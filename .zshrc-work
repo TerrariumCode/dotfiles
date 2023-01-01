@@ -1,0 +1,129 @@
+export GOROOT="/usr/local/go"
+export GOBIN=$GOROOT/bin
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:$PATH"
+fpath+=~/.zfunc
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/cmacrae/.oh-my-zsh"
+
+# for tmux, because it asked me to add this
+export DISABLE_AUTO_TITLE='true'
+
+# rename tab title
+# function tt() {
+#     echo -ne "\e]1;$*\a"
+# }
+
+# buildkit now please, docker
+export DOCKER_BUILDKIT=1
+
+ZSH_THEME="xxf"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(
+    git
+    kubectl
+    zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+source ~/.zsh_vars
+source <(stern --completion=zsh)
+
+#source $HOME/gitrepos/kube-ps1/kube-ps1.sh
+
+# HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=10000
+setopt appendhistory
+
+onelogin() {
+
+  # Onelogin username/email
+  ONELOGIN_USERNAME="colin.macrae@hearst.co.uk"
+
+  # The location to the onelogin python git repo
+  ONELOGIN_DIR="/Users/cmacrae/gitrepos/onelogin-python-aws-assume-role"
+
+  # The session duration in seconds
+  # 1hr = 3600, 12hr = 43200
+  SESSION_DURATION="43200"
+
+  CURR_DIR="$(pwd)"
+  CURR_VENV="${VIRTUAL_ENV}"
+
+  unset AWS_PROFILE
+  unset AWS_SECRET_ACCESS_KEY
+  unset AWS_ACCESS_KEY_ID
+  unset AWS_SESSION_TOKEN
+  unset AWS_DEFAULT_REGION
+
+  cd "${ONELOGIN_DIR}"
+  [ ! -z "${CURR_VENV}" ] && deactivate
+  source ${ONELOGIN_DIR}/.venv/bin/activate
+
+  python src/onelogin/aws-assume-role/aws-assume-role.py \
+    --onelogin-username "${ONELOGIN_USERNAME}" \
+    --onelogin-subdomain "hearstmagazinesuk" \
+    --onelogin-app-id "777051" \
+    --aws-region "us-east-1" \
+    --profile "onelogin" \
+    --duration "${SESSION_DURATION}"
+
+  export AWS_PROFILE=onelogin
+  export AWS_ACCESS_KEY_ID="$(cat ${HOME}/.aws/credentials | printSection "onelogin" | perl -n -e'/^aws_access_key_id = (.+)$/ && print $1')"
+  export AWS_SECRET_ACCESS_KEY="$(cat ${HOME}/.aws/credentials | printSection "onelogin" | perl -n -e'/^aws_secret_access_key = (.+)$/ && print $1')"
+  export AWS_SESSION_TOKEN="$(cat ${HOME}/.aws/credentials | printSection "onelogin" | perl -n -e'/^aws_session_token = (.+)$/ && print $1')"
+
+  deactivate
+
+  cd ${CURR_DIR}
+  [ ! -z "${CURR_VENV}" ] && source ${CURR_VENV}/bin/activate
+
+}
+
+printSection()
+{
+  # read aws credential file by sections
+  section="${1}"
+  found=false
+  while read line
+  do
+    [[ $found == false && "$line" != "[$section]" ]] &&  continue
+    [[ $found == true && "${line:0:1}" = '[' ]] && break
+    found=true
+    echo "$line"
+  done
+}
+
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
+
+zplugin light jonmosco/kube-ps1
+PROMPT='$(kube_ps1)'$PROMPT
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export GPG_TTY=$(tty)
