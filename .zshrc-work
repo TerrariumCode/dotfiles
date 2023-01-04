@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh_vars
 source <(stern --completion=zsh)
 
-#source $HOME/gitrepos/kube-ps1/kube-ps1.sh
+#source $HOME/repos/kube-ps1/kube-ps1.sh
 
 # HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -43,7 +43,7 @@ onelogin() {
   ONELOGIN_USERNAME="colin.macrae@hearst.co.uk"
 
   # The location to the onelogin python git repo
-  ONELOGIN_DIR="/Users/cmacrae/gitrepos/onelogin-python-aws-assume-role"
+  ONELOGIN_DIR="/Users/cmacrae/repos/onelogin-python-aws-assume-role"
 
   # The session duration in seconds
   # 1hr = 3600, 12hr = 43200
