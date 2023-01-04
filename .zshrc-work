@@ -9,7 +9,9 @@ export ZSH="/Users/cmacrae/.oh-my-zsh"
 # for tmux, because it asked me to add this
 export DISABLE_AUTO_TITLE='true'
 
-# rename tab title
+export KUBE_EDITOR="nvim -u NORC"
+
+# rename tab title in iterm
 # function tt() {
 #     echo -ne "\e]1;$*\a"
 # }
