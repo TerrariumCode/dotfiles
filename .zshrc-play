@@ -7,6 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # some tmux thing
 export DISABLE_AUTO_TITLE='true'
 
+export VSCODE_LLDB_DIR='/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -47,8 +49,4 @@ if [ -f '/home/cmac4603/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cmac4603
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/cmac4603/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cmac4603/google-cloud-sdk/completion.zsh.inc'; fi
 
-# First and only argument is the desired term title
-function tt {
-  echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
-}
 fpath+=${ZDOTDIR:-~}/.zsh_functions
