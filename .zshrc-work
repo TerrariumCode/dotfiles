@@ -11,6 +11,8 @@ export DISABLE_AUTO_TITLE='true'
 
 export KUBE_EDITOR="nvim -u NORC"
 
+export VSCODE_LLDB_DIR='~/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
+
 # rename tab title in iterm
 # function tt() {
 #     echo -ne "\e]1;$*\a"
