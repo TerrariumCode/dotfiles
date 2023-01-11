@@ -1,6 +1,6 @@
 export GOROOT="/usr/local/go"
 export GOBIN=$GOROOT/bin
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:$GOBIN:$PATH"
 fpath+=~/.zfunc
 
 # Path to your oh-my-zsh installation.
