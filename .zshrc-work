@@ -1,7 +1,8 @@
 export GOROOT="/usr/local/go"
 export GOBIN=$GOROOT/bin
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$(pyenv root)/shims:$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:$GOBIN:$PYENV_ROOT/bin:$PATH"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$(pyenv root)/shims:$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:$GOBIN:$PATH"
 fpath+=~/.zfunc
 
 eval "$(pyenv init -)"
