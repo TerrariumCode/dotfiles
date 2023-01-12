@@ -96,6 +96,7 @@ return packer.startup(function(use)
      })
     end,
   }
+  use { "tpope/vim-surround" }
 
   -- Colorschemes
   use { "glepnir/zephyr-nvim" }

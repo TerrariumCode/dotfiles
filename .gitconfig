@@ -1,0 +1,7 @@
+[user]
+	name = cmac4603
+	email = cmac4306users.noreply.github.com
+	signingkey = 5E8C4D8EAA779AFC
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
