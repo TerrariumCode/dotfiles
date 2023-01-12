@@ -6,7 +6,6 @@ export PATH="$(pyenv root)/shims:$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby
 fpath+=~/.zfunc
 
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/cmacrae/.oh-my-zsh"
@@ -33,6 +32,7 @@ plugins=(
     git
     kubectl
     zsh-autosuggestions
+    virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
