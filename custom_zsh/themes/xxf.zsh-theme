@@ -55,9 +55,11 @@ ys_hg_prompt_info() {
 	fi
 }
 
+ZSH_THEME_VIRTUALENV_SUFFIX="] "
+
 # Prompt format: \n # TIME USER at MACHINE in [DIRECTORY] on git:BRANCH STATE \n $
 PROMPT=" \
-$(virtualenv_prompt_info) \
+$(virtualenv_prompt_info)\
 %{$fg[cyan]%}%n \
 %{$fg[white]%}at \
 %{$fg[green]%}$(box_name) \
