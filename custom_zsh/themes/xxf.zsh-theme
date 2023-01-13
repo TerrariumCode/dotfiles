@@ -1,3 +1,8 @@
+setopt promptsubst
+
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+
 # Machine name.
 function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || echo $HOST
@@ -15,24 +20,6 @@ function virtenv_indicator {
 
 add-zsh-hook precmd virtenv_indicator
 
-PR_RST="$reset_color%"
-
-function prompt_kubecontext {
-  kube_env=$(kc config current-context)
-  if [[ ${kube_env} == *"test"* ]]; then
-        kube_format_env="(%{%F{green}%}${kube_env}${PR_RST})"
-  elif [[ ${kube_env} == *"feature"* ]]; then
-        kube_format_env="(%{%F{green}%}${kube_env}${PR_RST})"
-  elif [[ ${kube_env} == *"stage"* ]]; then
-        kube_format_env="(%{%F{yellow}%}${kube_env}${PR_RST})"
-  elif [[ ${kube_env} == *"prod"* ]]; then
-        kube_format_env="(%{%F{red}%}${kube_env}${PR_RST})"
-  else;
-        kube_format_env="(%{$hotpink%}${kube_env}${PR_RST})"
-  fi
-}
-
-add-zsh-hook precmd prompt_kubecontext
 
 # Directory info.
 local current_dir='${PWD/#$HOME/~}'
@@ -69,9 +56,8 @@ ys_hg_prompt_info() {
 }
 
 # Prompt format: \n # TIME USER at MACHINE in [DIRECTORY] on git:BRANCH STATE \n $
-PROMPT="
-${kube_format_env} \
-%(1V.(%1v).) \
+PROMPT=" \
+$(virtualenv_prompt_info) \
 %{$fg[cyan]%}%n \
 %{$fg[white]%}at \
 %{$fg[green]%}$(box_name) \

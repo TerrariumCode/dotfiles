@@ -17,16 +17,10 @@ export KUBE_EDITOR="nvim -u NORC"
 
 export VSCODE_LLDB_DIR='~/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
 
-# rename tab title in iterm
-# function tt() {
-#     echo -ne "\e]1;$*\a"
-# }
-
 # buildkit now please, docker
 export DOCKER_BUILDKIT=1
 
 ZSH_THEME="xxf"
-#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
     git
@@ -37,9 +31,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source <(stern --completion=zsh)
-
-#source $HOME/repos/kube-ps1/kube-ps1.sh
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 
 # HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -117,3 +108,6 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit light jonmosco/kube-ps1
+PROMPT='$(kube_ps1)'$PROMPT

@@ -3,5 +3,11 @@
 	email = cmac4306users.noreply.github.com
 	signingkey = 5E8C4D8EAA779AFC
 
+[push]
+    default = current
+
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+
+[core]
+    editor = nvim -u NORC
