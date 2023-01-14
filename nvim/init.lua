@@ -1,5 +1,5 @@
 require "cmac4603.impatient"
--- require "cmac4603.auto-hlsearch"
+require "cmac4603.auto-hlsearch"
 require "cmac4603.options"
 require "cmac4603.keymaps"
 require "cmac4603.plugins"

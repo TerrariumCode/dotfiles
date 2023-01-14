@@ -10,3 +10,18 @@ ln -s ~/repos/dotfiles/nvim ~/.config/nvim
 ln -s ~/repos/dotfiles/custom_zsh/alias-work.zsh ~/.oh-my-zsh/custom/alias.zsh
 ln -s ~/repos/dotfiles/custom_zsh/themes/xxf.zsh-theme ~/.oh-my-zsh/custom/themes/xxf.zsh-theme
 ```
+
+## Firefox remove upper bar tabs
+- Go to `about:support`
+- Find the directory `Profile Folder`
+- Create `chrome/userChrome.css` inside that dir
+- Add the following to that CSS file:
+  ```css
+  #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+  }
+  ```

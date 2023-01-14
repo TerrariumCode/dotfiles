@@ -97,6 +97,7 @@ return packer.startup(function(use)
     end,
   }
   use { "tpope/vim-surround" }
+  use { "chrisbra/csv.vim" }
 
   -- Colorschemes
   use { "glepnir/zephyr-nvim" }
@@ -145,6 +146,7 @@ return packer.startup(function(use)
 
   -- DAP
   use { "mfussenegger/nvim-dap" }
+  use { "mfussenegger/nvim-dap-python" }
   use { "rcarriga/nvim-dap-ui" }
   use { "ravenxrz/DAPInstall.nvim" }
 

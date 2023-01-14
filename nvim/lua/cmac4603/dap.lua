@@ -15,8 +15,8 @@ end
 
 dap_install.setup({})
 
-dap_install.config("python", {})
--- add other configs here
+-- dap_install.config("python", {})
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
 dapui.setup({
 	expand_lines = true,
