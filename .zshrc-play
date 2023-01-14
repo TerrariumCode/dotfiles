@@ -10,6 +10,7 @@ export DISABLE_AUTO_TITLE='true'
 export KUBE_EDITOR="nvim -u NORC"
 
 export VSCODE_LLDB_DIR='/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
+export LLDB_EXEC_PATH='/bin/lldb-vscode'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
