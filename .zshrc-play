@@ -12,6 +12,9 @@ export KUBE_EDITOR="nvim -u NORC"
 export VSCODE_LLDB_DIR='/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
 export LLDB_EXEC_PATH='/bin/lldb-vscode'
 
+# morhetz/gruvbox
+export FZF_DEFAULT_OPTS='--color=bg+:#3c3836,bg:#32302f,spinner:#fb4934,hl:#928374,fg:#ebdbb2,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,fg+:#ebdbb2,prompt:#fb4934,hl+:#fb4934'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
