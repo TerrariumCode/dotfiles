@@ -7,6 +7,3 @@ alias clear-dns="sudo killall -HUP mDNSResponder"
 alias whatismyip="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 
 alias nv="nvim"
-
-alias gwa="git worktree add"
-alias gwr="git worktree remove"

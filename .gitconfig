@@ -11,3 +11,13 @@
 
 [core]
     editor = nvim -u NORC
+
+[pull]
+	rebase = true
+
+[commit]
+	template = /Users/cmacrae/.gitcommitmsg.txt
+	gpgsign = true
+
+[gpg]
+	program = gpg
