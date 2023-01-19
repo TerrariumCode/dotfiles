@@ -1,5 +1,5 @@
 -- Shorten function name
-local keymap = vim.keymap.set
+local keymap = vim.api.nvim_set_keymap
 -- Silent keymap option
 local opts = { silent = true }
 
@@ -20,6 +20,11 @@ keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
+
+keymap("", "<Up>", "<Nop>", { noremap=true, silent=true })
+keymap("", "<Down>", "<Nop>", { noremap=true, silent=true })
+keymap("", "<Left>", "<Nop>", { noremap=true, silent=true })
+keymap("", "<Right>", "<Nop>", { noremap=true, silent=true })
 
 -- Modes
 --   normal_mode = "n",
@@ -43,8 +48,9 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", "<CMD>BufferLineCycleWindowlessNext<CR>", { noremap = true, silent = true })
+keymap("n", "<S-h>", "<CMD>BufferLineCycleWindowlessPrev<CR>", { noremap = true, silent = true })
+keymap("n", "<S-t>", "<CMD>BufferLineCycleWindowlessToggle<CR>", { noremap = true, silent = true })
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -79,7 +85,7 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
@@ -91,6 +97,10 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+-- DAP Python
+keymap("n", "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>", opts)
+keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opts)
+keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)

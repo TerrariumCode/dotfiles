@@ -15,7 +15,9 @@ end
 
 dap_install.setup({})
 
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+local dap_python = require('dap-python')
+dap_python.setup('~/.virtualenvs/debugpy/bin/python')
+dap_python.test_runner = 'pytest'
 
 dap.adapters.lldb = {
   type = 'executable',
