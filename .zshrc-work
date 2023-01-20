@@ -112,3 +112,4 @@ autoload -Uz _zinit
 
 zinit light jonmosco/kube-ps1
 PROMPT='$(kube_ps1)'$PROMPT
+export GPG_TTY=$(tty)
