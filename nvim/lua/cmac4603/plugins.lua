@@ -61,7 +61,19 @@ return packer.startup(function(use)
   use { "folke/trouble.nvim" }
   use { "folke/todo-comments.nvim" }
   use { "ThePrimeagen/vim-be-good" }
-  use { "saecki/crates.nvim" }
+  use {
+    'saecki/crates.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        local null_ls = require("null-ls")
+        require('crates').setup {
+            null_ls = {
+                enabled = true,
+                name = "crates.nvim",
+            }
+        }
+    end,
+  }
   use { "mbbill/undotree" }
   use { "jdhao/whitespace.nvim" }
   use { "tiagovla/scope.nvim" }
