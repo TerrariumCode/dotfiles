@@ -113,10 +113,10 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { "glepnir/zephyr-nvim" }
-  use {
-    'uloco/bluloco.nvim',
-    requires = { 'rktjmp/lush.nvim' }
-  }
+  -- use {
+  --   'uloco/bluloco.nvim',
+  --   requires = { 'rktjmp/lush.nvim' }
+  -- }
   -- use { "rebelot/kanagawa.nvim" }
   -- use { "Rigellute/shades-of-purple.vim" }
   -- use { "folke/tokyonight.nvim" }
