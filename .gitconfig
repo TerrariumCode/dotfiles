@@ -17,3 +17,4 @@
 
 [commit]
 	template = /Users/cmacrae/.gitcommitmsg.txt
+	gpgsign = true
