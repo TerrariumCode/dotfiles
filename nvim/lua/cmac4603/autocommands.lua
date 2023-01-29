@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+-- vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	callback = function()
@@ -58,11 +58,12 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-    callback = function ()
-        vim.cmd("NvimTreeFocus | wincmd w")
-    end,
-})
+vim.cmd[[
+    augroup NEOTREE_AUGROUP
+      autocmd!
+      au VimEnter * lua vim.defer_fn(function() vim.cmd("Neotree show left") end, 10)
+    augroup END
+  ]]
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     callback = function ()

@@ -10,8 +10,8 @@ vim.g.mapleader = " "
 keymap("n", "<leader>y", "\"+y", { noremap = true })
 
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
-keymap("n", "<tab>", ":if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>", { noremap = true, silent = true })
-keymap("n", "<s-tab>", ":if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>", { noremap = true, silent = true })
+-- keymap("n", "<tab>", ":if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>", { noremap = true, silent = true })
+-- keymap("n", "<s-tab>", ":if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>", { noremap = true, silent = true })
 keymap("n", "<C-S>s", ":vert sb", { noremap = true, silent = true })
 
 keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", { noremap = true })
