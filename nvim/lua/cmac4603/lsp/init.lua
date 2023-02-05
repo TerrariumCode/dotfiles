@@ -20,6 +20,19 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
     settings = {
         ["rust-analyzer"] = {
             inlayHints = { locationLinks = false },
+            cargo = {
+              loadOutDirsFromCheck = true,
+              features = "all",
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+            procMacro = {
+              enable = true,
+            },
+            experimental = {
+              procAttrMacros = true,
+            },
         },
     },
 })
