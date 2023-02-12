@@ -1,7 +1,6 @@
 vim.opt.title = false
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80,120"
--- vim.api.nvim_set_hl(0, "ColorColumn", { bg='#ff0000' })
 vim.opt.clipboard = ""
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -23,7 +22,7 @@ vim.opt.splitbelow = true                       -- force all horizontal splits t
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-vim.opt.background = "dark"
+vim.o.background = "dark"
 vim.opt.timeoutlen = 500                        -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 200                        -- faster completion (4000ms default)

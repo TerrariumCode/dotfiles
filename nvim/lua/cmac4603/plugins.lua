@@ -94,15 +94,15 @@ return packer.startup(function(use)
   use { "hashivim/vim-terraform" }
   use { "jeanlucthumm/nvim-lua-format" }
   use {
-  "folke/zen-mode.nvim",
-  config = function()
-    require("zen-mode").setup {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
     }
-  end
+    end
   }
   use { "tpope/vim-obsession" }
   use { "asiryk/auto-hlsearch.nvim" }
-  use { "j-hui/fidget.nvim" }
+  use { "j-hui/fidget.nvim" }  -- standalone UI for LSP
   use {
     "roobert/bufferline-cycle-windowless.nvim",
     requires = {
@@ -119,11 +119,13 @@ return packer.startup(function(use)
   use { "timrecyclist/nvim-csv" }
 
   -- Colorschemes
-  use({
-    'glepnir/zephyr-nvim',
-    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
-  })
-  use { 'navarasu/onedark.nvim' }
+  use { "navarasu/onedark.nvim" }
+  use {
+    "delphinus/auto-cursorline.nvim",
+    config = function()
+      require("auto-cursorline").setup {}
+    end,
+  }
 
   -- lsp
   use {
