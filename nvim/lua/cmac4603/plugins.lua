@@ -116,11 +116,14 @@ return packer.startup(function(use)
     end,
   }
   use { "tpope/vim-surround" }
-  use { "chrisbra/csv.vim" }
+  use { "timrecyclist/nvim-csv" }
 
   -- Colorschemes
-  use { "glepnir/zephyr-nvim" }
-  use { "folke/tokyonight.nvim" }
+  use({
+    'glepnir/zephyr-nvim',
+    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
+  })
+  use { 'navarasu/onedark.nvim' }
 
   -- lsp
   use {
@@ -147,6 +150,18 @@ return packer.startup(function(use)
   use { "simrat39/rust-tools.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" }
   use { "RRethy/vim-illuminate" }
+  use({
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    after = "nvim-web-devicons", -- keep this if you're using NvChad
+    config = function()
+      require("barbecue").setup()
+    end,
+  })
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim" }
