@@ -49,6 +49,7 @@ onelogin() {
   # The session duration in seconds
   # 1hr = 3600, 12hr = 43200
   SESSION_DURATION="43200"
+  # SESSION_DURATION="3600"
 
   CURR_DIR="$(pwd)"
   CURR_VENV="${VIRTUAL_ENV}"
@@ -63,10 +64,11 @@ onelogin() {
   [ ! -z "${CURR_VENV}" ] && deactivate
   source ${ONELOGIN_DIR}/.venv/bin/activate
 
+    # --onelogin-app-id "2000889" \
   python src/onelogin/aws-assume-role/aws-assume-role.py \
     --onelogin-username "${ONELOGIN_USERNAME}" \
     --onelogin-subdomain "hearstmagazinesuk" \
-    --onelogin-app-id "777051" \
+    --onelogin-app-id "2000889" \
     --aws-region "us-east-1" \
     --profile "onelogin" \
     --duration "${SESSION_DURATION}"

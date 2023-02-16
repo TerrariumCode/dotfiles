@@ -104,3 +104,4 @@ keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+keymap("n", "<leader>cv", "<cmd>lua require('nvim-preview-csv').preview()<cr>", opts)

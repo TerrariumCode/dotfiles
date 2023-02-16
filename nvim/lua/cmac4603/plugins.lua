@@ -116,7 +116,7 @@ return packer.startup(function(use)
     end,
   }
   use { "tpope/vim-surround" }
-  use { "timrecyclist/nvim-csv" }
+  use { "Nguyen-Hoang-Nam/nvim-preview-csv" }
 
   -- Colorschemes
   use { "navarasu/onedark.nvim" }
