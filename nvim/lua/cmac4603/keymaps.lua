@@ -104,4 +104,17 @@ keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap('n', 'gD', "<cmd>lua vim.lsp.buf.declaration", opts)
+keymap('n', 'gd', "<cmd>lua vim.lsp.buf.definition", opts)
+keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover", opts)
+keymap('n', 'gi', "<cmd>lua vim.lsp.buf.implementation", opts)
+keymap('n', '<C-k>', "<cmd>lua vim.lsp.buf.signature_help", opts)
+keymap('n', '<space>wa', "<cmd>lua vim.lsp.buf.add_workspace_folder", opts)
+keymap('n', '<space>wr', "<cmd>lua vim.lsp.buf.remove_workspace_folder", opts)
+keymap('n', '<space>D', "<cmd>lua vim.lsp.buf.type_definition", opts)
+keymap('n', '<space>rn', "<cmd>lua vim.lsp.buf.rename", opts)
+keymap('n', '<space>ca', "<cmd>lua vim.lsp.buf.code_action", opts)
+keymap('n', 'gr', "<cmd>lua vim.lsp.buf.references", opts)
+
 keymap("n", "<leader>cv", "<cmd>lua require('nvim-preview-csv').preview()<cr>", opts)
