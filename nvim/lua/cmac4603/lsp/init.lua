@@ -14,8 +14,6 @@ lsp.configure('yamlls', {
     }
 })
 
-lsp.setup()
-
 local rust_lsp = lsp.build_options('rust_analyzer', {
     settings = {
         ["rust-analyzer"] = {
@@ -36,6 +34,8 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
         },
     },
 })
+
+lsp.setup()
 
 local extension_path = vim.env.HOME .. vim.env.VSCODE_LLDB_DIR
 local codelldb_path = extension_path .. 'adapter/codelldb'

@@ -164,6 +164,12 @@ return packer.startup(function(use)
       require("barbecue").setup()
     end,
   })
+  use {
+    "klen/nvim-test",
+    config = function()
+      require('nvim-test').setup()
+    end
+  }
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim" }
