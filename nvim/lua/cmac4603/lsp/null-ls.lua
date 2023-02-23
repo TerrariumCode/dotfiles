@@ -12,6 +12,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
+    diagnostics.codespell.with { extra_args = { "--I /Users/cmacrae/.codespell.txt" } },
     formatting.prettier.with {
       extra_filetypes = { "toml" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
