@@ -143,12 +143,32 @@ return packer.startup(function(use)
       {"saadparwaiz1/cmp_luasnip"},
       {"hrsh7th/cmp-nvim-lsp"},
       {"hrsh7th/cmp-nvim-lua"},
+      {"hrsh7th/cmp-nvim-lsp-signature-help"},
+      {"hrsh7th/cmp-copilot"},
 
       -- Snippets
       {"L3MON4D3/LuaSnip"},
       {"rafamadriz/friendly-snippets"},
     }
   }
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       suggestion = { enabled = false },
+  --       panel = { enabled = false },
+  --     })
+  --   end,
+  -- }
+  -- use {
+  --   "zbirenbaum/copilot-cmp",
+  --   after = { "copilot.lua" },
+  --   config = function ()
+  --     require("copilot_cmp").setup()
+  --   end
+  -- }
   use { "simrat39/rust-tools.nvim" }
   use { "jose-elias-alvarez/null-ls.nvim" }
   use { "RRethy/vim-illuminate" }

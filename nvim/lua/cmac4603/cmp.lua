@@ -16,6 +16,7 @@ local check_backspace = function()
 end
 
 local kind_icons = {
+    Copilot = "",
 	Text = "",
 	Method = "",
 	Function = "",
@@ -43,6 +44,23 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_filetypes = {
+  ["*"] = false,
+  ["javascript"] = true,
+  ["typescript"] = true,
+  ["lua"] = false,
+  ["rust"] = true,
+  ["c"] = true,
+  ["c#"] = true,
+  ["c++"] = true,
+  ["go"] = true,
+  ["python"] = true,
+}
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -52,7 +70,16 @@ cmp.setup({
 
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+		-- ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-j>"] = cmp.mapping(function(fallback)
+          cmp.mapping.abort()
+          local copilot_keys = vim.fn["copilot#Accept"]()
+          if copilot_keys ~= "" then
+            vim.api.nvim_feedkeys(copilot_keys, "i", true)
+          else
+            fallback()
+          end
+        end),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -110,10 +137,12 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
+        { name = 'nvim_lsp_signature_help' },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "crates" },
+		{ name = "copilot" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -126,4 +155,22 @@ cmp.setup({
 	experimental = {
 		ghost_text = true,
 	},
+    -- sorting = {
+    --   priority_weight = 2,
+    --   comparators = {
+    --     require("copilot_cmp.comparators").prioritize,
+    --
+    --     -- Below is the default comparitor list and order for nvim-cmp
+    --     cmp.config.compare.offset,
+    --     -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+    --     cmp.config.compare.exact,
+    --     cmp.config.compare.score,
+    --     cmp.config.compare.recently_used,
+    --     cmp.config.compare.locality,
+    --     cmp.config.compare.kind,
+    --     cmp.config.compare.sort_text,
+    --     cmp.config.compare.length,
+    --     cmp.config.compare.order,
+    --   },
+    -- },
 })
