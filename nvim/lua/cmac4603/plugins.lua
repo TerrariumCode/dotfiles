@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-web-devicons" }
   use {
     "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
@@ -202,6 +203,8 @@ return packer.startup(function(use)
 
   -- Git
   use { "lewis6991/gitsigns.nvim" }
+
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- DAP
   use { "mfussenegger/nvim-dap" }
