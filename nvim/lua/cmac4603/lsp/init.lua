@@ -25,12 +25,17 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
             checkOnSave = {
               command = "clippy",
             },
-            procMacro = {
-              enable = true,
+            diagnostics = {
+                enable = true,
+                disabled = {"unresolved-proc-macro"},
+                enableExperimental = true,
             },
-            experimental = {
-              procAttrMacros = true,
-            },
+        --     procMacro = {
+        --       enable = true,
+        --     },
+        --     experimental = {
+        --       procAttrMacros = true,
+        --     },
         },
     },
 })
