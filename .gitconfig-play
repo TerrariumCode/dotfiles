@@ -7,7 +7,7 @@
 [push]
 	default = current
 [core]
-	editor = nvim
+    editor = nvim -u NORC
 [init]
 	defaultBranch = main
 [pull]
