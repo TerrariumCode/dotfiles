@@ -35,12 +35,6 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
                 disabled = {"unresolved-proc-macro"},
                 enableExperimental = true,
             },
-        --     procMacro = {
-        --       enable = true,
-        --     },
-        --     experimental = {
-        --       procAttrMacros = true,
-        --     },
         },
     },
 })

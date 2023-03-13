@@ -39,7 +39,6 @@ return {
             require("zen-mode").setup{}
         end
     },
-    "tpope/vim-obsession",
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
     "Nguyen-Hoang-Nam/nvim-preview-csv",
