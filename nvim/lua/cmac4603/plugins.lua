@@ -86,12 +86,6 @@ return packer.startup(function(use)
   use { "jdhao/whitespace.nvim" }
   use { "tiagovla/scope.nvim" }
   use { "RubixDev/mason-update-all" }
-  use {
-    "ggandor/leap.nvim",
-    requires = {
-        "tpope/vim-repeat"
-    }
-  }
   use { "hashivim/vim-terraform" }
   use { "jeanlucthumm/nvim-lua-format" }
   use {
