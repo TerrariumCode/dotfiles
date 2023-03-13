@@ -1,26 +1,22 @@
-require "cmac4603.impatient"
-require "cmac4603.auto-hlsearch"
-require "cmac4603.options"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  print("Cloning lazy.nvim, let this finish before anything else...")
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " "
+
+require("lazy").setup("plugins")
 require "cmac4603.keymaps"
-require "cmac4603.plugins"
+require "cmac4603.options"
 require "cmac4603.autocommands"
-require "cmac4603.colorscheme"
-require "cmac4603.cmp"
-require "cmac4603.telescope"
-require "cmac4603.gitsigns"
-require "cmac4603.treesitter"
-require "cmac4603.comment"
-require "cmac4603.neo-tree"
-require "cmac4603.bufferline"
-require "cmac4603.lualine"
-require "cmac4603.toggleterm"
-require "cmac4603.trouble"
-require "cmac4603.illuminate"
-require "cmac4603.indentline"
-require "cmac4603.alpha"
 require "cmac4603.lsp"
 require "cmac4603.dap"
-require "cmac4603.whichkey"
-require "cmac4603.scope"
-require "cmac4603.todo-comments"
-require "cmac4603.nvim-lua-format"

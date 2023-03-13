@@ -5,7 +5,6 @@ local opts = { silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
 
 keymap("n", "<leader>y", "\"+y", { noremap = true })
 
@@ -47,9 +46,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", "<CMD>BufferLineCycleWindowlessNext<CR>", { noremap = true, silent = true })
-keymap("n", "<S-h>", "<CMD>BufferLineCycleWindowlessPrev<CR>", { noremap = true, silent = true })
-keymap("n", "<S-t>", "<CMD>BufferLineCycleWindowlessToggle<CR>", { noremap = true, silent = true })
+keymap('n', '<S-h>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true })
+keymap('n', '<S-l>', '<Cmd>BufferNext<CR>', { noremap = true, silent = true })
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
