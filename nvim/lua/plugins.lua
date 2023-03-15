@@ -4,6 +4,10 @@ return {
         "folke/todo-comments.nvim",
         config = true,
     },
+    {
+        "numToStr/Comment.nvim",
+        config = true,
+    },
     "JoosepAlviste/nvim-ts-context-commentstring",
     "akinsho/toggleterm.nvim",
     "lewis6991/impatient.nvim",
