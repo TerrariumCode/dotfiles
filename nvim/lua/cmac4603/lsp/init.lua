@@ -1,10 +1,8 @@
-local lsp = require('lsp-zero')
-lsp.preset({
-  name = 'minimal',
-  set_lsp_keymaps = true,
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = true,
-})
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
 
 lsp.skip_server_setup({'rust_analyzer'})
 
@@ -51,15 +49,6 @@ local opts = {
 }
 -- Initialize rust_analyzer with rust-tools and other lspconfig.setup params
 require('rust-tools').setup(opts)
-
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-  severity_sort = false,
-  float = true,
-})
 
 -- mason-update-all LSP servers
 require('mason-update-all').setup()
@@ -111,10 +100,13 @@ local kind_icons = {
 }
 
 local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 
-lsp.setup_nvim_cmp({
+cmp.setup({
 	mapping = lsp.defaults.cmp_mappings({
         ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
         ['<Tab>'] = vim.NIL,
         ['<S-Tab>'] = vim.NIL,
     }),
@@ -154,24 +146,34 @@ lsp.setup_nvim_cmp({
 	experimental = {
 		ghost_text = true,
 	},
-    -- sorting = {
-    --   priority_weight = 2,
-    --   comparators = {
-    --     require("copilot_cmp.comparators").prioritize,
-    --
-    --     -- Below is the default comparitor list and order for nvim-cmp
-    --     cmp.config.compare.offset,
-    --     -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-    --     cmp.config.compare.exact,
-    --     cmp.config.compare.score,
-    --     cmp.config.compare.recently_used,
-    --     cmp.config.compare.locality,
-    --     cmp.config.compare.kind,
-    --     cmp.config.compare.sort_text,
-    --     cmp.config.compare.length,
-    --     cmp.config.compare.order,
-    --   },
-    -- },
+    sorting = {
+      priority_weight = 2,
+      comparators = {
+        -- require("copilot_cmp.comparators").prioritize,
+
+        -- Below is the default comparitor list and order for nvim-cmp
+        cmp.config.compare.offset,
+        -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+        cmp.config.compare.recently_used,
+        cmp.config.compare.locality,
+        cmp.config.compare.kind,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order,
+      },
+    },
 })
 
 lsp.setup()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  -- signs = true,
+  -- update_in_insert = false,
+  -- underline = true,
+  -- severity_sort = false,
+  -- float = true,
+})
+
