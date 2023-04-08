@@ -48,10 +48,6 @@ return {
     "Nguyen-Hoang-Nam/nvim-preview-csv",
 
     {
-        "stevearc/overseer.nvim",
-        config = true
-    },
-    {
         "j-hui/fidget.nvim",  -- standalone UI for LSP
         config = true,
     },
@@ -89,4 +85,8 @@ return {
     "mfussenegger/nvim-dap-python",
     "rcarriga/nvim-dap-ui",
     "ravenxrz/DAPInstall.nvim",
+
+    -- Notetaking
+    "lervag/wiki.vim",
+    "lervag/wiki-ft.vim",
 }
