@@ -41,14 +41,15 @@ local extension_path = vim.env.HOME .. vim.env.VSCODE_LLDB_DIR
 local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
 
-local opts = {
+lsp.setup()
+
+-- setup rust-tools after lsp setup
+require('rust-tools').setup({
     server = rust_lsp,
     dap = {
         adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
     },
-}
--- Initialize rust_analyzer with rust-tools and other lspconfig.setup params
-require('rust-tools').setup(opts)
+})
 
 -- mason-update-all LSP servers
 require('mason-update-all').setup()
@@ -99,10 +100,20 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
+-- Make sure you setup `cmp` after lsp-zero
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
 	mapping = lsp.defaults.cmp_mappings({
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
@@ -133,7 +144,7 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "crates" },
-		{ name = "copilot" },
+		-- { name = "copilot" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -166,14 +177,10 @@ cmp.setup({
     },
 })
 
-lsp.setup()
-
+-- diagnostic output config
 vim.diagnostic.config({
   virtual_text = true,
-  signs = true,
   update_in_insert = false,
   underline = true,
-  -- severity_sort = false,
-  float = true,
 })
 
