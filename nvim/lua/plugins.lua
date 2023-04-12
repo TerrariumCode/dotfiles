@@ -71,6 +71,7 @@ return {
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-context",
 
     -- Git
     "lewis6991/gitsigns.nvim",

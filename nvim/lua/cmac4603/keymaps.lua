@@ -100,8 +100,8 @@ keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opt
 keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
 
 -- Lsp
--- keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
--- keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 -- keymap('n', 'gD', "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 -- keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
