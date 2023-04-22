@@ -69,9 +69,6 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--ignore,--hidden,--files<CR>", opts)
@@ -106,7 +103,7 @@ keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 keymap('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 -- keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 -- keymap('n', 'gi', "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
--- keymap('n', '<C-k>', "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap('n', '<C-k>', "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 -- keymap('n', '<space>wa', "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 -- keymap('n', '<space>wr', "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 -- keymap('n', '<space>D', "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)

@@ -45,7 +45,8 @@ return {
     },
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
-    "Nguyen-Hoang-Nam/nvim-preview-csv",
+
+    "mechatroner/rainbow_csv",
 
     {
         "j-hui/fidget.nvim",  -- standalone UI for LSP
@@ -90,4 +91,7 @@ return {
     -- Notetaking
     "lervag/wiki.vim",
     "lervag/wiki-ft.vim",
+
+    -- Screenshot code
+    "segeljakt/vim-silicon",
 }

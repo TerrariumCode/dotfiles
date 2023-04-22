@@ -29,16 +29,15 @@ wk.register({
 }, { prefix = "<leader>" })
 
 wk.register({
-  o = {
-    name = "Overseer",
-    t = {"<CMD>OverseerToggle<CR>", "Overseer Toggle"},
-    r = {"<CMD>OverseerRun<CR>", "Overseer Run"},
+  u = {
+    name = "UndoTree",
+    t = {"<CMD>UndotreeToggle<CR>", "Undotree Toggle"},
   },
 }, { prefix = "<leader>" })
 
 wk.register({
-  u = {
-    name = "UndoTree",
-    t = {"<CMD>UndotreeToggle<CR>", "Undotree Toggle"},
+  r = {
+    name = "RustTools",
+    t = {"<CMD>lua require('rust-tools').runnables.runnables()<CR>", "RustRunnables"},
   },
 }, { prefix = "<leader>" })

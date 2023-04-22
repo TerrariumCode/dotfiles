@@ -1,12 +1,12 @@
 local lsp = require('lsp-zero').preset({})
+lsp.preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
-lsp.skip_server_setup({'rust_analyzer'})
+local rust_lsp = lsp.build_options('rust_analyzer', {})
 
-lsp.configure('terraformls', {})
 lsp.configure('yamlls', {
     settings = {
         ["yaml"] = {
@@ -17,39 +17,20 @@ lsp.configure('yamlls', {
     }
 })
 
-local rust_lsp = lsp.build_options('rust_analyzer', {
-    settings = {
-        ["rust-analyzer"] = {
-            inlayHints = { locationLinks = false },
-            cargo = {
-              loadOutDirsFromCheck = true,
-              features = "all",
-            },
-            checkOnSave = {
-              command = "clippy",
-            },
-            diagnostics = {
-                enable = true,
-                disabled = {"unresolved-proc-macro"},
-                enableExperimental = true,
-            },
-        },
-    },
-})
-
-local extension_path = vim.env.HOME .. vim.env.VSCODE_LLDB_DIR
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+-- local extension_path = vim.env.HOME .. vim.env.VSCODE_LLDB_DIR
+-- local codelldb_path = extension_path .. 'adapter/codelldb'
+-- local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+--
+-- local opts = {
+--     server = rust_lsp,
+--     dap = {
+--         adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
+--     },
+-- }
 
 lsp.setup()
-
--- setup rust-tools after lsp setup
-require('rust-tools').setup({
-    server = rust_lsp,
-    dap = {
-        adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
-    },
-})
+-- Initialize rust_analyzer with rust-tools
+require('rust-tools').setup({server = rust_lsp})
 
 -- mason-update-all LSP servers
 require('mason-update-all').setup()
@@ -155,7 +136,7 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
     sorting = {
       priority_weight = 2,
