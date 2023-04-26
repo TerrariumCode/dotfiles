@@ -7,7 +7,9 @@ end)
 
 local rust_lsp = lsp.build_options('rust_analyzer', {})
 
-lsp.configure('yamlls', {
+local lspconfig = require('lspconfig')
+
+lspconfig.yamlls.setup({
     settings = {
         ["yaml"] = {
             customTags = {
