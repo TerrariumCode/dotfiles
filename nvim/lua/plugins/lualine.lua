@@ -46,8 +46,8 @@ return {
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = {"branch"},
-        lualine_c = { diagnostics },
+        lualine_b = { "branch", diagnostics },
+        lualine_c = { 'filename', require('pomodoro').statusline },
         lualine_x = { diff, spaces, "encoding", filetype },
         lualine_y = { location },
         lualine_z = { "progress" },

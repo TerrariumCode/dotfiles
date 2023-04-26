@@ -94,4 +94,12 @@ return {
 
     -- Screenshot code
     "segeljakt/vim-silicon",
+
+    -- pomodoro
+    {
+        "wthollingsworth/pomodoro.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+        }
+    },
 }
