@@ -100,6 +100,15 @@ return {
         "wthollingsworth/pomodoro.nvim",
         dependencies = {
             "MunifTanjim/nui.nvim",
+        },
+    },
+    {
+        "kiyoon/jupynium.nvim",
+        build = "pip3 install --user .",
+        dependencies = {
+            "hrsh7th/nvim-cmp",       -- optional, for completion
+            "rcarriga/nvim-notify",   -- optional
+            "stevearc/dressing.nvim", -- optional, UI for :JupyniumKernelSelect
         }
     },
 }

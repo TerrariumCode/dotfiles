@@ -11,10 +11,11 @@ local lspconfig = require('lspconfig')
 
 lspconfig.yamlls.setup({
     settings = {
-        ["yaml"] = {
+        yaml = {
             customTags = {
                 "!vault",
-            }
+            },
+            keyOrdering = false
         }
     }
 })
