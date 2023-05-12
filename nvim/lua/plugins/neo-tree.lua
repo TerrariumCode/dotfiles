@@ -1,8 +1,7 @@
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
-        -- branch = "v2.x",
-        version = "2.59",
+        branch = "v2.x",
         lazy = false,
         dependencies = {
           "nvim-lua/plenary.nvim",
