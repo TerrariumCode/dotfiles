@@ -12,6 +12,7 @@ ln -s ~/repos/dotfiles/custom_zsh/themes/xxf.zsh-theme ~/.oh-my-zsh/custom/theme
 ```
 
 ## Firefox remove upper bar tabs
+- You need to set toolkit.legacyUserProfileCustomizations.stylesheets to true with about:config, otherwise userChrome.css (and userContent.css) in your profile is simply ignored by Firefox.
 - Go to `about:support`
 - Find the directory `Profile Folder`
 - Create `chrome/userChrome.css` inside that dir
