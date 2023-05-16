@@ -1,4 +1,8 @@
-source ~/repos/zsh-snap/znap.zsh
+# Download Znap, if it's not there yet.
+[[ -r ~/repos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/repos/znap
+source ~/repos/znap/znap.zsh
 export PATH=$HOME/.pyenv/bin:$(pyenv root)/shims:/home/cmac4604/.local/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/gems/bin:/opt/maven/bin:/snap/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -84,3 +88,4 @@ zinit light-mode for \
 
 zinit light jonmosco/kube-ps1
 PROMPT='$(kube_ps1)'$PROMPT
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
