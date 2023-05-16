@@ -1,13 +1,13 @@
 [user]
-	signingkey = E56209DB7DBC045F
 	name = Colin MacRae
 	email = cmac4603@users.noreply.github.com
+	signingkey = 426A472EEF048AB1
 [commit]
 	gpgsign = true
 [push]
 	default = current
 [core]
-    editor = nvim -u NORC
+    editor = nvim --clean
 [init]
 	defaultBranch = main
 [pull]

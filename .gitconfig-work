@@ -10,7 +10,7 @@
 	insteadOf = https://github.com/
 
 [core]
-    editor = nvim -u NORC
+    editor = nvim --clean
 
 [pull]
 	rebase = true
