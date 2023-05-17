@@ -89,3 +89,7 @@ zinit light-mode for \
 zinit light jonmosco/kube-ps1
 PROMPT='$(kube_ps1)'$PROMPT
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
