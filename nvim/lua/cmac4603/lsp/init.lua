@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero').preset({})
+local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
