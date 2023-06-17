@@ -1,24 +1,47 @@
 return {
-    {
-        "github/copilot.vim",
-        lazy = false,
-        init = function ()
-            vim.g.copilot_no_tab_map = true
-            vim.g.copilot_assume_mapped = true
-            vim.g.copilot_tab_fallback = ""
-            vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-            vim.g.copilot_filetypes = {
-                ["*"] = false,
-                ["javascript"] = true,
-                ["typescript"] = true,
-                ["lua"] = false,
-                ["rust"] = true,
-                ["c"] = true,
-                ["c#"] = true,
-                ["c++"] = true,
-                ["go"] = true,
-                ["python"] = true,
-            }
-        end
-    }
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "InsertEnter",
+  config = function()
+    require("copilot").setup({
+      panel = {
+        enabled = true,
+        auto_refresh = true,
+        keymap = {
+          jump_prev = "[[",
+          jump_next = "]]",
+          accept = "<CR>",
+          refresh = "gr",
+          open = "<M-CR>"
+        },
+        layout = {
+          position = "bottom", -- | top | left | right
+          ratio = 0.4
+        },
+      },
+      filetypes = {
+        yaml = true,
+        markdown = true,
+        help = true,
+        gitcommit = true,
+        gitrebase = true,
+        qf = true,
+        hgcommit = true,
+        svn = true,
+        cvs = true,
+        ["."] = true,
+      },
+      suggestion = {
+        enabled = true,
+        auto_trigger = false,
+        debounce = 75,
+        keymap = {
+          accept = "<C-j>",
+          next = "<C-l>",
+          prev = "<C-k>",
+          dismiss = "<C-/>",
+        },
+      },
+    })
+  end,
 }
