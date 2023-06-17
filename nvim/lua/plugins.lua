@@ -51,6 +51,7 @@ return {
     {
         "j-hui/fidget.nvim",  -- standalone UI for LSP
         config = true,
+        tag = "legacy",
     },
     "simrat39/rust-tools.nvim",
     "jose-elias-alvarez/null-ls.nvim",
