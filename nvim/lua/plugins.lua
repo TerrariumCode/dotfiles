@@ -96,4 +96,6 @@ return {
     -- Screenshot code
     "segeljakt/vim-silicon",
 
+    "ionide/Ionide-vim",
+
 }
