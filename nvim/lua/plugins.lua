@@ -99,4 +99,9 @@ return {
     -- fsharp
     "ionide/Ionide-vim",
 
+    {
+        "varnishcache-friends/vim-varnish",
+        ft = "vcl",
+    },
+
 }
