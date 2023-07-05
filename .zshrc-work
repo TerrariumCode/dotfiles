@@ -64,13 +64,13 @@ onelogin() {
   [ ! -z "${CURR_VENV}" ] && deactivate
   source ${ONELOGIN_DIR}/.venv/bin/activate
 
-    # --onelogin-app-id "2000889" \
+   # --onelogin-app-id "2010731" \  # intl
   python src/onelogin/aws-assume-role/aws-assume-role.py \
     --onelogin-username "${ONELOGIN_USERNAME}" \
     --onelogin-subdomain "hearstmagazinesuk" \
+    --profile "onelogin" \
     --onelogin-app-id "2000889" \
     --aws-region "us-east-1" \
-    --profile "onelogin" \
     --duration "${SESSION_DURATION}"
 
   export AWS_PROFILE=onelogin
