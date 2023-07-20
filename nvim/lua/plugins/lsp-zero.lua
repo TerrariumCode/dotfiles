@@ -96,7 +96,7 @@ return {
         lsp.default_keymaps({buffer = bufnr})
       end)
 
-      local rust_lsp = lsp.build_options('rust_analyzer', {})
+      lsp.skip_server_setup({'rust_analyzer'})
 
       local lspconfig = require('lspconfig')
 
@@ -116,7 +116,46 @@ return {
       lsp.setup()
 
       -- Initialize rust_analyzer with rust-tools
-      require('rust-tools').setup({server = rust_lsp})
+      local rust_tools = require('rust-tools')
+      rust_tools.setup({
+        on_attach = function(_, bufnr)
+          vim.keymap.set("n", "K", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+          vim.keymap.set("n", "<leader>ca", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+          local opts = { noremap = true, silent = true }
+          local keymap = vim.api.nvim_buf_set_keymap
+          keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+          keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+          keymap(bufnr, "n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+          keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+          keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+          keymap(bufnr, "n", "<C-K>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+          keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+          keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format( { timeout_ms = 5000  })<CR>", opts)
+          keymap(bufnr, "n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+          keymap(bufnr, "n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+          keymap(bufnr, "n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+          keymap(bufnr, "n", "<leader>uo", "<cmd>lua require('dapui').toggle()<CR>", opts)
+          keymap(bufnr, "n", "<leader>uc", "<cmd>lua require('dapui').close()<CR>", opts)
+          keymap(bufnr, "n", "<leader>un", ":DapContinue<CR>", opts)
+          keymap(bufnr, "n", "<leader>ut", ":DapTerminate<CR>", opts)
+          keymap(bufnr, "n", "<leader>bb", ":DapToggleBreakpoint<CR>", opts)
+        end,
+        server = {
+          settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                features = "all",
+              }
+            }
+          },
+          -- on_attach = function(_, bufnr)
+          --   -- Hover actions
+          --   vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+          --   -- Code action groups
+          --   vim.keymap.set("n", "<Leader>a", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+          -- end
+        }
+      })
 
     end
   }
