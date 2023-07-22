@@ -89,10 +89,6 @@ return {
     "rcarriga/nvim-dap-ui",
     "ravenxrz/DAPInstall.nvim",
 
-    -- Notetaking
-    "lervag/wiki.vim",
-    "lervag/wiki-ft.vim",
-
     -- Screenshot code
     "segeljakt/vim-silicon",
 
