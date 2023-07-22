@@ -97,7 +97,6 @@ return {
         lsp.default_keymaps({buffer = bufnr})
       end)
 
-      -- lsp.skip_server_setup({'rust_analyzer'})
       local rust_lsp = lsp.build_options('rust_analyzer', {})
 
       local lspconfig = require('lspconfig')
