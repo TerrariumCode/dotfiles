@@ -22,6 +22,9 @@ keymap("", "<Up>", "<Nop>", { noremap=true, silent=true })
 keymap("", "<Down>", "<Nop>", { noremap=true, silent=true })
 keymap("", "<Left>", "<Nop>", { noremap=true, silent=true })
 keymap("", "<Right>", "<Nop>", { noremap=true, silent=true })
+
+keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+
 -- keymap("n", "<Space>", "<Nop>", { noremap=true, silent=true })
 
 -- Modes

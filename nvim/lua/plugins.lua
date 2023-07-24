@@ -31,18 +31,18 @@ return {
             }
         end,
     },
+    {
+      "VonHeikemen/fine-cmdline.nvim",
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+      },
+    },
     "mbbill/undotree",
     "jdhao/whitespace.nvim",
     "tiagovla/scope.nvim",
     "RubixDev/mason-update-all",
     "hashivim/vim-terraform",
     "jeanlucthumm/nvim-lua-format",
-    {
-        "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup{}
-        end
-    },
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
 
