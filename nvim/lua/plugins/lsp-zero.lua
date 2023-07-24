@@ -100,6 +100,7 @@ return {
 
       local lspconfig = require('lspconfig')
 
+      lspconfig.denols.setup{}
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
       lspconfig.yamlls.setup({

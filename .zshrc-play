@@ -99,5 +99,4 @@ export PATH="/home/cmac4603/.turso:$PATH"
 
 # opam configuration
 [[ ! -r /home/cmac4603/.opam/opam-init/init.zsh ]] || source /home/cmac4603/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
 [ -f "/home/cmac4603/.ghcup/env" ] && source "/home/cmac4603/.ghcup/env" # ghcup-env
