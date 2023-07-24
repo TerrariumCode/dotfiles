@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+
 require("lazy").setup("plugins")
 require "cmac4603.keymaps"
 require "cmac4603.options"
