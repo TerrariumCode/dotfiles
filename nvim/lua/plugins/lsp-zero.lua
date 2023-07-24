@@ -91,6 +91,7 @@ return {
     },
     config = function()
       local lsp = require('lsp-zero')
+      lsp.preset('recommended')
 
       lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps({buffer = bufnr})
@@ -116,7 +117,13 @@ return {
 
       lsp.setup()
 
-      -- Initialize rust_analyzer with rust-tools
+      rust_lsp.settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            features = "all",
+          }
+        }
+      }
       require('rust-tools').setup({server = rust_lsp})
 
     end

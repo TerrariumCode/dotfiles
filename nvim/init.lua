@@ -14,9 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
--- for notes store
-vim.g.wiki_root = "~/wiki"
-
 require("lazy").setup("plugins")
 require "cmac4603.keymaps"
 require "cmac4603.options"
