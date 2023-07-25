@@ -39,14 +39,13 @@ return {
             ['<S-Tab>'] = vim.NIL,
         },
         sources = {
+            { name = "path" },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
             { name = 'nvim_lsp_signature_help' },
             { name = "luasnip" },
             { name = "buffer" },
-            { name = "path" },
             { name = "crates" },
-            -- { name = "copilot" },
         },
         window = {
             completion = cmp.config.window.bordered(),
@@ -55,7 +54,6 @@ return {
         sorting = {
           priority_weight = 2,
           comparators = {
-            -- require("copilot_cmp.comparators").prioritize,
 
             -- Below is the default comparitor list and order for nvim-cmp
             cmp.config.compare.offset,
