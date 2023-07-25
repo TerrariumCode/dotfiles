@@ -41,3 +41,11 @@ wk.register({
     t = {"<CMD>lua require('rust-tools').runnables.runnables()<CR>", "RustRunnables"},
   },
 }, { prefix = "<leader>" })
+
+wk.register({
+  g = {
+    name = "GitTools",
+    o = {"<CMD>DiffviewOpen<CR>", "Open diff view"},
+    c = {"<CMD>DiffviewClose<CR>", "Close diff view"},
+  },
+}, { prefix = "<leader>" })
