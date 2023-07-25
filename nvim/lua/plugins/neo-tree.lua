@@ -41,7 +41,9 @@ return {
                       "thumbs.db"
                     },
                   },
-                follow_current_file = true,
+                follow_current_file = {
+                    enable = true,
+                },
                 group_empty_dirs = false,
                 hijack_netrw_behavior = "open_default",
                 use_libuv_file_watcher = true,
