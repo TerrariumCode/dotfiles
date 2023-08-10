@@ -31,12 +31,6 @@ return {
             }
         end,
     },
-    {
-      "VonHeikemen/fine-cmdline.nvim",
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-      },
-    },
     "mbbill/undotree",
     "jdhao/whitespace.nvim",
     "tiagovla/scope.nvim",
