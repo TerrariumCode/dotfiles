@@ -39,7 +39,8 @@ return {
     "jeanlucthumm/nvim-lua-format",
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
-
+    "tpope/vim-fugitive",
+    "tpope/vim-rhubarb",
     "mechatroner/rainbow_csv",
 
     {
