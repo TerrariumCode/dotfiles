@@ -1,4 +1,3 @@
-vim.cmd[[colorscheme tokyonight]]
 vim.opt.title = false
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80,120"
