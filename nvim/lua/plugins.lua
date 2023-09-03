@@ -40,6 +40,12 @@ return {
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
     "tpope/vim-fugitive",
+    {
+        "wintermute-cell/gitignore.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
+    },
     "tpope/vim-rhubarb",
     "mechatroner/rainbow_csv",
 
