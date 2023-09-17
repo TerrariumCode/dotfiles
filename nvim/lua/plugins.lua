@@ -16,10 +16,13 @@ return {
     "ThePrimeagen/harpoon",
     "folke/which-key.nvim",
     "ThePrimeagen/vim-be-good",
+
+    "simrat39/rust-tools.nvim",
     {
         "saecki/crates.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "jose-elias-alvarez/null-ls.nvim",
         },
         config = function()
             local null_ls = require("null-ls")
@@ -31,6 +34,31 @@ return {
             }
         end,
     },
+
+    {
+      'stevearc/conform.nvim',
+      opts = {
+        formatters_by_ft = {
+            json = { "jq" },
+            lua = { "stylua" },
+            markdown = { "markdownlint" },
+            -- Conform will run multiple formatters sequentially
+            python = { "isort", "black", "ruff" },
+            -- Use a sub-list to run only the first available formatter
+            javascript = { { "prettierd", "prettier" } },
+            rust = { "rustfmt" },
+            terraform = { "terraform_fmt" },
+            toml = { "taplo" },
+            postgresql = { "pg_format" },
+            ["*"] = { "trim_whitespace", "trim_newlines", "codespell" },
+        },
+        format_on_save = {
+          lsp_fallback = true,
+          timeout_ms = 500,
+        },
+      },
+    },
+
     "mbbill/undotree",
     "jdhao/whitespace.nvim",
     "tiagovla/scope.nvim",
@@ -40,12 +68,14 @@ return {
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
     "tpope/vim-fugitive",
+
     {
         "wintermute-cell/gitignore.nvim",
         dependencies = {
             "nvim-telescope/telescope.nvim",
         },
     },
+
     "tpope/vim-rhubarb",
     "mechatroner/rainbow_csv",
 
@@ -54,8 +84,6 @@ return {
         config = true,
         tag = "legacy",
     },
-    "simrat39/rust-tools.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
     {
         "utilyre/barbecue.nvim",
         dependencies = {
@@ -75,6 +103,8 @@ return {
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-context",
+
+    "Glench/Vim-Jinja2-Syntax",
 
     -- Git
     "lewis6991/gitsigns.nvim",

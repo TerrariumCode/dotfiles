@@ -1,6 +1,3 @@
--- pull in null-ls cfg
-require "cmac4603.lsp.null-ls"
-
 -- mason-update-all LSP servers
 require('mason-update-all').setup()
 
