@@ -6,7 +6,7 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
-keymap("n", "<leader>y", "\"+y", { noremap = true })
+keymap("n", "<leader>y", '"+y', { noremap = true })
 
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 keymap("n", "<C-S>s", ":vert sb", { noremap = true, silent = true })
@@ -18,10 +18,10 @@ keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 
-keymap("", "<Up>", "<Nop>", { noremap=true, silent=true })
-keymap("", "<Down>", "<Nop>", { noremap=true, silent=true })
-keymap("", "<Left>", "<Nop>", { noremap=true, silent=true })
-keymap("", "<Right>", "<Nop>", { noremap=true, silent=true })
+keymap("", "<Up>", "<Nop>", { noremap = true, silent = true })
+keymap("", "<Down>", "<Nop>", { noremap = true, silent = true })
+keymap("", "<Left>", "<Nop>", { noremap = true, silent = true })
+keymap("", "<Right>", "<Nop>", { noremap = true, silent = true })
 
 -- keymap("n", "<Space>", "<Nop>", { noremap=true, silent=true })
 
@@ -47,8 +47,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap('n', '<S-h>', '<Cmd>BufferPrevious<CR>', { noremap = true, silent = true })
-keymap('n', '<S-l>', '<Cmd>BufferNext<CR>', { noremap = true, silent = true })
+keymap("n", "<S-h>", "<Cmd>BufferPrevious<CR>", { noremap = true, silent = true })
+keymap("n", "<S-l>", "<Cmd>BufferNext<CR>", { noremap = true, silent = true })
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -98,18 +98,18 @@ keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opt
 keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
 
 -- Lsp
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
+keymap("n", "<leader>lf", "<cmd>Format<cr>", opts)
 keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 -- keymap('n', 'gD', "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-keymap('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 -- keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 -- keymap('n', 'gi', "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-keymap('n', '<C-k>', "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 -- keymap('n', '<space>wa', "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 -- keymap('n', '<space>wr', "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 -- keymap('n', '<space>D', "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 -- keymap('n', '<space>rn', "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 -- keymap('n', '<space>ca', "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap('n', 'gr', "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 
 keymap("n", "<leader>cv", "<cmd>lua require('nvim-preview-csv').preview()<cr>", opts)

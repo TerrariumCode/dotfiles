@@ -1,139 +1,114 @@
 return {
-    "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
-    {
-        "folke/todo-comments.nvim",
-        config = true,
-    },
-    {
-        "numToStr/Comment.nvim",
-        config = true,
-    },
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    "akinsho/toggleterm.nvim",
-    "lewis6991/impatient.nvim",
-    "lukas-reineke/indent-blankline.nvim",
-    "goolord/alpha-nvim",
-    "ThePrimeagen/harpoon",
-    "folke/which-key.nvim",
-    "ThePrimeagen/vim-be-good",
+	"nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
+	{
+		"folke/todo-comments.nvim",
+		config = true,
+	},
+	{
+		"numToStr/Comment.nvim",
+		config = true,
+	},
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	"akinsho/toggleterm.nvim",
+	"lewis6991/impatient.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"goolord/alpha-nvim",
+	"ThePrimeagen/harpoon",
+	"folke/which-key.nvim",
+	"ThePrimeagen/vim-be-good",
 
-    "simrat39/rust-tools.nvim",
-    {
-        "saecki/crates.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "jose-elias-alvarez/null-ls.nvim",
-        },
-        config = function()
-            local null_ls = require("null-ls")
-            require("crates").setup {
-                null_ls = {
-                    enabled = true,
-                    name = "crates.nvim",
-                },
-            }
-        end,
-    },
+	"simrat39/rust-tools.nvim",
+	{
+		"saecki/crates.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+		config = function()
+			local null_ls = require("null-ls")
+			require("crates").setup({
+				null_ls = {
+					enabled = true,
+					name = "crates.nvim",
+				},
+			})
+		end,
+	},
 
-    {
-      'stevearc/conform.nvim',
-      opts = {
-        formatters_by_ft = {
-            json = { "jq" },
-            lua = { "stylua" },
-            markdown = { "markdownlint" },
-            -- Conform will run multiple formatters sequentially
-            python = { "isort", "black", "ruff" },
-            -- Use a sub-list to run only the first available formatter
-            javascript = { { "prettierd", "prettier" } },
-            rust = { "rustfmt" },
-            terraform = { "terraform_fmt" },
-            toml = { "taplo" },
-            postgresql = { "pg_format" },
-            ["*"] = { "trim_whitespace", "trim_newlines", "codespell" },
-        },
-        format_on_save = {
-          lsp_fallback = true,
-          timeout_ms = 500,
-        },
-      },
-    },
+	"mbbill/undotree",
+	"jdhao/whitespace.nvim",
+	"tiagovla/scope.nvim",
+	"RubixDev/mason-update-all",
+	"hashivim/vim-terraform",
+	"jeanlucthumm/nvim-lua-format",
+	"asiryk/auto-hlsearch.nvim",
+	"tpope/vim-surround",
+	"tpope/vim-fugitive",
 
-    "mbbill/undotree",
-    "jdhao/whitespace.nvim",
-    "tiagovla/scope.nvim",
-    "RubixDev/mason-update-all",
-    "hashivim/vim-terraform",
-    "jeanlucthumm/nvim-lua-format",
-    "asiryk/auto-hlsearch.nvim",
-    "tpope/vim-surround",
-    "tpope/vim-fugitive",
+	{
+		"wintermute-cell/gitignore.nvim",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+	},
 
-    {
-        "wintermute-cell/gitignore.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-        },
-    },
+	"tpope/vim-rhubarb",
+	"mechatroner/rainbow_csv",
 
-    "tpope/vim-rhubarb",
-    "mechatroner/rainbow_csv",
+	{
+		"j-hui/fidget.nvim", -- standalone UI for LSP
+		config = true,
+		tag = "legacy",
+	},
+	{
+		"utilyre/barbecue.nvim",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		config = true,
+	},
+	{
+		"klen/nvim-test",
+		config = true,
+	},
 
-    {
-        "j-hui/fidget.nvim",  -- standalone UI for LSP
-        config = true,
-        tag = "legacy",
-    },
-    {
-        "utilyre/barbecue.nvim",
-        dependencies = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-        config = true,
-    },
-    {
-        "klen/nvim-test",
-        config = true
-    },
+	-- Telescope
+	"nvim-telescope/telescope.nvim",
 
-    -- Telescope
-    "nvim-telescope/telescope.nvim",
+	-- Treesitter
+	"nvim-treesitter/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter-context",
 
-    -- Treesitter
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-treesitter/nvim-treesitter-context",
+	"Glench/Vim-Jinja2-Syntax",
 
-    "Glench/Vim-Jinja2-Syntax",
+	-- Git
+	"lewis6991/gitsigns.nvim",
 
-    -- Git
-    "lewis6991/gitsigns.nvim",
+	{
+		"sindrets/diffview.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
+	},
 
-    {
-        "sindrets/diffview.nvim",
-        dependencies = "nvim-lua/plenary.nvim"
-    },
+	-- DAP
+	"mfussenegger/nvim-dap",
+	"mfussenegger/nvim-dap-python",
+	"rcarriga/nvim-dap-ui",
+	"ravenxrz/DAPInstall.nvim",
 
-    -- DAP
-    "mfussenegger/nvim-dap",
-    "mfussenegger/nvim-dap-python",
-    "rcarriga/nvim-dap-ui",
-    "ravenxrz/DAPInstall.nvim",
+	-- Screenshot code
+	"segeljakt/vim-silicon",
 
-    -- Screenshot code
-    "segeljakt/vim-silicon",
+	-- fsharp
+	"ionide/Ionide-vim",
 
-    -- fsharp
-    "ionide/Ionide-vim",
+	{
+		"varnishcache-friends/vim-varnish",
+		ft = "vcl",
+	},
 
-    {
-        "varnishcache-friends/vim-varnish",
-        ft = "vcl",
-    },
-
-    -- Database stuff
-    "tpope/vim-dadbod",
-    "kristijanhusak/vim-dadbod-ui",
-    "kristijanhusak/vim-dadbod-completion",
-
+	-- Database stuff
+	"tpope/vim-dadbod",
+	"kristijanhusak/vim-dadbod-ui",
+	"kristijanhusak/vim-dadbod-completion",
 }
