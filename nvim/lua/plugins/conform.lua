@@ -28,8 +28,9 @@ return {
 			["*"] = { "trim_whitespace", "trim_newlines", "codespell" },
 		},
 		format_on_save = {
-			lsp_fallback = true,
-			timeout_ms = 500,
+			enabled = false,
+			-- lsp_fallback = true,
+			-- timeout_ms = 500,
 		},
 	},
 }
