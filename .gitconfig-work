@@ -12,6 +12,9 @@
 [core]
     editor = nvim --clean
 
+[checkout]
+    defaultRemote = origin
+
 [pull]
 	rebase = true
 
