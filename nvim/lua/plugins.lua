@@ -4,6 +4,10 @@ return {
 		"freddiehaddad/feline.nvim",
 		config = true,
 	},
+    {
+        "karb94/neoscroll.nvim",
+        config = true,
+    },
 	{
 		"folke/todo-comments.nvim",
 		config = true,
