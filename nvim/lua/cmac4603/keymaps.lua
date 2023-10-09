@@ -70,6 +70,7 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--ignore,--hidden,--files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope toggleterm<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -94,7 +95,7 @@ keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opt
 keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
 
 -- Lsp
-keymap("n", "<leader>lf", "<cmd>Format<cr>", opts)
+-- keymap("n", "<leader>lf", "<cmd>Format<cr>", opts) -- maybe in conform opts
 keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 -- keymap('n', 'gD', "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
