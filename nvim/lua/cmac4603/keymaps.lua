@@ -58,6 +58,8 @@ keymap("v", "p", '"_dP', opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts) -- Shift visual selected line down
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts) -- Shift visual selected line up
 
 -- Visual --
 -- Stay in indent mode
