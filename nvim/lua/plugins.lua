@@ -57,6 +57,7 @@ return {
 	"tiagovla/scope.nvim",
 	"RubixDev/mason-update-all",
 	"hashivim/vim-terraform",
+	"towolf/vim-helm",
 	"jeanlucthumm/nvim-lua-format",
 	"asiryk/auto-hlsearch.nvim",
 	"tpope/vim-surround",
