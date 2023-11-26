@@ -10,10 +10,11 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-        opts = {
-            pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-        },
-        lazy = false,
+		-- enable_autocmd = false,
+		-- config = {
+		-- pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+		-- },
+		lazy = false,
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"akinsho/toggleterm.nvim",
@@ -97,7 +98,7 @@ return {
 	-- Treesitter
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-treesitter/nvim-treesitter-context",
-    "JoosepAlviste/nvim-ts-context-commentstring",
+	"JoosepAlviste/nvim-ts-context-commentstring",
 
 	"Glench/Vim-Jinja2-Syntax",
 
