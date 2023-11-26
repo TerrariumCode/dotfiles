@@ -13,6 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
+-- skip backwards compatibility routines and speed up loading
+vim.g.skip_ts_context_commentstring_module = true
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript"
