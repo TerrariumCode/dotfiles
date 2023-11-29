@@ -6,7 +6,7 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
-keymap("n", "<leader>y", '"+y', { noremap = true })
+keymap("v", "<leader>y", '"+y', { noremap = true })
 
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 keymap("n", "<C-S>s", ":vert sb", { noremap = true, silent = true })
@@ -23,7 +23,7 @@ keymap("", "<Down>", "<Nop>", { noremap = true, silent = true })
 keymap("", "<Left>", "<Nop>", { noremap = true, silent = true })
 keymap("", "<Right>", "<Nop>", { noremap = true, silent = true })
 
--- keymap("n", "<Space>", "<Nop>", { noremap=true, silent=true })
+keymap("n", "<leader>j", "<C-^>", opts)
 
 -- Modes
 --   normal_mode = "n",
@@ -48,9 +48,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
