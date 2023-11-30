@@ -23,7 +23,11 @@ keymap("", "<Down>", "<Nop>", { noremap = true, silent = true })
 keymap("", "<Left>", "<Nop>", { noremap = true, silent = true })
 keymap("", "<Right>", "<Nop>", { noremap = true, silent = true })
 
+-- jump back and forth between last two buffers
 keymap("n", "<leader>j", "<C-^>", opts)
+
+-- Sidebar toggle
+keymap("n", "<leader>s", ":SidebarNvimToggle<CR>", opts)
 
 -- Modes
 --   normal_mode = "n",
