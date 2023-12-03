@@ -3,7 +3,9 @@
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/repos/znap
 source ~/repos/znap/znap.zsh
-export PATH=$HOME/.pyenv/bin:$(pyenv root)/shims:/home/cmac4604/.local/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/gems/bin:/opt/maven/bin:/snap/bin:/home/cmac4603/.dotnet/tools:$PATH
+export PATH=$HOME/.pyenv/bin:$(pyenv root)/shims:${HOME}/.local/bin:$HOME/.cargo/bin:/usr/local/go/bin:$HOME/gems/bin:/opt/maven/bin:/snap/bin:${HOME}/.dotnet/tools:$PATH
+# allows dotnet tools to run
+export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

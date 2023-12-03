@@ -3,7 +3,7 @@ export GOBIN=$GOROOT/bin
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 export DENO_INSTALL="/Users/cmacrae/.deno"
-export PATH="$(pyenv root)/shims:$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:/usr/local/opt/libpq/bin:$GOBIN:$DENO_INSTALL/bin:/Users/cmacrae/.kubescape/bin:$PATH"
+export PATH="$(pyenv root)/shims:$HOME/bin:/usr/local/bin:/usr/local/Cellar/ruby/3.0.0_1/bin:/Applications/Contents/Resources/app/bin:/Users/cmacrae/Documents/google-cloud-sdk/bin:/Users/cmacrae/.local/bin:/usr/local/opt/libpq/bin:$GOBIN:$DENO_INSTALL/bin:${HOME}/.kubescape/bin:$PATH"
 fpath+=~/.zfunc
 
 eval "$(pyenv init -)"
