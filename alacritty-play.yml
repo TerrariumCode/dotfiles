@@ -6,7 +6,7 @@ ime_input: false
 
 font:
   normal:
-    family: SauceCodePro Nerd Font
+    family: MesloLGS Nerd Font
 
   # Point size
   size: 11.0
