@@ -5,6 +5,10 @@ return {
 		config = true,
 	},
 	{
+		"laytan/cloak.nvim",
+		config = true,
+	},
+	{
 		"folke/todo-comments.nvim",
 		config = true,
 	},
