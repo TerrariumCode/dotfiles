@@ -88,6 +88,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+source <(kubectl completion zsh)
+
 zinit light jonmosco/kube-ps1
 PROMPT='$(kube_ps1)'$PROMPT
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
