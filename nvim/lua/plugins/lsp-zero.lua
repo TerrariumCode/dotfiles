@@ -75,12 +75,13 @@ return {
 			local lsp_zero = require("lsp-zero")
 			lsp_zero.extend_lspconfig()
 
-			--- if you want to know more about lsp-zero and mason.nvim
-			--- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 			lsp_zero.on_attach(function(client, bufnr)
 				-- see :help lsp-zero-keybindings
 				-- to learn the available actions
-				lsp_zero.default_keymaps({ buffer = bufnr })
+				lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "<F2>", "<F3>" } })
+
+				vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", { buffer = bufnr })
+				vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", { buffer = bufnr })
 			end)
 
 			vim.g.rustaceanvim = {

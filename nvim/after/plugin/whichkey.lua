@@ -43,10 +43,10 @@ wk.register({
 	},
 }, { prefix = "<leader>" })
 
-wk.register({
-	g = {
-		name = "GitTools",
-		o = { "<CMD>DiffviewOpen<CR>", "Open diff view" },
-		c = { "<CMD>DiffviewClose<CR>", "Close diff view" },
-	},
-}, { prefix = "<leader>" })
+-- wk.register({
+-- 	g = {
+-- 		name = "GitTools",
+-- 		o = { "<CMD>DiffviewOpen<CR>", "Open diff view" },
+-- 		c = { "<CMD>DiffviewClose<CR>", "Close diff view" },
+-- 	},
+-- }, { prefix = "<leader>" })

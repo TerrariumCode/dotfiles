@@ -40,13 +40,14 @@ return {
 	"goolord/alpha-nvim",
 	"ThePrimeagen/harpoon",
 	"folke/which-key.nvim",
+	"folke/zen-mode.nvim",
 	"ThePrimeagen/vim-be-good",
 
-    {
-      'mrcjkb/rustaceanvim',
-      version = '^3', -- Recommended
-      ft = { 'rust' },
-    },
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^3", -- Recommended
+		ft = { "rust" },
+	},
 	{
 		"saecki/crates.nvim",
 		dependencies = {
