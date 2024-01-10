@@ -57,8 +57,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts) -- Press jk fast to enter
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts) -- Shift visual selected line down
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts) -- Shift visual selected line up
 
@@ -74,9 +73,6 @@ keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidd
 keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--ignore,--hidden,--files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fs", ":Telescope toggleterm<CR>", opts)
-
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
@@ -96,20 +92,5 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>", opts)
 keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opts)
 keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
-
--- Lsp
--- keymap("n", "<leader>lf", "<cmd>Format<cr>", opts) -- maybe in conform opts
-keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
--- keymap('n', 'gD', "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
--- keymap('n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
--- keymap('n', 'gi', "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
--- keymap('n', '<space>wa', "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
--- keymap('n', '<space>wr', "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
--- keymap('n', '<space>D', "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
--- keymap('n', '<space>rn', "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
--- keymap('n', '<space>ca', "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 
 keymap("n", "<leader>cv", "<cmd>lua require('nvim-preview-csv').preview()<cr>", opts)
