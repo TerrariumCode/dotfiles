@@ -38,7 +38,8 @@ wk.register({
 wk.register({
   r = {
     name = "RustTools",
-    t = {"<CMD>lua require('rust-tools').runnables.runnables()<CR>", "RustRunnables"},
+    d = {"<CMD>lua vim.cmd.RustLsp {'debuggables', 'last' }<CR>", "RustDebuggables"},
+    t = {"<CMD>lua vim.cmd.RustLsp {'runnables', 'last' }<CR>", "RustRunnables"},
   },
 }, { prefix = "<leader>" })
 

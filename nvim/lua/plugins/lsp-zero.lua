@@ -1,7 +1,6 @@
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
         lazy = true,
         config = function()
             -- This is where you modify the settings for lsp-zero
@@ -131,7 +130,6 @@ return {
                     }
                 }
             }
-            require('rust-tools').setup({ server = rust_lsp })
         end
     }
 }

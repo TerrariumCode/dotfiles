@@ -42,7 +42,11 @@ return {
 	"folke/which-key.nvim",
 	"ThePrimeagen/vim-be-good",
 
-	"simrat39/rust-tools.nvim",
+    {
+      'mrcjkb/rustaceanvim',
+      version = '^3', -- Recommended
+      ft = { 'rust' },
+    },
 	{
 		"saecki/crates.nvim",
 		dependencies = {
