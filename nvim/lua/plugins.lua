@@ -27,28 +27,6 @@ return {
     "folke/zen-mode.nvim",
     "ThePrimeagen/vim-be-good",
 
-    {
-        "mrcjkb/rustaceanvim",
-        version = "^3", -- Recommended
-        ft = { "rust" },
-    },
-    {
-        "saecki/crates.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "jose-elias-alvarez/null-ls.nvim",
-        },
-        config = function()
-            local null_ls = require("null-ls")
-            require("crates").setup({
-                null_ls = {
-                    enabled = true,
-                    name = "crates.nvim",
-                },
-            })
-        end,
-    },
-
     "mbbill/undotree",
     "jdhao/whitespace.nvim",
     "tiagovla/scope.nvim",

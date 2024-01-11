@@ -14,3 +14,5 @@ vim.diagnostic.config({
   update_in_insert = false,
   underline = true,
 })
+
+require("cmac4603.lsp.settings.jdtls")

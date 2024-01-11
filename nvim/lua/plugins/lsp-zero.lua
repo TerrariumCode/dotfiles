@@ -63,6 +63,28 @@ return {
 		end,
 	},
 
+    {
+        "mrcjkb/rustaceanvim",
+        version = "^3", -- Recommended
+        ft = { "rust" },
+    },
+    {
+        "saecki/crates.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "jose-elias-alvarez/null-ls.nvim",
+        },
+        config = function()
+            local null_ls = require("null-ls")
+            require("crates").setup({
+                null_ls = {
+                    enabled = true,
+                    name = "crates.nvim",
+                },
+            })
+        end,
+    },
+
 	-- LSP
 	{
 		"neovim/nvim-lspconfig",
@@ -71,6 +93,7 @@ return {
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "williamboman/mason-lspconfig.nvim" },
+            { "mfussenegger/nvim-jdtls" },
 		},
 		config = function()
 			-- This is where all the LSP shenanigans will live
@@ -101,10 +124,11 @@ return {
 			}
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "tsserver", "rust_analyzer", "pyright" },
+				ensure_installed = { "tsserver", "rust_analyzer", "pyright", "jdtls" },
 				handlers = {
 					lsp_zero.default_setup,
 					rust_analyzer = lsp_zero.noop,
+                    jdtls = lsp_zero.noop,
 					lua_ls = function()
 						-- (Optional) Configure lua language server for neovim
 						local lua_opts = lsp_zero.nvim_lua_ls()
