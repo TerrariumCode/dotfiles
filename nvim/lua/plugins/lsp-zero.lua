@@ -63,27 +63,27 @@ return {
 		end,
 	},
 
-    {
-        "mrcjkb/rustaceanvim",
-        version = "^3", -- Recommended
-        ft = { "rust" },
-    },
-    {
-        "saecki/crates.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "jose-elias-alvarez/null-ls.nvim",
-        },
-        config = function()
-            local null_ls = require("null-ls")
-            require("crates").setup({
-                null_ls = {
-                    enabled = true,
-                    name = "crates.nvim",
-                },
-            })
-        end,
-    },
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^3", -- Recommended
+		ft = { "rust" },
+	},
+	{
+		"saecki/crates.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+		config = function()
+			local null_ls = require("null-ls")
+			require("crates").setup({
+				null_ls = {
+					enabled = true,
+					name = "crates.nvim",
+				},
+			})
+		end,
+	},
 
 	-- LSP
 	{
@@ -93,7 +93,7 @@ return {
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "williamboman/mason-lspconfig.nvim" },
-            { "mfussenegger/nvim-jdtls" },
+			{ "mfussenegger/nvim-jdtls" },
 		},
 		config = function()
 			-- This is where all the LSP shenanigans will live
@@ -105,6 +105,7 @@ return {
 				lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "<F2>", "<F3>" } })
 
 				local opts = { buffer = bufnr }
+				vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
 				vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 				vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 				vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
@@ -128,7 +129,7 @@ return {
 				handlers = {
 					lsp_zero.default_setup,
 					rust_analyzer = lsp_zero.noop,
-                    jdtls = lsp_zero.noop,
+					jdtls = lsp_zero.noop,
 					lua_ls = function()
 						-- (Optional) Configure lua language server for neovim
 						local lua_opts = lsp_zero.nvim_lua_ls()
