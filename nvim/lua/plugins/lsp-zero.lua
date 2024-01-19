@@ -111,6 +111,22 @@ return {
 				vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 			end)
 
+			-- local lspconfig = require("lspconfig")
+			--
+			-- lspconfig.pyright.setup({
+			-- 	settings = {
+			-- 		pyright = { autoImportCompletion = true },
+			-- 		python = {
+			-- 			analysis = {
+			-- 				autoSearchPaths = true,
+			-- 				diagnosticMode = "openFilesOnly",
+			-- 				useLibraryCodeForTypes = true,
+			-- 				typeCheckingMode = "off",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
+
 			vim.g.rustaceanvim = {
 				server = {
 					capabilities = lsp_zero.get_capabilities(),
