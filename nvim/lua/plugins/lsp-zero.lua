@@ -98,6 +98,7 @@ return {
 		config = function()
 			-- This is where all the LSP shenanigans will live
 			local lsp_zero = require("lsp-zero")
+			local lspconfig = require("lspconfig")
 			lsp_zero.extend_lspconfig()
 
 			lsp_zero.on_attach(function(client, bufnr)
@@ -136,6 +137,12 @@ return {
 						require("lspconfig").lua_ls.setup(lua_opts)
 					end,
 				},
+			})
+
+			require("lspconfig").pyright.setup({
+				on_init = function(client)
+					client.server_capabilities.semanticTokensProvider = nil
+				end,
 			})
 		end,
 	},

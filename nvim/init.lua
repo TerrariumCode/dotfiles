@@ -11,6 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+require("cmac4603.options")
 
 vim.g.mapleader = " "
 -- skip backwards compatibility routines and speed up loading
@@ -22,7 +23,7 @@ vim.g.markdown_fenced_languages = {
 
 require("lazy").setup("plugins")
 require("cmac4603.keymaps")
-require("cmac4603.options")
 require("cmac4603.autocommands")
 require("cmac4603.lsp")
 require("cmac4603.dap")
+vim.cmd([[colorscheme tokyonight-moon]])

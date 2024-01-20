@@ -29,6 +29,9 @@ keymap("n", "<leader>j", "<C-^>", opts)
 -- Sidebar toggle
 keymap("n", "<leader>s", ":SidebarNvimToggle<CR>", opts)
 
+-- enable treesitter highlighting
+keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
