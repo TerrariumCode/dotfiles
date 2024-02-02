@@ -2,6 +2,8 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		event = { "BufReadPre", "BufNewFile" },
+		main = "nvim-treesitter.configs",
 		opts = {
 			ensure_installed = "all", -- one of "all" or a list of languages
 			ignore_install = { "" }, -- List of parsers to ignore installing
