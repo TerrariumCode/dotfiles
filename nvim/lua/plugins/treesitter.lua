@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		opts = {
 			ensure_installed = "all", -- one of "all" or a list of languages
 			ignore_install = { "" }, -- List of parsers to ignore installing
@@ -30,5 +31,6 @@ return {
 		},
 	},
 	"nvim-treesitter/nvim-treesitter-context",
+	"nvim-treesitter/nvim-treesitter-textobjects",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 }
