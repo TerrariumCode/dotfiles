@@ -1,7 +1,7 @@
 [user]
 	name = cmac4603
 	email = cmac4603@users.noreply.github.com
-	signingkey = 9D569C8419D434BD
+	signingkey = 58DA96022AFCA738
 
 [push]
 	default = current
