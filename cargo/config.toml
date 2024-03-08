@@ -11,5 +11,11 @@ rustflags = [
   "-C", "link-arg=dynamic_lookup",
 ]
 
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
+# mold is a drop-in replacement for ld that supports the -undefined dynamic_lookup flag
+# not installed right now but might use again in the future
+# [target.x86_64-unknown-linux-gnu]
+# rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
+
+# brew install FiloSottile/musl-cross/musl-cross
+[target.x86_64-unknown-linux-musl]
+linker = "x86_64-linux-musl-gcc"

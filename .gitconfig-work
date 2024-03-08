@@ -21,3 +21,6 @@
 [commit]
 	template = /Users/cmacrae/.gitcommitmsg.txt
 	gpgsign = true
+
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
