@@ -24,3 +24,4 @@
 
 [remote "origin"]
 	fetch = +refs/heads/*:refs/remotes/origin/*
+	#fetch = +refs/archive/*:refs/archive/*
