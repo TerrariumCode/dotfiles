@@ -56,9 +56,7 @@ return {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
 		},
-		config = {
-			theme = "tokyonight",
-		},
+		config = true,
 	},
 
 	"Glench/Vim-Jinja2-Syntax",

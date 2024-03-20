@@ -3,7 +3,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = {
 		options = {
-			theme = "tokyonight",
 			section_separators = { "", "" },
 			component_separators = { "", "" },
 		},
