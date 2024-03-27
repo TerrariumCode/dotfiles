@@ -1,6 +1,9 @@
 working_directory = "/home/cmac4603"
 live_config_reload = true
 
+[shell]
+program = "fish"
+
 [font]
 size = 11.0
 
