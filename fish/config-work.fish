@@ -37,3 +37,6 @@ export LLDB_EXEC_PATH="/usr/local/opt/llvm/bin/lldb-vscode"
 
 # buildkit now please, docker
 export DOCKER_BUILDKIT=1
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cmacrae/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/cmacrae/Downloads/google-cloud-sdk/path.fish.inc'; end
