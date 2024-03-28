@@ -4,11 +4,11 @@ end
 
 export GOROOT="/usr/local/go"
 export GOBIN=$GOROOT/bin
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || fish_add_path "{$PYENV_ROOT}/bin:{$PATH}"
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
 export DENO_INSTALL="/Users/cmacrae/.deno"
 
-fish_add_path {$(pyenv root)/shims}
+# fish_add_path {$(pyenv root)/shims}
 fish_add_path {$HOME}/bin
 fish_add_path /usr/local/bin
 fish_add_path /usr/local/Cellar/ruby/3.0.0_1/bin
@@ -20,8 +20,10 @@ fish_add_path {$GOBIN}
 fish_add_path {$DENO_INSTALL}/bin
 fish_add_path /Applications/Alacritty.app/Contents/MacOS/
 fish_add_path /Users/cmacrae/.kubescape/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path /opt/homebrew/bin
 
-eval "$(pyenv init -)"
+# pyenv init - | source
 
 # for tmux, because it asked me to add this
 export DISABLE_AUTO_TITLE='true'
