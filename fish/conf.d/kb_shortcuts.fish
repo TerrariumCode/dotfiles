@@ -7,6 +7,7 @@ abbr -a -- gcmsg git commit -m
 abbr -a -- gd git diff
 abbr -a -- gp git push
 abbr -a -- gst git status
+abbr -a -- gl git pull
 
 # infri things
 abbr -a -- infriopsdir "set INFRI_OPS_DIR $(pwd)"
