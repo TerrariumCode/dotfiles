@@ -8,6 +8,8 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
 export DENO_INSTALL="/Users/cmacrae/.deno"
 
+set -U fish_greeting
+
 # fish_add_path {$(pyenv root)/shims}
 fish_add_path {$HOME}/bin
 fish_add_path /usr/local/bin
@@ -23,7 +25,7 @@ fish_add_path /Users/cmacrae/.kubescape/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path /opt/homebrew/bin
 
-# pyenv init - | source
+pyenv init - | source
 
 # for tmux, because it asked me to add this
 export DISABLE_AUTO_TITLE='true'

@@ -33,7 +33,7 @@ return {
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
     "tpope/vim-fugitive",
-
+    "tpope/vim-obsession",
     {
         "wintermute-cell/gitignore.nvim",
         dependencies = {
