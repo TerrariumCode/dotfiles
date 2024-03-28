@@ -1,0 +1,25 @@
+- name: Setup play machine
+  hosts: localhost
+  become: true
+  tasks:
+
+    - name: Clean apt cache
+      ansible.builtin.apt:
+        clean: yes
+
+    - name: Add fish shell repository
+      ansible.builtin.apt_repository:
+        repo: ppa:fish-shell/release-3
+        state: present
+        update_cache: false
+
+    - name: Install packages
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - curl
+        - wget
+        - tmux
+        - fish
