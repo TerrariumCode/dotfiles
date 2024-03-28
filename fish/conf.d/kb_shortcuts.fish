@@ -12,6 +12,11 @@ abbr -a -- grhh git reset --hard
 abbr -a -- grbi git rebase --interactive
 abbr -a -- gloga git log --oneline --decorate --graph --all
 abbr -a -- gpf! git push --force
+abbr -a -- gwt git worktree
+abbr -a -- gwta git worktree add
+abbr -a -- gwtls git worktree list
+abbr -a -- gwtmv git worktree move
+abbr -a -- gwtrm git worktree remove
 
 # infri things
 abbr -a -- infriopsdir "set INFRI_OPS_DIR $(pwd)"
