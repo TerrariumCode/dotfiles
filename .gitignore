@@ -1,3 +1,2 @@
 .DS_Store
-custom_zsh/exports.zsh
-nvim/pack/
+fish/conf.d/exports.fish
