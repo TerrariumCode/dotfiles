@@ -1,25 +1,17 @@
 - name: Setup play machine
   hosts: localhost
-  become: true
   tasks:
 
-    - name: Clean apt cache
-      ansible.builtin.apt:
-        clean: yes
-
-    - name: Add fish shell repository
-      ansible.builtin.apt_repository:
-        repo: ppa:fish-shell/release-3
-        state: present
-        update_cache: false
-
-    - name: Install packages
-      ansible.builtin.apt:
-        name: "{{ item }}"
-        state: present
+    - name: All the symlinks, get it done
+      ansible.builtin.file:
+        src: "{{ item[0] }}"
+        dest: "{{ item[1] }}"
+        owner: cmac4603
+        group: cmac4603
+        state: link
+        force: true
       loop:
-        - git
-        - curl
-        - wget
-        - tmux
-        - fish
+        - ['~/repos/dotfiles/alacritty-play.toml', '~/.config/alacritty/alacritty.toml']
+        - ['~/repos/dotfiles/tmux-cfg', '~/.config/tmux']
+        - ['~/repos/dotfiles/nvim', '~/.config/nvim']
+        - ['~/repos/dotfiles/.gitconfig-play', '~/.gitconfig']
