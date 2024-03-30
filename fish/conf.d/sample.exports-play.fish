@@ -1,1 +1,1 @@
-abbr -a -- GITHUB_TOKEN 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
+abbr -a -- GITHUB_TOKEN your_github_token
