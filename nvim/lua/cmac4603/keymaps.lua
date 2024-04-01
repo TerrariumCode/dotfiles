@@ -18,6 +18,8 @@ keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 
+keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", opts)
+
 keymap("", "<Up>", "<Nop>", { noremap = true, silent = true })
 keymap("", "<Down>", "<Nop>", { noremap = true, silent = true })
 keymap("", "<Left>", "<Nop>", { noremap = true, silent = true })

@@ -23,6 +23,8 @@ return {
     "folke/zen-mode.nvim",
     "ThePrimeagen/vim-be-good",
 
+    "eandrju/cellular-automaton.nvim",
+
     "mbbill/undotree",
     "jdhao/whitespace.nvim",
     "tiagovla/scope.nvim",

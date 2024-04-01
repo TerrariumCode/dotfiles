@@ -2,6 +2,9 @@
   hosts: localhost
   tasks:
 
+    - ansible.builtin.include_role:
+        name: roles/apt-packages
+
     - name: All the symlinks, get it done
       ansible.builtin.file:
         src: "{{ item[0] }}"
@@ -15,3 +18,7 @@
         - ['~/repos/dotfiles/tmux-cfg', '~/.config/tmux']
         - ['~/repos/dotfiles/nvim', '~/.config/nvim']
         - ['~/repos/dotfiles/.gitconfig-play', '~/.gitconfig']
+        - ['~/repos/dotfiles/fish/conf.d/exports.fish', '~/.config/fish/conf.d/exports.fish']
+        - ['~/repos/dotfiles/fish/conf.d/fnm.fish', '~/.config/fish/conf.d/fnm.fish']
+        - ['~/repos/dotfiles/fish/conf.d/kb_shortcuts.fish', '~/.config/fish/conf.d/kb_shortcuts.fish']
+        - ['~/repos/dotfiles/fish/conf.d/stern.fish', '~/.config/fish/conf.d/stern.fish']

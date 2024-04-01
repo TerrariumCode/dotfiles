@@ -1,0 +1,25 @@
+---
+
+# software-properties-common is required for apt_repository module
+- name: Install software-properties-common package
+  ansible.builtin.apt:
+    name: software-properties-common
+    state: present
+  become: true
+
+- name: Add repository and install its signing key on Ubuntu target
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+  become: true
+  loop: "{{ repositories }}"
+
+- name: Update repositories cache and install packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    autoclean: true
+    autoremove: true
+    state: latest
+    update_cache: yes
+  become: true
+  loop: "{{ packages }}"

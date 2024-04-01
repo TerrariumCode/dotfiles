@@ -1,0 +1,31 @@
+# TODO: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html
+apt_keys:
+  - https://updates.signal.org/desktop/apt/keys.asc
+
+repositories:
+  - ppa:fish-shell/release-3
+  - deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-3_1-ubuntu-mantic-amd64 mantic main
+  - deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main
+
+packages:
+  - alacritty
+  - fish
+  - fzf
+  - htop
+  - httpie
+  - i3xrocks-cpu-usage
+  - i3xrocks-focused-window-name
+  - i3xrocks-rofication
+  - i3xrocks-info
+  - i3xrocks-app-launcher
+  - i3xrocks-memory
+  - i3xrocks-battery
+  - i3xrocks-temp
+  - i3xrocks-time
+  - i3xrocks-nm-vpn
+  - neovim
+  - regolith-desktop
+  - regolith-session-flashback
+  - regolith-look-lascaille
+  - ripgrep
+  - signal-desktop

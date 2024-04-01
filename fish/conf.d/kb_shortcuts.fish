@@ -28,6 +28,7 @@ abbr -a -- kx kubectx
 abbr -a -- kn kubens
 
 # random things
+abbr -a -- cb clipboard
 abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"
 abbr -a -- l exa --long --header --git
 abbr -a -- nv nvim
