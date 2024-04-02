@@ -1,1 +1,1 @@
-abbr -a -- GITHUB_TOKEN your_github_token
+set -Ux GITHUB_TOKEN your_github_token
