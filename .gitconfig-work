@@ -4,7 +4,7 @@
 	signingkey = 58DA96022AFCA738
 
 [push]
-	default = current
+	default = upstream
 
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
@@ -12,16 +12,9 @@
 [core]
 	editor = nvim --clean
 
-[checkout]
-	defaultRemote = origin
-
 [pull]
 	rebase = true
 
 [commit]
 	template = /Users/cmacrae/.gitcommitmsg.txt
 	gpgsign = true
-
-[remote "origin"]
-	fetch = +refs/heads/*:refs/remotes/origin/*
-	#fetch = +refs/archive/*:refs/archive/*
