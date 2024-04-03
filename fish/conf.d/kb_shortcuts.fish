@@ -30,7 +30,7 @@ abbr -a -- kn kubens
 # random things
 abbr -a -- cb clipboard
 abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"
-abbr -a -- l exa --long --header --git
+abbr -a -- l exa --all --long --header --git
 abbr -a -- nv nvim
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"
 abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
