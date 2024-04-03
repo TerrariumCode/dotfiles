@@ -1,3 +1,6 @@
+# aws things
+abbr -a -- ecr-login "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 451479211471.dkr.ecr.us-east-1.amazonaws.com"
+
 # git things
 abbr -a -- ga git add
 abbr -a -- gau git add -u
