@@ -9,7 +9,6 @@ set -Ux BURDEN_API_KEY
 set -Ux HUBCAP_API_KEY
 
 set -Ux INFRI_DEV yafrank
-set -Ux INFRI_OPS_DIR $(pwd)
 set -Ux INFRI_FILE_ENC_KEY
 set -Ux INFRI_VAULT_PASSWORD
 
