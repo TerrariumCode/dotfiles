@@ -68,12 +68,6 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
     },
 
-    -- DAP
-    "mfussenegger/nvim-dap",
-    "mfussenegger/nvim-dap-python",
-    "rcarriga/nvim-dap-ui",
-    "ravenxrz/DAPInstall.nvim",
-
     -- Screenshot code
     "segeljakt/vim-silicon",
 
