@@ -4,6 +4,7 @@
 	signingkey = 58DA96022AFCA738
 
 [push]
+	autoSetupRemote = true
 	default = upstream
 
 [url "ssh://git@github.com/"]
