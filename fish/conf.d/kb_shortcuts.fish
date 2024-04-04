@@ -22,8 +22,8 @@ abbr -a -- gwtmv git worktree move
 abbr -a -- gwtrm git worktree remove
 
 # infri things
-abbr -a -- infriopsdir "set INFRI_OPS_DIR $(pwd)"
-abbr -a -- infriopsmain "set PYTHONPATH ~/repos/hearstrepos/infri.git/master && set INFRI_OPS_DIR $(pwd)"
+abbr -a -- infriopsdir "set -gx INFRI_OPS_DIR "
+abbr -a -- infriopsmain "set -gx PYTHONPATH ~/repos/hearstrepos/infri.git/master && set -gx INFRI_OPS_DIR $(pwd)"
 
 # k8s things
 abbr -a -- kc kubectl
