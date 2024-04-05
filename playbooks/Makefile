@@ -1,4 +1,4 @@
 .PHONY: run-play
 
 run-play:
-	ansible-playbook playbook-play.yaml
+	ansible-playbook -K playbook-play.yaml

@@ -1,11 +1,5 @@
-# TODO: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html
-apt_keys:
-  - https://updates.signal.org/desktop/apt/keys.asc
-
 repositories:
   - ppa:fish-shell/release-3
-  - deb [arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] https://regolith-desktop.org/release-3_1-ubuntu-mantic-amd64 mantic main
-  - deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main
 
 packages:
   - alacritty
@@ -28,4 +22,4 @@ packages:
   - regolith-session-flashback
   - regolith-look-lascaille
   - ripgrep
-  - signal-desktop
+  # - signal-desktop
