@@ -4,7 +4,7 @@ abbr -a -- ecr-login "aws ecr get-login-password --region us-east-1 | docker log
 # docker things
 abbr -a -- d docker
 abbr -a -- dc docker compose
-abbr -a -- dcc docker context
+abbr -a -- dcx docker context
 
 # git things
 abbr -a -- ga git add
@@ -44,3 +44,11 @@ abbr -a -- nv nvim
 abbr -a -- vaulty deepcli vault login && set -Ux VAULT_TOKEN $(cat ~/.vault-token)
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"
 abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
+
+# rust things
+abbr -a -- c cargo
+abbr -a -- cb cargo build
+abbr -a -- cbr cargo build --release
+abbr -a -- ccc cargo check
+abbr -a -- ct cargo test
+abbr -a -- cr cargo run
