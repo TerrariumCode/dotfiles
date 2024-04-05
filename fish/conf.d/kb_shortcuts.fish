@@ -1,12 +1,18 @@
 # aws things
 abbr -a -- ecr-login "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 451479211471.dkr.ecr.us-east-1.amazonaws.com"
 
+# docker things
+abbr -a -- d docker
+abbr -a -- dc docker compose
+abbr -a -- dcc docker context
+
 # git things
 abbr -a -- ga git add
 abbr -a -- gau git add -u
 abbr -a -- gaa git add -A
 abbr -a -- gc git commit
 abbr -a -- gcmsg git commit -m
+abbr -a -- gco git checkout
 abbr -a -- gd git diff
 abbr -a -- gp git push
 abbr -a -- gst git status
@@ -35,5 +41,6 @@ abbr -a -- cb clipboard
 abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"
 abbr -a -- l exa --all --long --header --git
 abbr -a -- nv nvim
+abbr -a -- vaulty deepcli vault login && set -Ux VAULT_TOKEN $(cat ~/.vault-token)
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"
 abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
