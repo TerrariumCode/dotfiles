@@ -22,4 +22,10 @@ packages:
   - regolith-session-flashback
   - regolith-look-lascaille
   - ripgrep
+  - gnupg
+  - postgresql-common
+  - apt-transport-https
+  - lsb-release
+  - wget
   # - signal-desktop
+  # - timescaledb-2-postgresql-14
