@@ -5,6 +5,9 @@
     - ansible.builtin.include_role:
         name: roles/apt-packages
 
+    - ansible.builtin.include_role:
+        name: roles/nerdfonts
+
     - name: All the symlinks, get it done
       ansible.builtin.file:
         src: "{{ item[0] }}"

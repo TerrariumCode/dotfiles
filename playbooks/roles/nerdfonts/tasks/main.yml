@@ -1,0 +1,31 @@
+---
+- name: Create the “.fonts” directory
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.fonts"
+    state: directory
+
+- name: Update from git
+  ansible.builtin.git:
+    repo: "https://github.com/ryanoasis/nerd-fonts.git"
+    dest: "{{ ansible_env.HOME }}/repos/nerd-fonts"
+    depth: 1
+
+- name: Select fonts to install
+  ansible.builtin.find:
+    recurse: yes
+    use_regex: yes
+    paths: "{{ ansible_env.HOME }}/repos/nerd-fonts/patched-fonts"
+    patterns:
+      - '^.*?((?!Windows).)*?\.ttf$'
+  register: fonts_to_install
+
+- ansible.builtin.copy:
+    dest: "{{ ansible_env.HOME }}/.fonts/{{ item.path | basename }}"
+    src: "{{ item.path }}"
+    remote_src: yes
+  loop: "{{ fonts_to_install.files }}"
+
+- name: Update font cache
+  ansible.builtin.shell: fc-cache -fv
+  args:
+    chdir: "{{ ansible_env.HOME }}/.fonts"
