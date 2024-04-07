@@ -73,6 +73,10 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- Copilot
+-- toggle copilot auto trigger
+keymap("n", "<leader>co", ":Copilot suggestion toggle_auto_trigger", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--ignore,--hidden,--files<CR>", opts)
