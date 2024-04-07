@@ -6,6 +6,9 @@ abbr -a -- d docker
 abbr -a -- dc docker compose
 abbr -a -- dcx docker context
 
+# fish things
+abbr -a -- hm history merge
+
 # git things
 abbr -a -- ga git add
 abbr -a -- gau git add -u

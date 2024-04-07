@@ -75,7 +75,7 @@ keymap("v", ">", ">gv", opts)
 
 -- Copilot
 -- toggle copilot auto trigger
-keymap("n", "<leader>co", ":Copilot suggestion toggle_auto_trigger", opts)
+keymap("n", "<leader>go", ":Copilot suggestion toggle_auto_trigger", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", opts)
@@ -105,4 +105,4 @@ keymap("n", "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>", op
 keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opts)
 keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
 
-keymap("n", "<leader>cv", "<cmd>lua require('nvim-preview-csv').preview()<cr>", opts)
+keymap("n", "<leader>csv", "<cmd>lua require('nvim-preview-csv').preview()<cr>", opts)
