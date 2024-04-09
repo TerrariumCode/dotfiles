@@ -24,6 +24,7 @@ fish_add_path /Applications/Alacritty.app/Contents/MacOS/
 fish_add_path /Users/cmacrae/.kubescape/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path /opt/homebrew/bin
+fish_add_path /Library/PostgreSQL/16/bin
 
 pyenv init - | source
 
