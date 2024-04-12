@@ -20,6 +20,8 @@ abbr -a -- gd git diff
 abbr -a -- gp git push
 abbr -a -- gst git status
 abbr -a -- gl git pull
+abbr -a -- gcl git clone
+abbr -a -- gclb git clone --bare
 abbr -a -- grhh git reset --hard
 abbr -a -- grbi git rebase --interactive
 abbr -a -- gloga git log --oneline --decorate --graph --all
