@@ -23,6 +23,7 @@ abbr -a -- gl git pull
 abbr -a -- gcl git clone
 abbr -a -- gclb git clone --bare
 abbr -a -- grhh git reset --hard
+abbr -a -- grb git rebase
 abbr -a -- grbi git rebase --interactive
 abbr -a -- gloga git log --oneline --decorate --graph --all
 abbr -a -- gpf! git push --force
@@ -46,6 +47,8 @@ abbr -a -- cb clipboard
 abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"
 abbr -a -- l exa --all --long --header --git
 abbr -a -- nv nvim
+abbr -a -- ngrok-hearst ngrok http --domain=cmac4603-hearst.ngrok.io 8081
+
 # abbr -a -- vaulty "deepcli vault login && set -Ux VAULT_TOKEN $(cat ~/.vault-token)"
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"
 abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
