@@ -29,7 +29,7 @@ keymap("", "<Right>", "<Nop>", { noremap = true, silent = true })
 keymap("n", "<leader>j", "<C-^>", opts)
 
 -- Sidebar toggle
-keymap("n", "<leader>s", ":SidebarNvimToggle<CR>", opts)
+keymap("n", "<leader>s", ":Neotree Toggle<CR>", opts)
 
 -- enable treesitter highlighting
 keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)
