@@ -22,23 +22,23 @@ vim.g.markdown_fenced_languages = {
 }
 
 vim.fn.sign_define(
-  'DiagnosticSignError',
-  { texthl = 'DiagnosticSignError', text = '', numhl = 'DiagnosticSignError' }
+    'DiagnosticSignError',
+    { texthl = 'DiagnosticSignError', text = '', numhl = 'DiagnosticSignError' }
 )
 
 vim.fn.sign_define(
-  'DiagnosticSignWarn',
-  { texthl = 'DiagnosticSignWarn', text = '', numhl = 'DiagnosticSignWarn' }
+    'DiagnosticSignWarn',
+    { texthl = 'DiagnosticSignWarn', text = '', numhl = 'DiagnosticSignWarn' }
 )
 
 vim.fn.sign_define(
-  'DiagnosticSignHint',
-  { texthl = 'DiagnosticSignHint', text = '', numhl = 'DiagnosticSignHint' }
+    'DiagnosticSignHint',
+    { texthl = 'DiagnosticSignHint', text = '', numhl = 'DiagnosticSignHint' }
 )
 
 vim.fn.sign_define(
-  'DiagnosticSignInfo',
-  { texthl = 'DiagnosticSignInfo', text = '', numhl = 'DiagnosticSignInfo' }
+    'DiagnosticSignInfo',
+    { texthl = 'DiagnosticSignInfo', text = '', numhl = 'DiagnosticSignInfo' }
 )
 
 require("lazy").setup("plugins")
@@ -46,3 +46,9 @@ require("cmac4603.keymaps")
 require("cmac4603.autocommands")
 require("cmac4603.lsp")
 vim.cmd([[colorscheme zephyr]])
+vim.cmd [[
+    augroup NEOTREE_AUGROUP
+      autocmd!
+      au VimEnter * lua vim.defer_fn(function() vim.cmd("Neotree show left") end, 10)
+    augroup END
+  ]]
