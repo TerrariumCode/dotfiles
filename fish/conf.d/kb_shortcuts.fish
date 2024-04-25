@@ -46,8 +46,12 @@ abbr -a -- kn kubens
 abbr -a -- cb clipboard
 abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"
 abbr -a -- l exa --all --long --header --git
-abbr -a -- nv nvim
 abbr -a -- ngrok-hearst ngrok http --domain=cmac4603-hearst.ngrok.io 8081
+abbr -a -- nv nvim
+
+# vault (hashicorp) things
+abbr -a -- vlogin vault login -method=github token=$GITHUB_TOKEN
+abbr -a -- vset set -gx VAULT_TOKEN $(cat ~/.vault-token)
 
 # abbr -a -- vaulty "deepcli vault login && set -Ux VAULT_TOKEN $(cat ~/.vault-token)"
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"

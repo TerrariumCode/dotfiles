@@ -14,6 +14,7 @@ set -Ux INFRI_VAULT_PASSWORD
 
 set -Ux ANSIBLE_VAULT_PASSWORD
 set -Ux SEM3_ANSIBLE_VAULT_PASSWORD
+set -Ux VAULT_ADDR https://vault.hearstapps.com
 
 set -Ux REGISTRY_HOST
 
