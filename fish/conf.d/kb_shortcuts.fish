@@ -51,7 +51,8 @@ abbr -a -- nv nvim
 
 # vault (hashicorp) things
 abbr -a -- vlogin vault login -method=github token=$GITHUB_TOKEN
-abbr -a -- vset set -gx VAULT_TOKEN $(cat ~/.vault-token)
+# TODO: figure out lazy compute of commands in abbr
+# abbr -a -- vset set -gx VAULT_TOKEN $(cat ~/.vault-token)
 
 # abbr -a -- vaulty "deepcli vault login && set -Ux VAULT_TOKEN $(cat ~/.vault-token)"
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"
