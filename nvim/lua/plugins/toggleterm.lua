@@ -6,13 +6,12 @@ return {
                 if term.direction == "horizontal" then
                     return 15
                 elseif term.direction == "vertical" then
-                    return vim.o.columns * 0.35
+                    return math.floor(0.33 * vim.o.columns)
                 end
             end,
             open_mapping = [[<c-\>]],
             hide_numbers = true,
-            shade_terminals = true,
-            shading_factor = 2,
+            shade_terminals = false,
             start_in_insert = true,
             insert_mappings = true,
             persist_size = true,
