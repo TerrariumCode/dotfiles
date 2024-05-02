@@ -56,7 +56,7 @@ abbr -a -- vlogin vault login -method=github token=$GITHUB_TOKEN
 # abbr -a -- vset set -gx VAULT_TOKEN $(cat ~/.vault-token)
 
 # abbr -a -- vaulty "deepcli vault login && set -Ux VAULT_TOKEN $(cat ~/.vault-token)"
-abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"vpn.hearstapps.com\"' -e 'end tell'"
+abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"mediaos-london\"' -e 'end tell'"
 abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 abbr -a -- wp which python
 
