@@ -11,6 +11,9 @@ keymap("v", "<leader>y", '"+y', { noremap = true })
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 keymap("n", "<C-S>s", ":vert sb", { noremap = true, silent = true })
 
+keymap("n", ">", ":30winc <<CR>", opts)
+keymap("n", "<", ":30winc ><CR>", opts)
+
 keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", { noremap = true })
 
 keymap("n", "<C-s>", ":w<CR>", opts)
@@ -62,7 +65,7 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
-keymap("i", "jk", "<ESC>", opts) -- Press jk fast to enter
+keymap("i", "jk", "<ESC>", opts)           -- Press jk fast to enter
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts) -- Shift visual selected line down
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts) -- Shift visual selected line up
 
