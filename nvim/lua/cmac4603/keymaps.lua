@@ -31,8 +31,8 @@ keymap("", "<Right>", "<Nop>", { noremap = true, silent = true })
 -- jump back and forth between last two buffers
 keymap("n", "<leader>j", "<C-^>", opts)
 
--- Sidebar toggle
-keymap("n", "<leader>s", ":Neotree Toggle<CR>", opts)
+-- neotree toggle
+keymap("n", "<leader>s", ":Neotree toggle<CR>", opts)
 
 -- enable treesitter highlighting
 keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)
