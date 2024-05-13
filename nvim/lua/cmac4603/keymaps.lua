@@ -11,8 +11,8 @@ keymap("v", "<leader>y", '"+y', { noremap = true })
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 keymap("n", "<C-S>s", ":vert sb", { noremap = true, silent = true })
 
-keymap("n", ">", ":30winc <<CR>", opts)
-keymap("n", "<", ":30winc ><CR>", opts)
+keymap("n", "<C-,>", ":30winc <<CR>", opts)
+keymap("n", "<C-.>", ":30winc ><CR>", opts)
 
 keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", { noremap = true })
 

@@ -78,9 +78,4 @@ return {
         "varnishcache-friends/vim-varnish",
         ft = "vcl",
     },
-
-    -- Database stuff
-    "tpope/vim-dadbod",
-    "kristijanhusak/vim-dadbod-ui",
-    "kristijanhusak/vim-dadbod-completion",
 }
