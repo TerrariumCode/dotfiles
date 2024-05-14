@@ -128,6 +128,8 @@ return {
             local lspconfig = require("lspconfig")
             lsp_zero.extend_lspconfig()
 
+            -- lsp_zero.on_
+
             lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "<F2>", "<F3>" } })
@@ -195,6 +197,17 @@ return {
                     },
                 },
             })
+
+            lspconfig.helm_ls.setup {
+                settings = {
+                    ['helm-ls'] = {
+                        yamlls = {
+                            path = "yaml-language-server",
+                        }
+                    }
+                }
+            }
+
         end,
     },
 }

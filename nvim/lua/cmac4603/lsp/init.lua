@@ -8,6 +8,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'} , {
+    pattern = 'deployment.yaml',
+    callback = function()
+          vim.opt_local.filetype = 'helm'
+    end
+})
+
 -- diagnostic output config
 vim.diagnostic.config({
   virtual_text = true,
