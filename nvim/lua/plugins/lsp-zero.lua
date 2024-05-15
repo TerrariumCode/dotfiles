@@ -60,6 +60,13 @@ return {
                     -- ['<S-Tab>'] = vim.NIL,
                 }),
             })
+
+            cmp.select.filetype({ "sql" }, {
+                sources = {
+                    { name = "vim-dadbod-completion" },
+                    { name = "buffer" },
+                }
+            })
         end,
     },
 
@@ -207,7 +214,6 @@ return {
                     }
                 }
             }
-
         end,
     },
 }
