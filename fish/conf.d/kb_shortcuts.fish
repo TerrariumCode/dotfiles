@@ -36,6 +36,7 @@ abbr -a -- gwtrm git worktree remove
 # infri things
 abbr -a -- infriopsdir "set -gx INFRI_OPS_DIR "
 abbr -a -- infriopsmain "set -gx PYTHONPATH ~/repos/hearstrepos/infri.git/master && set -gx INFRI_OPS_DIR $(pwd)"
+abbr -a -- setser "set -gx SERVICE_ID"
 
 # k8s things
 abbr -a -- kc kubectl
@@ -59,7 +60,7 @@ abbr -a -- vlogin vault login -method=github token=$GITHUB_TOKEN
 abbr -a -- vpn "osascript -e 'tell application \"Tunnelblick\"' -e '  connect \"mediaos-london\"' -e 'end tell'"
 abbr -a -- whatismyip "dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 abbr -a -- wp which python
-abbr -a -- set -gx PYTHONPATH $(pwd)
+abbr -a -- setpythonpath -gx PYTHONPATH $(pwd)
 
 # rust things
 abbr -a -- c cargo
