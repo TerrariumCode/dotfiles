@@ -32,7 +32,10 @@ keymap("", "<Right>", "<Nop>", { noremap = true, silent = true })
 keymap("n", "<leader>j", "<C-^>", opts)
 
 -- neotree toggle
-keymap("n", "<leader>s", ":Neotree toggle<CR>", opts)
+keymap("n", "<leader>n", ":Neotree toggle<CR>", opts)
+
+-- toggleterm horizontal
+keymap("n", "<leader>s", ":ToggleTerm size=15 direction=horizontal name=horizontal<CR>", opts)
 
 -- enable treesitter highlighting
 keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)

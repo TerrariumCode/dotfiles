@@ -9,6 +9,7 @@ return {
                     return math.floor(0.33 * vim.o.columns)
                 end
             end,
+            -- there is also a keymap to open horizantal
             open_mapping = [[<c-\>]],
             hide_numbers = true,
             shade_terminals = false,
