@@ -1,0 +1,3 @@
+[submodule "cryptostorm_client_configuration_files"]
+	path = cryptostorm_client_configuration_files
+	url = git@github.com:cryptostorm/cryptostorm_client_configuration_files.git
