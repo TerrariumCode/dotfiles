@@ -142,7 +142,7 @@ return {
             }
 
             require("mason-lspconfig").setup({
-                ensure_installed = { "tsserver", "rust_analyzer", "pyright", "jdtls", "jsonls", "yamlls", "ruff_lsp", "lua_ls" },
+                ensure_installed = { "tsserver", "rust_analyzer", "pyright", "jdtls", "jsonls", "yamlls", "ruff", "lua_ls" },
                 handlers = {
                     lsp_zero.default_setup,
                     rust_analyzer = lsp_zero.noop,
@@ -155,10 +155,33 @@ return {
                 },
             })
 
+            local on_attach = function(client, bufnr)
+                if client.name == 'ruff' then
+                    -- Disable hover in favor of Pyright
+                    client.server_capabilities.hoverProvider = false
+                end
+            end
+
+            lspconfig.ruff.setup {
+                on_attach = on_attach,
+            }
+
             lspconfig.pyright.setup({
                 on_init = function(client)
                     client.server_capabilities.semanticTokensProvider = nil
                 end,
+                settings = {
+                    pyright = {
+                        -- Using Ruff's import organizer
+                        disableOrganizeImports = true,
+                    },
+                    python = {
+                        analysis = {
+                            -- Ignore all files for analysis to exclusively use Ruff for linting
+                            ignore = { '*' },
+                        },
+                    },
+                },
             })
 
             lspconfig.jsonls.setup({
