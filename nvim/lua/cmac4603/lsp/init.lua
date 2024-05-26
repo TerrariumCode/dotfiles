@@ -1,6 +1,3 @@
--- mason-update-all LSP servers
-require('mason-update-all').setup()
-
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = {"*.tf", "*.tfvars"},
   callback = function ()

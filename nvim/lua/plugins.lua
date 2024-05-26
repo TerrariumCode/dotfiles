@@ -27,7 +27,6 @@ return {
 
     "mbbill/undotree",
     "jdhao/whitespace.nvim",
-    "RubixDev/mason-update-all",
     "hashivim/vim-terraform",
     "towolf/vim-helm",
     "jeanlucthumm/nvim-lua-format",
