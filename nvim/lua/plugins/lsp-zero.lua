@@ -147,7 +147,7 @@ return {
                     "pyright",
                     "ruff",
                     "rust_analyzer",
-                    "terraform-ls",
+                    "terraformls",
                     "tsserver",
                     "yamlls",
                 },
