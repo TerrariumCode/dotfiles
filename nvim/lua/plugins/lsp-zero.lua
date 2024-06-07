@@ -115,8 +115,6 @@ return {
             local lspconfig = require("lspconfig")
             lsp_zero.extend_lspconfig()
 
-            -- lsp_zero.on_
-
             lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "<F2>", "<F3>" } })
@@ -142,7 +140,17 @@ return {
             }
 
             require("mason-lspconfig").setup({
-                ensure_installed = { "tsserver", "rust_analyzer", "pyright", "jdtls", "jsonls", "yamlls", "ruff", "lua_ls" },
+                ensure_installed = {
+                    "jdtls",
+                    "jsonls",
+                    "lua_ls",
+                    "pyright",
+                    "ruff",
+                    "rust_analyzer",
+                    "terraform-ls",
+                    "tsserver",
+                    "yamlls",
+                },
                 handlers = {
                     lsp_zero.default_setup,
                     rust_analyzer = lsp_zero.noop,
@@ -174,12 +182,6 @@ return {
                     pyright = {
                         -- Using Ruff's import organizer
                         disableOrganizeImports = true,
-                    },
-                    python = {
-                        analysis = {
-                            -- Ignore all files for analysis to exclusively use Ruff for linting
-                            ignore = { '*' },
-                        },
                     },
                 },
             })

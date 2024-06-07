@@ -55,7 +55,6 @@ return {
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
             postgresql = { "pg_format" },
-            yaml = { "yamlfix" },
             ["*"] = { "trim_whitespace", "trim_newlines" },
         },
         format_on_save = function(bufnr)
