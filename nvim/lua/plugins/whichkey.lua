@@ -12,18 +12,6 @@ return {
         }, { prefix = "<leader>" })
 
         wk.register({
-            t = {
-                name = "Trouble",
-                t = { "<CMD>TroubleToggle<CR>", "Toggle Trouble" },
-                w = { "<CMD>TroubleToggle workspace_diagnostics<CR>", "Workspace diagnostics" },
-                d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
-                l = { "<cmd>TroubleToggle loclist<cr>", "LocList" },
-                q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-                R = { "<cmd>TroubleToggle lsp_references<cr>", "LSP references" },
-            },
-        }, { prefix = "<leader>" })
-
-        wk.register({
             z = {
                 name = "Zen Mode",
                 z = { "<CMD>ZenMode<CR>", "Zen mode...mmmm" },
