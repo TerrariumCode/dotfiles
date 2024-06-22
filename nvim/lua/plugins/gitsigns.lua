@@ -11,7 +11,6 @@ return {
         },
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
         watch_gitdir = {
-            interval = 1000,
             follow_files = true,
         },
         attach_to_untracked = true,
