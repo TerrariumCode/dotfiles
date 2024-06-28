@@ -1,4 +1,31 @@
 return {
+
+    -- Java
+    {
+        'nvim-java/nvim-java',
+        config = true,
+        dependencies = {
+            'nvim-java/lua-async-await',
+            'nvim-java/nvim-java-refactor',
+            'nvim-java/nvim-java-core',
+            'nvim-java/nvim-java-test',
+            'nvim-java/nvim-java-dap',
+            'MunifTanjim/nui.nvim',
+            'neovim/nvim-lspconfig',
+            'mfussenegger/nvim-dap',
+            {
+                'williamboman/mason.nvim',
+                opts = {
+                    registries = {
+                        'github:nvim-java/mason-registry',
+                        'github:mason-org/mason-registry',
+                    },
+                },
+            }
+        },
+    },
+
+    -- LSP-Zero
     {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v3.x",
@@ -10,6 +37,8 @@ return {
             vim.g.lsp_zero_extend_lspconfig = 0
         end,
     },
+
+    -- Mason installs and manages LSP servers, DAP servers, linters, and formatters
     {
         "williamboman/mason.nvim",
         lazy = false,
@@ -106,7 +135,6 @@ return {
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason-lspconfig.nvim" },
-            { "mfussenegger/nvim-jdtls" },
             { "b0o/schemastore.nvim" },
         },
         config = function()
@@ -156,7 +184,10 @@ return {
                 handlers = {
                     lsp_zero.default_setup,
                     rust_analyzer = lsp_zero.noop,
-                    jdtls = lsp_zero.noop,
+                    jdtls = function ()
+                        require('java').setup()
+                        require('lspconfig').jdtls.setup({})
+                    end,
                     lua_ls = function()
                         -- (Optional) Configure lua language server for neovim
                         local lua_opts = lsp_zero.nvim_lua_ls()
@@ -223,4 +254,5 @@ return {
             }
         end,
     },
+
 }
