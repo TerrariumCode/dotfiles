@@ -45,16 +45,15 @@ return {
     },
     opts = {
         formatters_by_ft = {
+            css = {"stylelint"},
+            javascript = { { "prettierd", "prettier" } },
             json = { "jq" },
             lua = { "stylua" },
             markdown = { "markdownlint" },
-            -- Conform will run multiple formatters sequentially
             python = { "isort", "black", "ruff" },
-            -- Use a sub-list to run only the first available formatter
-            javascript = { { "prettierd", "prettier" } },
+            postgresql = { "pg_format" },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
-            postgresql = { "pg_format" },
             ["*"] = { "trim_whitespace", "trim_newlines" },
         },
         format_on_save = function(bufnr)
