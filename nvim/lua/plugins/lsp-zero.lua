@@ -129,10 +129,12 @@ return {
                 lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "<F2>", "<F3>" } })
 
                 local opts = { buffer = bufnr }
+                vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
                 vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
                     opts)
-                vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+                vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
                 vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+                vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
             end)
 
             vim.g.rustaceanvim = {
