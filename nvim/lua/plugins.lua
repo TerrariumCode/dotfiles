@@ -65,9 +65,6 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
     },
 
-    -- Screenshot code
-    "segeljakt/vim-silicon",
-
     -- fsharp
     "ionide/Ionide-vim",
 
