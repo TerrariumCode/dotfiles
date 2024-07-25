@@ -155,6 +155,7 @@ return {
                     "jdtls",
                     "jsonls",
                     "lua_ls",
+                    "marksman",
                     "pyright",
                     "ruff",
                     "rust_analyzer",
@@ -181,9 +182,26 @@ return {
                 end
             end
 
-            lspconfig.ruff.setup {
-                on_attach = on_attach,
+            lspconfig.helm_ls.setup {
+                settings = {
+                    ['helm-ls'] = {
+                        yamlls = {
+                            path = "yaml-language-server",
+                        }
+                    }
+                }
             }
+
+            lspconfig.jsonls.setup({
+                settings = {
+                    json = {
+                        schemas = require('schemastore').json.schemas(),
+                        validate = { enable = true },
+                    },
+                },
+            })
+
+            lspconfig.marksman.setup({})
 
             lspconfig.pyright.setup({
                 on_init = function(client)
@@ -197,14 +215,9 @@ return {
                 },
             })
 
-            lspconfig.jsonls.setup({
-                settings = {
-                    json = {
-                        schemas = require('schemastore').json.schemas(),
-                        validate = { enable = true },
-                    },
-                },
-            })
+            lspconfig.ruff.setup {
+                on_attach = on_attach,
+            }
 
             lspconfig.yamlls.setup({
                 settings = {
@@ -221,15 +234,6 @@ return {
                 },
             })
 
-            lspconfig.helm_ls.setup {
-                settings = {
-                    ['helm-ls'] = {
-                        yamlls = {
-                            path = "yaml-language-server",
-                        }
-                    }
-                }
-            }
         end,
     },
 
