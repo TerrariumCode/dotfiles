@@ -137,20 +137,9 @@ return {
                 vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
             end)
 
-            vim.g.rustaceanvim = {
-                server = {
-                    capabilities = lsp_zero.get_capabilities(),
-                    settings = {
-                        ["rust-analyzer"] = {
-                            cargo = {
-                                features = "all",
-                            },
-                        },
-                    },
-                },
-            }
+            local mason_lspconfig = require("mason-lspconfig")
 
-            require("mason-lspconfig").setup({
+            mason_lspconfig.setup({
                 ensure_installed = {
                     "jdtls",
                     "jsonls",
@@ -175,65 +164,96 @@ return {
                 },
             })
 
-            local on_attach = function(client, bufnr)
-                if client.name == 'ruff' then
-                    -- Disable hover in favor of Pyright
-                    client.server_capabilities.hoverProvider = false
-                end
-            end
+            mason_lspconfig.setup_handlers {
+                -- The first entry (without a key) will be the default handler
+                -- and will be called for each installed server that doesn't have
+                -- a dedicated handler.
+                function(server_name) -- default handler (optional)
+                    require("lspconfig")[server_name].setup {}
+                end,
 
-            lspconfig.helm_ls.setup {
-                settings = {
-                    ['helm-ls'] = {
-                        yamlls = {
-                            path = "yaml-language-server",
+                -- provide a dedicated handler for specific servers
+                ["helm_ls"] = function()
+                    require("lspconfig")["helm_ls"].setup {
+                        settings = {
+                            ['helm-ls'] = {
+                                yamlls = {
+                                    path = "yaml-language-server",
+                                }
+                            }
                         }
                     }
-                }
-            }
-
-            lspconfig.jsonls.setup({
-                settings = {
-                    json = {
-                        schemas = require('schemastore').json.schemas(),
-                        validate = { enable = true },
-                    },
-                },
-            })
-
-            lspconfig.marksman.setup({})
-
-            lspconfig.pyright.setup({
-                on_init = function(client)
-                    client.server_capabilities.semanticTokensProvider = nil
                 end,
-                settings = {
-                    pyright = {
-                        -- Using Ruff's import organizer
-                        disableOrganizeImports = true,
-                    },
-                },
-            })
 
-            lspconfig.ruff.setup {
-                on_attach = on_attach,
-            }
-
-            lspconfig.yamlls.setup({
-                settings = {
-                    yaml = {
-                        schemaStore = {
-                            -- You must disable built-in schemaStore support if you want to use
-                            -- this plugin and its advanced options like `ignore`.
-                            enable = false,
-                            -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-                            url = "",
+                ["jsonls"] = function()
+                    require("lspconfig")["jsonls"].setup {
+                        settings = {
+                            json = {
+                                schemas = require('schemastore').json.schemas(),
+                                validate = { enable = true },
+                            },
                         },
-                        schemas = require('schemastore').yaml.schemas(),
-                    },
-                },
-            })
+                    }
+                end,
 
+                ["pyright"] = function()
+                    require("lspconfig")["pyright"].setup {
+                        on_init = function(client)
+                            client.server_capabilities.semanticTokensProvider = nil
+                        end,
+                        settings = {
+                            pyright = {
+                                -- Using Ruff's import organizer
+                                disableOrganizeImports = true,
+                            },
+                        },
+                    }
+                end,
+
+                ["ruff"] = function()
+                    local on_attach = function(client, bufnr)
+                        if client.name == 'ruff' then
+                            -- Disable hover in favor of Pyright
+                            client.server_capabilities.hoverProvider = false
+                        end
+                    end
+                    require("lspconfig")["ruff"].setup {
+                        on_attach = on_attach,
+                    }
+                end,
+
+                ["rust_analyzer"] = function()
+                    vim.g.rustaceanvim = {
+                        server = {
+                            capabilities = lsp_zero.get_capabilities(),
+                            settings = {
+                                ["rust-analyzer"] = {
+                                    cargo = {
+                                        features = "all",
+                                    },
+                                },
+                            },
+                        },
+                    }
+                end,
+
+                ["yamlls"] = function()
+                    require("lspconfig")["yamlls"].setup {
+                        settings = {
+                            yaml = {
+                                schemaStore = {
+                                    -- You must disable built-in schemaStore support if you want to use
+                                    -- this plugin and its advanced options like `ignore`.
+                                    enable = false,
+                                    -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                                    url = "",
+                                },
+                                schemas = require('schemastore').yaml.schemas(),
+                            },
+                        },
+                    }
+                end
+            }
         end,
     },
 
