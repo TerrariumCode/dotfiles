@@ -1,15 +1,15 @@
 [target.x86_64-apple-darwin]
 rustflags = [
-  "-C", "link-arg=-undefined",
-  "-C", "link-arg=dynamic_lookup",
-  "-C", "link-arg=-fuse-ld=/usr/bin/mold",
+  "-C",
+  "link-arg=-undefined",
+  "-C",
+  "link-arg=dynamic_lookup",
+  "-C",
+  "link-arg=-fuse-ld=/usr/bin/mold",
 ]
 
 [target.aarch64-apple-darwin]
-rustflags = [
-  "-C", "link-arg=-undefined",
-  "-C", "link-arg=dynamic_lookup",
-]
+rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]
 
 # mold is a drop-in replacement for ld that supports the -undefined dynamic_lookup flag
 # not installed right now but might use again in the future
