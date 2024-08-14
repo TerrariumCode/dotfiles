@@ -141,7 +141,6 @@ return {
 
             mason_lspconfig.setup({
                 ensure_installed = {
-                    "djlint",
                     "jdtls",
                     "jsonls",
                     "lua_ls",
