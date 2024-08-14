@@ -1,6 +1,6 @@
 return {
    "amitds1997/remote-nvim.nvim",
-   version = "*", -- Pin to GitHub releases
+   version = "v0.3.9", -- Pin to GitHub releases
    dependencies = {
        "nvim-lua/plenary.nvim", -- For standard functions
        "MunifTanjim/nui.nvim", -- To build the plugin UI
