@@ -20,7 +20,7 @@ return {
                 ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>"
             ),
             dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-            dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+            dashboard.button("s", " " .. " Session picker", "::Telescope telescope-sessions search_sessions<CR>"),
             dashboard.button(
                 "t",
                 " " .. " Find text",

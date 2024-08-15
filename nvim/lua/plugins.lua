@@ -40,6 +40,11 @@ return {
         },
     },
 
+    {
+        'LukasPietzschmann/telescope-sessions',
+        dependencies = { 'LukasPietzschmann/sessions.nvim' },
+    },
+
     "tpope/vim-rhubarb",
     "mechatroner/rainbow_csv",
 
