@@ -219,10 +219,16 @@ run = ['move-node-to-workspace N']
 if.app-id = 'com.microsoft.Outlook'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace C']
+run = ['move-node-to-workspace E']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+if.during-aerospace-startup = true
+check-further-callbacks = true
+run = ['move-node-to-workspace Z']
