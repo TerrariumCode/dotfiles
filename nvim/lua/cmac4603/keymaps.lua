@@ -85,8 +85,8 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>go", ":Copilot suggestion toggle_auto_trigger", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--ignore,--hidden,--files<CR>", opts)
+keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files<CR>", opts)
+keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--no-ignore,--hidden,--files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fs", ":Telescope toggleterm<CR>", opts)
 
