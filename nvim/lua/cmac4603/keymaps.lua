@@ -19,7 +19,7 @@ keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", { noremap = true })
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 -- save file
-keymap("n", "<leader>s", ":w<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 
 keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", opts)
