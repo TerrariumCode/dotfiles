@@ -92,21 +92,12 @@ return {
     },
 
     {
-        "saecki/crates.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "jose-elias-alvarez/null-ls.nvim",
-        },
+        'saecki/crates.nvim',
+        tag = 'stable',
         config = function()
-            local null_ls = require("null-ls")
-            require("crates").setup({
-                null_ls = {
-                    enabled = true,
-                    name = "crates.nvim",
-                },
-            })
+            require('crates').setup()
         end,
-    },
+   },
 
     -- LSP
     {
