@@ -2,7 +2,8 @@ working_directory = "/home/cmac4603"
 live_config_reload = true
 
 [shell]
-program = "fish"
+program = "zellij"
+args = ["-l", "welcome"]
 
 [mouse]
 hide_when_typing = true

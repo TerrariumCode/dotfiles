@@ -16,7 +16,7 @@ keymap("n", "<C-.>", ":30winc ><CR>", opts)
 
 keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", { noremap = true })
 
-keymap("n", "<C-s>", ":w<CR>", opts)
+keymap("n", "<leader>s", ":w<CR>", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
@@ -35,7 +35,7 @@ keymap("n", "<leader>j", "<C-^>", opts)
 keymap("n", "<leader>n", ":Neotree toggle<CR>", opts)
 
 -- toggleterm horizontal
-keymap("n", "<leader>s", ":ToggleTerm size=15 direction=horizontal name=horizontal<CR>", opts)
+-- keymap("n", "<leader>s", ":ToggleTerm size=15 direction=horizontal name=horizontal<CR>", opts)
 
 -- enable treesitter highlighting
 keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)
