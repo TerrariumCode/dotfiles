@@ -33,7 +33,7 @@ return {
         wk.add({
             {"<leader>r", group="RustTools"},
             {"<leader>rd", "<CMD>lua vim.cmd.RustLsp {'debuggables' }<CR>", desc = "RustDebuggables"},
-            {"<leader>rt", "<CMD>lua vim.cmd.RustLsp {'runnables' }<CR>", desc = "RustRunnables"},
+            {"<leader>rr", "<CMD>lua vim.cmd.RustLsp {'runnables' }<CR>", desc = "RustRunnables"},
         })
 
     end
