@@ -139,8 +139,9 @@ return {
                     "pyright",
                     "ruff",
                     "rust_analyzer",
+                    "tailwindcss",
                     "terraformls",
-                    "tsserver",
+                    "ts_ls",
                     "yamlls",
                 },
                 handlers = {
