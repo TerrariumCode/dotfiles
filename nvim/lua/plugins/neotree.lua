@@ -62,6 +62,19 @@ return {
             width = 40,
         },
         filesystem = {
+            window = {
+                mappings = {
+                    ["L"] = "open_nofocus"
+                },
+            },
+            commands = {
+                open_nofocus = function(state)
+                    require("neo-tree.sources.filesystem.commands").open(state)
+                    vim.schedule(function()
+                        vim.cmd([[Neotree close]])
+                    end)
+                end,
+            },
             filtered_items = {
                 visible = true,
                 hide_dotfiles = false,
@@ -81,12 +94,12 @@ return {
             },
         },
         buffers = {
-          follow_current_file = {
-            enabled = true, -- This will find and focus the file in the active buffer every time
-            leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
-          },
-          group_empty_dirs = true, -- when true, empty folders will be grouped together
-          show_unloaded = true,
+            follow_current_file = {
+                enabled = true,     -- This will find and focus the file in the active buffer every time
+                leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+            },
+            group_empty_dirs = true, -- when true, empty folders will be grouped together
+            show_unloaded = true,
         }
     }
 }
