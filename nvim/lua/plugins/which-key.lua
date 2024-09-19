@@ -1,40 +1,49 @@
 return {
     "folke/which-key.nvim",
-      event = "VeryLazy",
+    event = "VeryLazy",
     keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
+        {
+            "<leader>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Buffer Local Keymaps (which-key)",
+        },
     },
-  },
     config = function()
         local wk = require("which-key")
 
         wk.add({
-            {"<leader>h", group="Harpoon"},
-            {"<leader>hh", "<CMD>lua require('harpoon.mark').add_file()<CR>", desc = "Harpoon it!"},
-            {"<leader>hm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Menu"},
-            {"<leader>ht", "<CMD>lua require('harpoon.term').gotoTerminal(1)<CR>", desc = "Goto Terminal [1]"},
+            { "<leader>h",  group = "Harpoon" },
+            { "<leader>hh", "<CMD>lua require('harpoon.mark').add_file()<CR>",        desc = "Harpoon it!" },
+            { "<leader>hm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Menu" },
+            { "<leader>ht", "<CMD>lua require('harpoon.term').gotoTerminal(1)<CR>",   desc = "Goto Terminal [1]" },
         })
 
         wk.add({
-            {"<leader>z", group="Zen Mode"},
-            {"<leader>zz", "<CMD>ZenMode<CR>", desc = "Toggle"},
+            { "<leader>r",  group = "RustTools" },
+            { "<leader>rd", "<CMD>lua vim.cmd.RustLsp {'debuggables' }<CR>", desc = "RustDebuggables" },
+            { "<leader>rr", "<CMD>lua vim.cmd.RustLsp {'runnables' }<CR>",   desc = "RustRunnables" },
         })
 
         wk.add({
-            {"<leader>u", group="UndoTree"},
-            {"<leader>ut", "<CMD>UndotreeToggle<CR>", desc = "Toggle"},
+            { "<leader>u",  group = "UndoTree" },
+            { "<leader>ut", "<CMD>UndotreeToggle<CR>", desc = "Toggle" },
         })
 
         wk.add({
-            {"<leader>r", group="RustTools"},
-            {"<leader>rd", "<CMD>lua vim.cmd.RustLsp {'debuggables' }<CR>", desc = "RustDebuggables"},
-            {"<leader>rr", "<CMD>lua vim.cmd.RustLsp {'runnables' }<CR>", desc = "RustRunnables"},
+            { "<leader>z",  group = "Zen Mode" },
+            { "<leader>zz", "<CMD>ZenMode<CR>", desc = "Toggle" },
         })
 
+        wk.add({
+            { "<leader>f",  group = "Toggleterm" },
+            { "<leader>ff", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files<CR>", desc = "Find Files" },
+            { "<leader>ft", ":Telescope live_grep find_command=rg,--no-ignore,--hidden,--files<CR>", desc = "Find Text" },
+            { "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers" },
+            { "<leader>fs", ":Telescope toggleterm<CR>", desc = "Find Terminals" },
+            { "<leader>fg", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "Find Commits in File" },
+            { "<leader>fl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "Find Commits on Line" },
+        })
     end
 }

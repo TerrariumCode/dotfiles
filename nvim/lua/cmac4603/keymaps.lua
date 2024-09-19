@@ -81,22 +81,9 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
--- Copilot
--- toggle copilot auto trigger
-keymap("n", "<leader>go", ":Copilot suggestion toggle_auto_trigger", opts)
-
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep find_command=rg,--no-ignore,--hidden,--files<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fs", ":Telescope toggleterm<CR>", opts)
-
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
-
--- Zen
-keymap("n", "<leader>z", ":ZenMode<CR>", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
