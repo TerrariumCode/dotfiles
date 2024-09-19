@@ -36,8 +36,8 @@ keymap("n", "<leader>j", "<C-^>", opts)
 keymap("n", "<leader>n", ":Neotree toggle<CR>", opts)
 
 -- toggleterm horizontal/vertical
-keymap("n", "<leader>s", ":ToggleTerm size=15 direction=horizontal name=horizontal<CR>", opts)
-keymap("n", "<leader>S", ":ToggleTerm size=40 direction=vertical name=vertical<CR>", opts)
+keymap("n", "<leader>s", ":ToggleTerm size=20 direction=horizontal name=horizontal<CR>", opts)
+keymap("n", "<leader>S", ":ToggleTerm size=80 direction=vertical name=vertical<CR>", opts)
 
 -- enable treesitter highlighting
 keymap("n", "<leader>i", ":TSBufEnable highlight<CR>", opts)
