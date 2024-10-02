@@ -4,7 +4,7 @@
 	signingkey = 426A472EEF048AB1
 
 [commit]
-	template = /Users/cmacrae/.gitcommitmsg.txt
+	template = /home/cmac4603/.gitcommitmsg.txt
 	gpgsign = true
 
 [push]
