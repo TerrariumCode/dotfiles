@@ -49,3 +49,7 @@ vim.opt.list = true
 vim.opt.listchars = {
 	eol = "↲",
 }
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  command = [[highlight CursorLine guibg=#4f4d51]]
+})
