@@ -14,6 +14,11 @@ return {
         local wk = require("which-key")
 
         wk.add({
+            { "<leader>m",  group = "Markview" },
+            { "<leader>mt", "<CMD>Markview splitToggle<CR>", desc = "Split Toggle" },
+        })
+
+        wk.add({
             { "<leader>h",  group = "Harpoon" },
             { "<leader>hh", "<CMD>lua require('harpoon.mark').add_file()<CR>",        desc = "Harpoon it!" },
             { "<leader>hm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", desc = "Menu" },
