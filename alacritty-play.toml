@@ -1,6 +1,9 @@
 working_directory = "/home/cmac4603"
 live_config_reload = true
 
+[window]
+decorations = "None"
+
 [shell]
 program = "tmux"
 
