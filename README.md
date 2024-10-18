@@ -1,14 +1,14 @@
 # dotfiles
 
 ## Play Machine
-```shell
+```bash
 source ~/.virtualenvs/dotfiles/bin/activate.fish
 cd playbooks/
 make run-play
 ```
 
 ## Work Machine
-```shell
+```bash
 # make sure to use the full path
 ln -s ~/repos/dotfiles/.zshrc-work ~/.zshrc
 ln -s ~/repos/dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
