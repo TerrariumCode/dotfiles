@@ -47,7 +47,7 @@ return {
         formatters_by_ft = {
             css = { "stylelint" },
             html = { "djlint" },
-            javascript = { { "prettierd", "prettier" } },
+            javascript = { "prettierd", "prettier", stop_after_first = true },
             json = { "jq" },
             lua = { "stylua" },
             markdown = { "markdownlint" },
