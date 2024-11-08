@@ -43,8 +43,8 @@ return {
 
         wk.add({
             { "<leader>f",  group = "Toggleterm" },
-            { "<leader>ff", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files<CR>", desc = "Find Files" },
-            { "<leader>ft", ":Telescope live_grep find_command=rg,--no-ignore,--hidden,--files<CR>", desc = "Find Text" },
+            { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
+            { "<leader>ft", ":Telescope live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
             { "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers" },
             { "<leader>fs", ":Telescope toggleterm<CR>", desc = "Find Terminals" },
             { "<leader>fg", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "Find Commits in File" },
