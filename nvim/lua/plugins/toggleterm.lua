@@ -6,7 +6,7 @@ return {
                 if term.direction == "horizontal" then
                     return 15
                 elseif term.direction == "vertical" then
-                    return math.floor(0.33 * vim.o.columns)
+                    return 120
                 end
             end,
             -- there is also a keymap to open horizantal
