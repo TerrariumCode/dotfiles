@@ -14,8 +14,8 @@ return {
         local wk = require("which-key")
 
         wk.add({
-            { "<leader>m",  group = "Markview" },
-            { "<leader>mt", "<CMD>Markview splitToggle<CR>", desc = "Split Toggle" },
+            { "<leader>g",  group = "Git" },
+            { "<leader>gb", "<CMD>Gitsigns blame_line<CR>", desc = "Git Blame Line" },
         })
 
         wk.add({
@@ -26,9 +26,24 @@ return {
         })
 
         wk.add({
+            { "<leader>m",  group = "Markview" },
+            { "<leader>mt", "<CMD>Markview splitToggle<CR>", desc = "Split Toggle" },
+        })
+
+        wk.add({
             { "<leader>r",  group = "RustTools" },
             { "<leader>rd", "<CMD>lua vim.cmd.RustLsp {'debuggables' }<CR>", desc = "RustDebuggables" },
             { "<leader>rr", "<CMD>lua vim.cmd.RustLsp {'runnables' }<CR>",   desc = "RustRunnables" },
+        })
+
+        wk.add({
+            { "<leader>f",  group = "Toggleterm" },
+            { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
+            { "<leader>ft", ":Telescope live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
+            { "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers" },
+            { "<leader>fs", ":Telescope toggleterm<CR>", desc = "Find Terminals" },
+            { "<leader>fg", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "Find Commits in File" },
+            { "<leader>fl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "Find Commits on Line" },
         })
 
         wk.add({
@@ -41,14 +56,5 @@ return {
             { "<leader>zz", "<CMD>ZenMode<CR>", desc = "Toggle" },
         })
 
-        wk.add({
-            { "<leader>f",  group = "Toggleterm" },
-            { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
-            { "<leader>ft", ":Telescope live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
-            { "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers" },
-            { "<leader>fs", ":Telescope toggleterm<CR>", desc = "Find Terminals" },
-            { "<leader>fg", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "Find Commits in File" },
-            { "<leader>fl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "Find Commits on Line" },
-        })
     end
 }
