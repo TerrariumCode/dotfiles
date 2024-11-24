@@ -38,7 +38,7 @@ return {
             },
             -- If you don't want to use these columns, you can set `enabled = false` for each of them individually
             file_size = {
-                enabled = true,
+                enabled = false,
                 required_width = 64, -- min width of window required to show this column
             },
             type = {

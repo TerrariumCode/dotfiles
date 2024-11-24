@@ -112,7 +112,6 @@ return {
         config = function()
             -- This is where all the LSP shenanigans will live
             local lsp_zero = require("lsp-zero")
-            local lspconfig = require("lspconfig")
             lsp_zero.extend_lspconfig()
 
             lsp_zero.on_attach(function(client, bufnr)
@@ -128,6 +127,7 @@ return {
                 vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
             end)
 
+            require("mason").setup()
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({

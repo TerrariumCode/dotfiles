@@ -46,9 +46,3 @@ require("cmac4603.keymaps")
 require("cmac4603.autocommands")
 require("cmac4603.lsp")
 vim.cmd([[colorscheme zephyr]])
-vim.cmd [[
-    augroup NEOTREE_AUGROUP
-      autocmd!
-      au VimEnter * lua vim.defer_fn(function() vim.cmd("Neotree show left") end, 10)
-    augroup END
-  ]]
