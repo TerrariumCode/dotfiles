@@ -51,7 +51,7 @@ return {
             json = { "jq" },
             lua = { "stylua" },
             markdown = { "markdownlint" },
-            python = { "isort", "black", "ruff" },
+            python = { "black", "ruff" },
             postgresql = { "pg_format" },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
