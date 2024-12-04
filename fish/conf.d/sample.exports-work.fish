@@ -5,6 +5,7 @@ set -Ux FASTLY_CORP_KEY
 
 set -Ux GITHUB_TOKEN
 
+set -Ux BAM_API_KEY
 set -Ux BURDEN_API_KEY
 set -Ux HUBCAP_API_KEY
 
