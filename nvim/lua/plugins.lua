@@ -32,7 +32,6 @@ return {
     "jeanlucthumm/nvim-lua-format",
     "asiryk/auto-hlsearch.nvim",
     "tpope/vim-surround",
-    "tpope/vim-fugitive",
     {
         "wintermute-cell/gitignore.nvim",
         dependencies = {

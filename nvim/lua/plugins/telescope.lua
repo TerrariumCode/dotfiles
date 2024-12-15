@@ -29,7 +29,7 @@ return {
                     -- => both will result in calling `:GBrowse commit`
 
                     -- fugitive or diffview
-                    diff_plugin = "fugitive",
+                    diff_plugin = "diffview",
                     -- customize git in previewer
                     -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
                     git_flags = {},
