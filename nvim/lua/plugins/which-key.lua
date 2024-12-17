@@ -16,6 +16,7 @@ return {
         wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>", desc = "Git Blame Line" },
+            { "<leader>gd", "<CMD>Neogit diff<CR>", desc = "Neogit Diff" },
             { "<leader>gl", "<CMD>Neogit log<CR>", desc = "Neogit Log" },
             { "<leader>gn", "<CMD>Neogit<CR>", desc = "Neogit Open" },
             { "<leader>gp", "<CMD>Neogit push<CR>", desc = "Neogit Push" },

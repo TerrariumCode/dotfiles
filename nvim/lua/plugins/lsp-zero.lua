@@ -97,7 +97,7 @@ return {
         config = function()
             require('crates').setup()
         end,
-   },
+    },
 
     -- LSP
     {
@@ -148,11 +148,7 @@ return {
                     lsp_zero.default_setup,
                     rust_analyzer = lsp_zero.noop,
                     jdtls = lsp_zero.noop,
-                    lua_ls = function()
-                        -- (Optional) Configure lua language server for neovim
-                        local lua_opts = lsp_zero.nvim_lua_ls()
-                        require("lspconfig").lua_ls.setup(lua_opts)
-                    end,
+                    lua_ls = lsp_zero.noop,
                 },
             })
 
@@ -183,6 +179,36 @@ return {
                             json = {
                                 schemas = require('schemastore').json.schemas(),
                                 validate = { enable = true },
+                            },
+                        },
+                    }
+                end,
+
+                -- lua_ls setup specifically for neovim
+                ["lua_ls"] = function()
+                    require("lspconfig")["lua_ls"].setup {
+                        settings = {
+                            Lua = {
+                                runtime = {
+                                    -- Tell the language server which version of Lua you're using
+                                    -- (most likely LuaJIT in the case of Neovim)
+                                    version = 'LuaJIT',
+                                },
+                                diagnostics = {
+                                    -- Get the language server to recognize the `vim` global
+                                    globals = {
+                                        'vim',
+                                        'require'
+                                    },
+                                },
+                                workspace = {
+                                    -- Make the server aware of Neovim runtime files
+                                    library = vim.api.nvim_get_runtime_file("", true),
+                                },
+                                -- Do not send telemetry data containing a randomized but unique identifier
+                                telemetry = {
+                                    enable = false,
+                                },
                             },
                         },
                     }
