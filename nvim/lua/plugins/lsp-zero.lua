@@ -167,29 +167,7 @@ return {
             require("mason").setup()
             local mason_lspconfig = require("mason-lspconfig")
 
-            mason_lspconfig.setup({
-                ensure_installed = {
-                    "jdtls",
-                    "jsonls",
-                    "lua_ls",
-                    "marksman",
-                    "pyright",
-                    "ruff",
-                    "rust_analyzer",
-                    "tailwindcss",
-                    "terraformls",
-                    "ts_ls",
-                    "yamlls",
-                },
-                handlers = {
-                    lsp_zero.default_setup,
-                    rust_analyzer = lsp_zero.noop,
-                    jdtls = lsp_zero.noop,
-                    lua_ls = lsp_zero.noop,
-                },
-            })
-
-            mason_lspconfig.setup_handlers {
+            local handlers =  {
                 -- The first entry (without a key) will be the default handler
                 -- and will be called for each installed server that doesn't have
                 -- a dedicated handler.
@@ -239,8 +217,11 @@ return {
                                     },
                                 },
                                 workspace = {
+                                    checkThirdParty = false,
                                     -- Make the server aware of Neovim runtime files
-                                    library = vim.api.nvim_get_runtime_file("", true),
+                                    library = {
+                                        vim.env.VIMRUNTIME,
+                                    }
                                 },
                                 -- Do not send telemetry data containing a randomized but unique identifier
                                 telemetry = {
@@ -307,8 +288,26 @@ return {
                             },
                         },
                     }
-                end
+                end,
             }
+
+            mason_lspconfig.setup({
+                ensure_installed = {
+                    "jdtls",
+                    "jsonls",
+                    "lua_ls",
+                    "marksman",
+                    "pyright",
+                    "ruff",
+                    "rust_analyzer",
+                    "tailwindcss",
+                    "terraformls",
+                    "ts_ls",
+                    "yamlls",
+                },
+                handlers = handlers,
+            })
+
         end,
     },
 
