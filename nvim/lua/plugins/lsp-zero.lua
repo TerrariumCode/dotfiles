@@ -17,7 +17,7 @@ return {
     {
         "williamboman/mason.nvim",
         lazy = false,
-        config = true,
+        opts = {}
     },
 
     -- Autocompletion
@@ -28,9 +28,10 @@ return {
             {
                 "hrsh7th/cmp-buffer",
                 "hrsh7th/cmp-path",
-                "saadparwaiz1/cmp_luasnip",
                 "hrsh7th/cmp-nvim-lua",
                 "L3MON4D3/LuaSnip",
+                "saadparwaiz1/cmp_luasnip",
+                "rafamadriz/friendly-snippets"
             },
         },
         config = function()
@@ -40,15 +41,21 @@ return {
 
             local cmp = require("cmp")
             local cmp_select = { behavior = cmp.SelectBehavior.Select }
+            require('luasnip.loaders.from_vscode').lazy_load()
 
             cmp.setup({
                 sources = {
-                    { name = "path" },
                     { name = "nvim_lsp" },
+                    { name = "path" },
                     { name = "nvim_lua" },
                     { name = "luasnip", keyword_length = 2 },
                     { name = "buffer",  keyword_length = 3 },
                     { name = "crates" },
+                },
+                snippet = {
+                    expand = function(args)
+                        require('luasnip').lsp_expand(args.body)
+                    end,
                 },
                 window = {
                     completion = cmp.config.window.bordered(),
@@ -62,6 +69,23 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                     -- ['<Tab>'] = vim.NIL,
                     -- ['<S-Tab>'] = vim.NIL,
+                    ['<C-f>'] = cmp.mapping(function(fallback)
+                        local luasnip = require('luasnip')
+                        if luasnip.locally_jumpable(1) then
+                            luasnip.jump(1)
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
+                    -- Jump to the previous snippet placeholder
+                    ['<C-b>'] = cmp.mapping(function(fallback)
+                        local luasnip = require('luasnip')
+                        if luasnip.locally_jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
                 }),
             })
 
@@ -106,26 +130,39 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
+            { 'williamboman/mason.nvim' },
             { "williamboman/mason-lspconfig.nvim" },
             { "b0o/schemastore.nvim" },
         },
         config = function()
             -- This is where all the LSP shenanigans will live
             local lsp_zero = require("lsp-zero")
-            lsp_zero.extend_lspconfig()
+            local lsp_defaults = require('lspconfig').util.default_config
 
-            lsp_zero.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                lsp_zero.default_keymaps({ buffer = bufnr, exclude = { "<F2>", "<F3>" } })
+            -- Add cmp_nvim_lsp capabilities settings to lspconfig
+            -- This should be executed before you configure any language server
+            lsp_defaults.capabilities = vim.tbl_deep_extend(
+                'force',
+                lsp_defaults.capabilities,
+                require('cmp_nvim_lsp').default_capabilities()
+            )
 
-                local opts = { buffer = bufnr }
-                vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-                vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
-                    opts)
-                vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-                vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
-                vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-            end)
+            -- LspAttach is where you enable features that only work
+            -- if there is a language server active in the file
+            vim.api.nvim_create_autocmd('LspAttach', {
+                desc = 'LSP actions',
+                callback = function(event)
+                    local opts = { buffer = event.buf }
+
+                    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+                    vim.keymap.set("n", "gh",
+                        "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
+                        opts)
+                    vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+                    vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+                    vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+                end,
+            })
 
             require("mason").setup()
             local mason_lspconfig = require("mason-lspconfig")
