@@ -40,7 +40,6 @@ return {
             lsp_zero.extend_cmp()
 
             local cmp = require("cmp")
-            local cmp_select = { behavior = cmp.SelectBehavior.Select }
             require('luasnip.loaders.from_vscode').lazy_load()
 
             cmp.setup({
@@ -63,13 +62,12 @@ return {
                 },
                 formatting = lsp_zero.cmp_format(),
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-                    ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
                     ["<CR>"] = cmp.mapping.confirm({ select = true }),
                     ["<C-Space>"] = cmp.mapping.complete(),
                     -- ['<Tab>'] = vim.NIL,
                     -- ['<S-Tab>'] = vim.NIL,
-                    ['<C-f>'] = cmp.mapping(function(fallback)
+                    -- Jump to the next snippet placeholder
+                    ['<C-n>'] = cmp.mapping(function(fallback)
                         local luasnip = require('luasnip')
                         if luasnip.locally_jumpable(1) then
                             luasnip.jump(1)
@@ -78,7 +76,7 @@ return {
                         end
                     end, { 'i', 's' }),
                     -- Jump to the previous snippet placeholder
-                    ['<C-b>'] = cmp.mapping(function(fallback)
+                    ['<C-p>'] = cmp.mapping(function(fallback)
                         local luasnip = require('luasnip')
                         if luasnip.locally_jumpable(-1) then
                             luasnip.jump(-1)
