@@ -7,6 +7,11 @@ cd playbooks/
 make run-play
 ```
 
+```bash
+# some softlinks to make
+ln -s /home/cmac4603/repos/dotfiles/ghostty /home/cmac4603/.config/ghostty/config
+```
+
 ## Work Machine
 ```bash
 # make sure to use the full path
