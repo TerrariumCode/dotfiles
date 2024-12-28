@@ -1,2 +1,3 @@
 window-decoration = false
-initial-command = "tmux"
+mouse-hide-while-typing = true
+bold-is-bright = true
