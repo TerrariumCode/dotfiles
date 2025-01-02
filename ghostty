@@ -1,3 +1,4 @@
 window-decoration = false
 mouse-hide-while-typing = true
 bold-is-bright = true
+link-url = true
