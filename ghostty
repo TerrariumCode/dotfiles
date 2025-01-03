@@ -2,4 +2,4 @@ window-decoration = false
 mouse-hide-while-typing = true
 bold-is-bright = true
 link-url = true
-font-family = "FiraCode Nerd Font Mono Bold"
+font-family = "FiraCode Nerd Font Mono"
