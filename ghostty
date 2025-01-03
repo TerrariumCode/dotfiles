@@ -3,3 +3,6 @@ mouse-hide-while-typing = true
 bold-is-bright = true
 link-url = true
 font-family = "FiraCode Nerd Font Mono"
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
