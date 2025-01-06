@@ -7,16 +7,10 @@ cd playbooks/
 make run-play
 ```
 
-```bash
-# some softlinks to make
-ln -s /home/cmac4603/repos/dotfiles/ghostty /home/cmac4603/.config/ghostty/config
-```
-
 ## Work Machine
 ```bash
 # make sure to use the full path
 ln -s ~/repos/dotfiles/.zshrc-work ~/.zshrc
-ln -s ~/repos/dotfiles/ghostty ~/.config/ghostty/config
 ln -s ~/repos/dotfiles/tmux-cfg ~/.config/tmux
 ln -s ~/repos/dotfiles/nvim ~/.config/nvim
 ln -s ~/repos/dotfiles/custom_zsh/alias-work.zsh ~/.oh-my-zsh/custom/alias.zsh
