@@ -43,6 +43,8 @@ return {
                 { section = "startup" },
             },
         },
+        indent = { enabled = true },
+        gitopen = { enabled = true },
         notifier = {
             enabled = true,
             timeout = 3000,
@@ -55,5 +57,6 @@ return {
                 wo = { wrap = true } -- Wrap notifications
             }
         },
+        zen = { enabled = true },
     },
 }
