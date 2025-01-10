@@ -22,11 +22,22 @@ return {
         vim.g.zephyr_italic_preproc = 1
     end
 }
+
 -- return {
 --     "cmac4603/morta.nvim",
 --     branch = "fix-background-colour",
 --     name = 'morta',
 --     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         vim.cmd.colorscheme 'morta'
+--     end,
+-- }
+
+-- return {
+--     "philosofonusus/morta.nvim",
+--     name = 'morta',
 --     priority = 1000,
 --     opts = {},
 --     config = function()
