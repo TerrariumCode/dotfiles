@@ -23,8 +23,10 @@ return {
     end
 }
 -- return {
---     "philosofonusus/morta.nvim",
+--     "cmac4603/morta.nvim",
+--     branch = "fix-background-colour",
 --     name = 'morta',
+--     lazy = false,
 --     priority = 1000,
 --     opts = {},
 --     config = function()
