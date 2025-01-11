@@ -104,16 +104,16 @@ return {
 
             local dap = require("dap")
             dap.listeners.before.attach.dapui_config = function()
-              dapui.open()
+                dapui.open()
             end
             dap.listeners.before.launch.dapui_config = function()
-              dapui.open()
+                dapui.open()
             end
             dap.listeners.before.event_terminated.dapui_config = function()
-              dapui.close()
+                dapui.close()
             end
             dap.listeners.before.event_exited.dapui_config = function()
-              dapui.close()
+                dapui.close()
             end
             dap.listeners.after.event_initialized["dapui_config"] = function()
                 dapui.open()
@@ -121,6 +121,7 @@ return {
         end,
 
     },
-    { "folke/neodev.nvim", config = { library = { plugins = { "nvim-dap-ui" }, types = true } }, opts = {} }
+
+    { "folke/neodev.nvim", opts = { library = { plugins = { "nvim-dap-ui" }, types = true } } }
 
 }
