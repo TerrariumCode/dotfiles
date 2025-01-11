@@ -155,7 +155,12 @@ return {
                     vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
                     vim.keymap.set("n", "gh",
                         "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>",
-                        opts)
+                        opts
+                    )
+                    vim.keymap.set("n", "gi",
+                        "<cmd>lua require('tiny-inline-diagnostic').toggle()<cr>",
+                        opts
+                    )
                     vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
                     vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
                     vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
@@ -165,7 +170,7 @@ return {
             require("mason").setup()
             local mason_lspconfig = require("mason-lspconfig")
 
-            local handlers =  {
+            local handlers = {
                 -- The first entry (without a key) will be the default handler
                 -- and will be called for each installed server that doesn't have
                 -- a dedicated handler.
@@ -305,7 +310,6 @@ return {
                 },
                 handlers = handlers,
             })
-
         end,
     },
 
