@@ -1,14 +1,18 @@
 return {
-  "epwalsh/obsidian.nvim",
-  lazy = true,
-  event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/play_pop_obsidian/**.md" },
-  dependencies = {
-    -- Required.
-    "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",
-    "nvim-telescope/telescope.nvim",
-  },
-  opts = {
-    dir = "~/Documents/play_pop_obsidian",
-  },
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/play_pop_obsidian/**.md" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+    opts = {
+        workspaces = {
+            {
+                name = "personal",
+                path = "~/Documents/play_pop_obsidian",
+            },
+        },
+    },
 }
