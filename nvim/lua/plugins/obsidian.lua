@@ -2,7 +2,7 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*",
     lazy = true,
-    event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/play_pop_obsidian/**.md" },
+    event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/WorkVault/**.md" },
     dependencies = {
         "nvim-lua/plenary.nvim",
     },

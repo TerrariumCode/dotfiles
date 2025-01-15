@@ -43,13 +43,23 @@ return {
         })
 
         wk.add({
-            { "<leader>f",  group = "Toggleterm" },
-            { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
-            { "<leader>ft", ":Telescope live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
+            { "<leader>.", "<CMD>Scratch<CR>", desc = "Open Daily Scratch" },
+        })
+
+        wk.add({
+            { "<leader>s", "<CMD>ToggleTerm size=20 direction=horizontal name=horizontal<CR>", desc = "Toggle Right Vertical" },
+            { "<leader>S", "<CMD>ToggleTerm size=80 direction=vertical name=vertical<CR>", desc = "Toggle Down Horizontal" },
+        })
+
+        wk.add({
+            { "<leader>f",  group = "Telescope" },
             { "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffers" },
-            { "<leader>fs", ":Telescope toggleterm<CR>", desc = "Find Terminals" },
+            { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
             { "<leader>fg", ":Telescope advanced_git_search diff_commit_file<CR>", desc = "Find Commits in File" },
             { "<leader>fl", ":Telescope advanced_git_search diff_commit_line<CR>", desc = "Find Commits on Line" },
+            { "<leader>fn", ":ScratchList<CR>", desc = "Find Scratch" },
+            { "<leader>fs", ":Telescope toggleterm<CR>", desc = "Find Terminals" },
+            { "<leader>ft", ":Telescope live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
         })
 
         wk.add({
@@ -58,8 +68,8 @@ return {
         })
 
         wk.add({
-            { "<leader>z",  group = "Zen Mode" },
-            { "<leader>zz", "<CMD>ZenMode<CR>", desc = "Toggle" },
+            -- { "<leader>z",  group = "Zen Mode" },
+            { "<leader>z", "<CMD>ZenMode<CR>", desc = "Toggle" },
         })
 
     end
