@@ -16,6 +16,8 @@ fish_add_path {$HOME}/.dotnet/tools
 fish_add_path /usr/local/lib/apache-maven-3.9.6/bin
 fish_add_path -g -p /usr/bin/flutter/bin/
 
+set fish_color_autosuggestion red --bold
+
 # allows dotnet tools to run
 export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
 

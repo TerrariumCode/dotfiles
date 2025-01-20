@@ -26,6 +26,8 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /Library/PostgreSQL/16/bin
 
+set fish_color_autosuggestion red --bold
+
 pyenv init - | source
 
 # for tmux, because it asked me to add this
