@@ -26,7 +26,7 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /Library/PostgreSQL/16/bin
 
-set fish_color_autosuggestion red --bold
+set fish_color_autosuggestion red
 
 pyenv init - | source
 
