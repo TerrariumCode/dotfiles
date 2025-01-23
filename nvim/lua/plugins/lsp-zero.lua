@@ -96,11 +96,6 @@ return {
         end,
     },
 
-    -- Java
-    {
-        'mfussenegger/nvim-jdtls'
-    },
-
     -- Rust
     {
         'mrcjkb/rustaceanvim',
@@ -296,7 +291,6 @@ return {
 
             mason_lspconfig.setup({
                 ensure_installed = {
-                    "jdtls",
                     "jsonls",
                     "lua_ls",
                     "marksman",
