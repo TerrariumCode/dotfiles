@@ -26,4 +26,4 @@
         - ['~/repos/dotfiles/fish/conf.d/kb_shortcuts.fish', '~/.config/fish/conf.d/kb_shortcuts.fish']
         - ['~/repos/dotfiles/fish/conf.d/stern.fish', '~/.config/fish/conf.d/stern.fish']
         - ['~/repos/dotfiles/fish/functions/fish_user_key_bindings.fish', '~/.config/fish/functions/fish_user_key_bindings.fish']
-        - ['~/repos/dotfiles/regolith/Xresources', '~/.config/regolith2/Xresources']
+        - ['~/repos/dotfiles/regolith/Xresources', '~/.config/regolith3/Xresources']
