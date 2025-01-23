@@ -2,6 +2,6 @@
 i3-wm.workspace.01.name: 1: Web
 i3-wm.workspace.02.name: 2: Terminal
 i3-wm.workspace.03.name: 3: Chat
-i3-wm.workspace.03.name: 4: Email
+i3-wm.workspace.04.name: 4: Email
 !regolith.look.path: /usr/share/regolith-look/blackhole
 regolith.look.path: /usr/share/regolith-look/nord
