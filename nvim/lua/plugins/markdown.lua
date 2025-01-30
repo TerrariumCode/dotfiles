@@ -6,8 +6,8 @@ return {
         "nvim-tree/nvim-web-devicons"
     },
     opts = {
-        split_conf = {
-            split = "right"
+        preview = {
+            splitview_winopts = { split = "right" },
         },
     }
 }
