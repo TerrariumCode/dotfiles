@@ -14,6 +14,13 @@ return {
         local wk = require("which-key")
 
         wk.add({
+            { "<leader>a", group = "AI" },
+            { "<leader>aa", "<CMD>CodeCompanionActions<CR>", desc = "Actions" },
+            { "<leader>ac", "<CMD>CodeCompanion /commit<CR>", desc = "Commit Message" },
+            { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>", desc = "Chat Toggle" },
+        })
+
+        wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>", desc = "Git Blame Line" },
             { "<leader>gd", "<CMD>Neogit diff<CR>", desc = "Neogit Diff" },
