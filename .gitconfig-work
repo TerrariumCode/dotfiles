@@ -1,7 +1,7 @@
 [user]
-	name = cmac4603
-	email = cmac4603@users.noreply.github.com
-	signingkey = 58DA96022AFCA738
+	name = TerrariumCode
+	email = 12590206+TerrariumCode@users.noreply.github.com
+	signingkey = F2A313003AC88818
 
 [push]
 	autoSetupRemote = true
