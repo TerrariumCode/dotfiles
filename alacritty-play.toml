@@ -12,11 +12,11 @@ program = "tmux"
 hide_when_typing = true
 
 [font]
-size = 15.0
+size = 14.0
 
 [font.normal]
-family = "Monofur Nerd Font"
-# family = "ShureTechMono Nerd Font"
+family = "BlexMono Nerd Font Mono"
+# family = "Monofur Nerd Font"  -- too fun
 
 [colors]
 draw_bold_text_with_bright_colors = true

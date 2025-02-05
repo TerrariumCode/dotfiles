@@ -50,7 +50,6 @@ size = 14.0
 
 [font.normal]
 family = "BlexMono Nerd Font Mono"
-# family = "Monofur Nerd Font" -- too fun
 
 [[keyboard.bindings]]
 chars = "\u0015"
