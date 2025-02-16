@@ -11,7 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-require("cmac4603.options")
+require("autocommands")
+require("keymaps")
+require("options")
 
 vim.g.mapleader = " "
 -- skip backwards compatibility routines and speed up loading
@@ -42,6 +44,3 @@ vim.fn.sign_define(
 )
 
 require("lazy").setup("plugins")
-require("cmac4603.keymaps")
-require("cmac4603.autocommands")
-require("cmac4603.lsp")

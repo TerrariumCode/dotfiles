@@ -307,4 +307,21 @@ return {
         end,
     },
 
+    {
+        'pmizio/typescript-tools.nvim',
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'nvim-lua/plenary.nvim',
+        },
+        ft = {
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+        },
+        opts = {},
+    },
+
 }
