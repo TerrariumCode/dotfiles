@@ -36,3 +36,7 @@ alias pbcopy='xclip -selection clipboard'
 
 # asdf for elixir (can be used for others too)
 source ~/.asdf/asdf.fish
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
