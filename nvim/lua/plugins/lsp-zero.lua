@@ -10,6 +10,12 @@ return {
             -- Disable automatic setup, we are doing it manually
             vim.g.lsp_zero_extend_cmp = 0
             vim.g.lsp_zero_extend_lspconfig = 0
+            -- diagnostic output config
+            vim.diagnostic.config({
+                virtual_text = true,
+                update_in_insert = false,
+                underline = true,
+            })
         end,
     },
 
