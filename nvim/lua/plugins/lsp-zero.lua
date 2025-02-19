@@ -271,6 +271,10 @@ return {
                     }
                 end,
 
+                ['ts_ls'] = function()
+                    -- do nothing, managed by typescript-tools
+                end,
+
                 ["yamlls"] = function()
                     require("lspconfig")["yamlls"].setup {
                         settings = {
