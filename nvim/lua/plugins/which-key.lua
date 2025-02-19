@@ -21,6 +21,11 @@ return {
         })
 
         wk.add({
+            { "<leader>c", group = "CSV" },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>", desc = "Toggle CSV View" },
+        })
+
+        wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>", desc = "Git Blame Line" },
             { "<leader>gd", "<CMD>Neogit diff<CR>", desc = "Neogit Diff" },
