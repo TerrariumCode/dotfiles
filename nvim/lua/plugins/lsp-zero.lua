@@ -47,6 +47,8 @@ return {
 
             local cmp = require("cmp")
             require('luasnip.loaders.from_vscode').lazy_load()
+            -- custom snippets in this config
+            require("luasnip.loaders.from_vscode").load({ paths = "../../snippets" })
 
             cmp.setup({
                 sources = {

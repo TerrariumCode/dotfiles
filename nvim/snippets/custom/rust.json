@@ -1,0 +1,9 @@
+{
+  "better-println": {
+    "prefix": "pln",
+    "body": [
+      "println!(\"${1}\");"
+    ],
+    "description": "custom println!(…);"
+  }
+}
