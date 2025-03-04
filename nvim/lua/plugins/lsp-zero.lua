@@ -3,7 +3,7 @@ return {
     -- LSP-Zero
     {
         "VonHeikemen/lsp-zero.nvim",
-        branch = "v3.x",
+        branch = "v4.x",
         lazy = true,
         config = false,
         init = function()
@@ -173,6 +173,15 @@ return {
             require("mason").setup()
             local mason_lspconfig = require("mason-lspconfig")
 
+            require("lspconfig").bacon_ls.setup({
+                init_options = {
+                    runBaconInBackground = true,
+                    updateOnSave = true,
+                    updateOnSaveWaitMillis = 1000,
+                    updateOnChange = false,
+                }
+            })
+
             local handlers = {
                 -- The first entry (without a key) will be the default handler
                 -- and will be called for each installed server that doesn't have
@@ -275,6 +284,12 @@ return {
                                             enable = true,
                                         },
                                         features = "all",
+                                    },
+                                    checkOnSave = {
+                                        enable = false,
+                                    },
+                                    diagnostics = {
+                                        enable = false,
                                     },
                                     procMacro = {
                                         enabled = true,

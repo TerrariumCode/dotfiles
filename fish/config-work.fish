@@ -43,3 +43,7 @@ export DOCKER_BUILDKIT=1
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/cmacrae/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/cmacrae/Downloads/google-cloud-sdk/path.fish.inc'; end
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

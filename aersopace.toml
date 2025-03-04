@@ -200,7 +200,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 # to find app-id use `aerospace list-apps`
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
+if.app-id = 'org.alacritty'
 run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
