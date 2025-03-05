@@ -247,13 +247,13 @@ return {
                     }
                 end,
 
-                ["pyright"] = function()
-                    require("lspconfig")["pyright"].setup {
+                ["basedpyright"] = function()
+                    require("lspconfig")["basedpyright"].setup {
                         on_init = function(client)
                             client.server_capabilities.semanticTokensProvider = nil
                         end,
                         settings = {
-                            pyright = {
+                            basedpyright = {
                                 -- Using Ruff's import organizer
                                 disableOrganizeImports = true,
                             },
@@ -264,7 +264,7 @@ return {
                 ["ruff"] = function()
                     local on_attach = function(client, bufnr)
                         if client.name == 'ruff' then
-                            -- Disable hover in favor of Pyright
+                            -- Disable hover in favor of basedpyright
                             client.server_capabilities.hoverProvider = false
                         end
                     end
@@ -324,10 +324,10 @@ return {
 
             mason_lspconfig.setup({
                 ensure_installed = {
+                    "basedpyright",
                     "jsonls",
                     "lua_ls",
                     "marksman",
-                    "pyright",
                     "ruff",
                     "rust_analyzer",
                     "tailwindcss",
