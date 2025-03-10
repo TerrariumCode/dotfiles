@@ -82,9 +82,10 @@ return {
             { "<leader>ut", "<CMD>UndotreeToggle<CR>", desc = "Toggle" },
         })
 
+        -- random assortment
         wk.add({
-            -- { "<leader>z",  group = "Zen Mode" },
-            { "<leader>z", "<CMD>ZenMode<CR>", desc = "Toggle" },
+            { "<leader>l", function () Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
+            { "<leader>z", "<CMD>ZenMode<CR>", desc = "Zen Toggle" },
         })
     end
 }

@@ -196,7 +196,7 @@ return {
                         default_config = {
                             cmd = { 'ast-grep', 'lsp' },
                             single_file_support = false,
-                            root_dir = nvim_lsp.util.root_pattern('sgconfig.yml'),
+                            -- root_dir = nvim_lsp.util.root_pattern('sgconfig.yml'),
                         },
                     }
                 end,
@@ -211,6 +211,20 @@ return {
                                 }
                             }
                         }
+                    }
+                end,
+
+                ["html"] = function()
+                    require("lspconfig")["html"].setup {
+                        capabilities = {
+                            textDocument = {
+                                completion = {
+                                    completionItem = {
+                                        snippetSupport = true,
+                                    },
+                                },
+                            },
+                        },
                     }
                 end,
 
@@ -339,8 +353,8 @@ return {
             mason_lspconfig.setup({
                 ensure_installed = {
                     "ast_grep",
-                    "bacon",
-                    "bacon_ls",
+                    -- "bacon",
+                    -- "bacon_ls",
                     "basedpyright",
                     "jsonls",
                     "lua_ls",
