@@ -191,6 +191,17 @@ return {
                 end,
 
                 -- provide a dedicated handler for specific servers
+                ["ast_grep"] = function()
+                    require("lspconfig")["ast_grep"].setup {
+                        default_config = {
+                            cmd = { 'ast-grep', 'lsp' },
+                            single_file_support = false,
+                            root_dir = nvim_lsp.util.root_pattern('sgconfig.yml'),
+                        },
+                    }
+                end,
+
+                -- provide a dedicated handler for specific servers
                 ["helm_ls"] = function()
                     require("lspconfig")["helm_ls"].setup {
                         settings = {
@@ -327,6 +338,9 @@ return {
 
             mason_lspconfig.setup({
                 ensure_installed = {
+                    "ast_grep",
+                    "bacon",
+                    "bacon_ls",
                     "basedpyright",
                     "jsonls",
                     "lua_ls",
