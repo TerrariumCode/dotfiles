@@ -256,6 +256,9 @@ return {
                             basedpyright = {
                                 -- Using Ruff's import organizer
                                 disableOrganizeImports = true,
+                                -- investigate slowdown
+                                reportImportCycles = false,
+                                typeCheckingMode = "recommended",
                             },
                         },
                     }
