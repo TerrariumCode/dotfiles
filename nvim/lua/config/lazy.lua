@@ -185,8 +185,10 @@ keymap("n", "<C-.>", ":30winc ><CR>", opts)
 
 keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", { noremap = true })
 
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
+-- jump up and down then center
+-- keymap("n", "<C-d>", "<C-d>zz", opts)
+-- keymap("n", "<C-u>", "<C-u>zz", opts)
+
 -- save file
 keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
