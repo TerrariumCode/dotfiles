@@ -19,3 +19,6 @@ rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]
 # brew install FiloSottile/musl-cross/musl-cross
 [target.x86_64-unknown-linux-musl]
 linker = "x86_64-linux-musl-gcc"
+
+[net]
+git-fetch-with-cli = true

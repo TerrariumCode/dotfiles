@@ -17,6 +17,7 @@
         state: link
         force: true
       loop:
+        - ['~/repos/dotfiles/cargo/config.toml', '~/.cargo/config.toml']
         - ['~/repos/dotfiles/alacritty-play.toml', '~/.config/alacritty/alacritty.toml']
         - ['~/repos/dotfiles/tmux-cfg', '~/.config/tmux']
         - ['~/repos/dotfiles/nvim', '~/.config/nvim']
