@@ -1,3 +1,5 @@
+set -Ux CLOUDHEALTH_TOKEN
+
 # fastly hdm
 set -Ux FASTLY_API_KEY
 set -Ux FASTLY_API_TOKEN $FASTLY_API_KEY

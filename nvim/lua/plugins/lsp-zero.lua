@@ -177,7 +177,7 @@ return {
                 init_options = {
                     runBaconInBackground = true,
                     updateOnSave = true,
-                    updateOnSaveWaitMillis = 10,
+                    updateOnSaveWaitMillis = 0,
                     updateOnChange = false,
                 }
             })
