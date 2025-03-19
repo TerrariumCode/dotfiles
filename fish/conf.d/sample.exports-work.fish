@@ -1,3 +1,5 @@
+set -Ux AWS_DEFAULT_REGION
+
 set -Ux CLOUDHEALTH_TOKEN
 
 # fastly hdm
