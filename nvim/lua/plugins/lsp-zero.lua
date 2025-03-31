@@ -388,4 +388,9 @@ return {
         opts = {},
     },
 
+    -- vcl syntax highlighting support
+    {
+        'fgsch/vim-varnish',
+    },
+
 }
