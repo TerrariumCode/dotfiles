@@ -67,6 +67,7 @@ return {
             { "<leader>m",  group = "Markdown" },
             { "<leader>mo", "<CMD>MarkdownPreviewToggle<CR>", desc = "Open Preview Toggle" },
             { "<leader>ms", "<CMD>Markview splitToggle<CR>",  desc = "Split Toggle" },
+            { "<leader>mt", "<CMD>Markview toggle<CR>",  desc = "Split Toggle" },
         })
 
         wk.add({
