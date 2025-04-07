@@ -50,6 +50,7 @@ return {
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>",    desc = "Git Blame Line" },
             { "<leader>gd", "<CMD>Neogit diff<CR>",            desc = "Neogit Diff" },
+            { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
             { "<leader>gl", "<CMD>Neogit log<CR>",             desc = "Neogit Log" },
             { "<leader>gn", "<CMD>Neogit<CR>",                 desc = "Neogit Open" },
             { "<leader>go", function() Snacks.gitbrowse() end, desc = "Open Remote Git URL" },
@@ -67,7 +68,7 @@ return {
             { "<leader>m",  group = "Markdown" },
             { "<leader>mo", "<CMD>MarkdownPreviewToggle<CR>", desc = "Open Preview Toggle" },
             { "<leader>ms", "<CMD>Markview splitToggle<CR>",  desc = "Split Toggle" },
-            { "<leader>mt", "<CMD>Markview toggle<CR>",  desc = "Split Toggle" },
+            { "<leader>mt", "<CMD>Markview toggle<CR>",       desc = "Split Toggle" },
         })
 
         wk.add({
