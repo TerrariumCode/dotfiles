@@ -5,6 +5,7 @@ return {
         options = {
             section_separators = { "", "" },
             component_separators = { "", "" },
+            theme = "auto",
         },
         sections = {
             lualine_a = { "mode" },
