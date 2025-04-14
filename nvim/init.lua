@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
         -- "bacon",
         -- "bacon-ls",
         "basedpyright",
-        -- "htmx-lsp",
+        -- "htmx",  -- borked right now on macos
         "jsonls",
         "lua_ls",
         "marksman",
@@ -74,7 +74,6 @@ vim.lsp.config("html", {
     },
 })
 
-
 -- JSON
 vim.lsp.config("jsonls", {
     settings = {
@@ -119,8 +118,7 @@ vim.lsp.config("lua_ls", {
             },
         },
     },
-}
-)
+})
 
 -- PYTHON
 vim.lsp.config("basedpyright", {

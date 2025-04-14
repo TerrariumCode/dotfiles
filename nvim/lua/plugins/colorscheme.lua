@@ -1,9 +1,8 @@
 return {
-    "philosofonusus/morta.nvim",
-    name = 'morta',
+    "miikanissi/modus-themes.nvim",
+    lazy = false,
     priority = 1000,
-    opts = {},
     config = function()
-        vim.cmd.colorscheme 'morta'
+        vim.cmd("colorscheme modus")
     end,
 }

@@ -28,6 +28,9 @@ return {
                     size = 0.3,
                 },
             },
+            lsp = {
+                win = { position = "right" },
+            },
         },
     },
     cmd = "Trouble",
