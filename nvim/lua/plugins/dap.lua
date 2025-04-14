@@ -100,8 +100,6 @@ return {
                 },
             })
 
-            vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-
             local dap = require("dap")
             dap.listeners.before.attach.dapui_config = function()
                 dapui.open()

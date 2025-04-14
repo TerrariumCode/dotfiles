@@ -52,11 +52,7 @@ return {
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>",    desc = "Git Blame Line" },
             { "<leader>gd", "<CMD>Neogit diff<CR>",            desc = "Neogit Diff" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
-            { "<leader>gl", "<CMD>Neogit log<CR>",             desc = "Neogit Log" },
-            { "<leader>gn", "<CMD>Neogit<CR>",                 desc = "Neogit Open" },
             { "<leader>go", function() Snacks.gitbrowse() end, desc = "Open Remote Git URL" },
-            { "<leader>gp", "<CMD>Neogit push<CR>",            desc = "Neogit Push" },
-            { "<leader>gr", "<CMD>Neogit rebase<CR>",          desc = "Neogit Rebase" },
         })
 
         wk.add({

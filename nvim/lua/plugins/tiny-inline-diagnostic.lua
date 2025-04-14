@@ -4,13 +4,9 @@ return {
     priority = 1000,
     config = function()
         require('tiny-inline-diagnostic').setup({
-            preset = "powerline",
+            preset = "modern",
             options = {
                 show_source = true,
-                break_line = {
-                    enabled = true,
-                    after = 40,
-                },
                 multilines = {
                     enabled = true,
                     always_show = true,
