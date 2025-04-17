@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
         -- "bacon",
         -- "bacon-ls",
         "basedpyright",
+        "html",
         -- "htmx",  -- borked right now on macos
         "jsonls",
         "lua_ls",
