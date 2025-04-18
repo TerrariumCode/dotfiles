@@ -4,6 +4,7 @@ end
 
 set -U fish_greeting
 
+fish_add_path /opt/nvim-linux-x86_64/bin
 fish_add_path {$HOME}/.pyenv/bin
 fish_add_path $(pyenv root)/shims
 fish_add_path {$HOME}/.local/bin

@@ -17,7 +17,7 @@ packages:
   - i3xrocks-temp
   - i3xrocks-time
   - i3xrocks-nm-vpn
-  - neovim
+  # - neovim
   - regolith-desktop
   - regolith-session-flashback
   - regolith-look-lascaille
