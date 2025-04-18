@@ -11,9 +11,11 @@ return {
             lualine_a = { "mode" },
             lualine_b = { "branch", "diff", "diagnostics" },
             lualine_c = { "filename", "location" },
-            lualine_x = { "encoding", "fileformat", "filetype" },
-            lualine_y = { "progress" },
-            lualine_z = {},
+            lualine_x = {
+                -- { require('mcphub.extensions.lualine') },
+            },
+            lualine_y = { "encoding", "fileformat", "filetype" },
+            lualine_z = { "progress" },
         },
     },
 }

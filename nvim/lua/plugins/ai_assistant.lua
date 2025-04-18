@@ -16,11 +16,27 @@ return {
                         },
                     })
                 end,
+                llama3 = function()
+                    return require("codecompanion.adapters").extend("ollama", {
+                        name = "llama3", -- Give this adapter a different name to differentiate it from the default ollama adapter
+                        schema = {
+                            model = {
+                                default = "llama3:latest",
+                            },
+                            num_ctx = {
+                                default = 16384,
+                            },
+                            num_predict = {
+                                default = -1,
+                            },
+                        },
+                    })
+                end,
             },
             strategies = {
-                stream = {
-                    adapter = "ollama",
-                },
+                -- stream = {
+                --     adapter = "ollama",
+                -- },
                 chat = {
                     adapter = "copilot",
                     tools = {
@@ -50,8 +66,8 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
         },
-        cmd = "MCPHub",                          -- lazy load by default
-        build = "bundled_build.lua",  -- Use this and set use_bundled_binary = true in opts  (see Advanced configuration)
+        cmd = "MCPHub",              -- lazy load by default
+        build = "bundled_build.lua", -- Use this and set use_bundled_binary = true in opts  (see Advanced configuration)
         config = function()
             require("mcphub").setup({
                 use_bundled_binary = true,

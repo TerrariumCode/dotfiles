@@ -24,6 +24,7 @@ require("mason-lspconfig").setup({
 vim.lsp.enable({
     "bacon_ls",
     "basedpyright",
+    "dockerls",
     "helm_ls",
     "html",
     "htmx",
