@@ -29,6 +29,18 @@ return {
     --     },
     -- },
 
+    -- Golang
+    {
+        "olexsmir/gopher.nvim",
+        ft = "go",
+        build = function()
+            -- will update plugin's deps on every update
+            vim.cmd.GoInstallDeps()
+        end,
+        ---@type gopher.Config
+        opts = {},
+    },
+
     -- Rust
     {
         "mrcjkb/rustaceanvim",
@@ -43,6 +55,7 @@ return {
             require("crates").setup()
         end,
     },
+
 
     -- typescript
     {
@@ -61,6 +74,7 @@ return {
         },
         opts = {},
     },
+
 
     -- vcl syntax highlighting support
     {
