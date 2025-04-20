@@ -10,6 +10,7 @@ fish_add_path $(pyenv root)/shims
 fish_add_path {$HOME}/.local/bin
 fish_add_path {$HOME}/.cargo/bin
 fish_add_path /usr/local/go/bin
+fish_add_path {$HOME}/go/bin
 fish_add_path {$HOME}/gems/bin
 fish_add_path /opt/maven/bin
 fish_add_path /snap/bin

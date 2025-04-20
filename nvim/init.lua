@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
         -- "bacon",
         -- "bacon-ls",
         "basedpyright",
+        "gopls",
         "html",
         -- "htmx",  -- borked right now on macos
         "jsonls",
@@ -26,6 +27,7 @@ vim.lsp.enable({
     "bacon_ls",
     "basedpyright",
     "dockerls",
+    "gopls",
     "helm_ls",
     "html",
     "htmx",
@@ -52,6 +54,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
         vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
     end,
+})
+
+-- GO
+vim.lsp.config("gopls", {
+    settings = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+            unusedParams = true,
+        },
+    },
 })
 
 -- HELM

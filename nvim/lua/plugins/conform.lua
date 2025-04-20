@@ -46,6 +46,7 @@ return {
     opts = {
         formatters_by_ft = {
             css = { "stylelint" },
+            go = { "goimports", "gofmt" },
             html = { "djlint" },
             javascript = { "prettierd", "prettier", stop_after_first = true },
             json = { "jq" },
