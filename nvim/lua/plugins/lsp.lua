@@ -5,42 +5,66 @@ return {
     "neovim/nvim-lspconfig",
     "b0o/schemastore.nvim",
 
+    -- maybe add one day
+    -- {
+    --     "nvimdev/lspsaga.nvim",
+    --     config = function()
+    --         require('lspsaga').setup({
+    --             lightbulb = { ignore = { ft = { 'http' } } }
+    --         })
+    --     end,
+    --     ft = {
+    --         "docker",
+    --         "helm",
+    --         "html",
+    --         "http",
+    --         "lua",
+    --         "python",
+    --         "rust",
+    --         "toml",
+    --     },
+    --     dependencies = {
+    --         "nvim-treesitter/nvim-treesitter",
+    --         "nvim-tree/nvim-web-devicons",
+    --     },
+    -- },
+
     -- Rust
     {
-        'mrcjkb/rustaceanvim',
-        version = '^6', -- Recommended
+        "mrcjkb/rustaceanvim",
+        version = "^6", -- Recommended
         lazy = false,   -- This plugin is already lazy
     },
 
     {
-        'saecki/crates.nvim',
-        tag = 'stable',
+        "saecki/crates.nvim",
+        tag = "stable",
         config = function()
-            require('crates').setup()
+            require("crates").setup()
         end,
     },
 
     -- typescript
     {
-        'pmizio/typescript-tools.nvim',
+        "pmizio/typescript-tools.nvim",
         dependencies = {
-            'neovim/nvim-lspconfig',
-            'nvim-lua/plenary.nvim',
+            "neovim/nvim-lspconfig",
+            "nvim-lua/plenary.nvim",
         },
         ft = {
-            'typescript',
-            'typescriptreact',
-            'typescript.tsx',
-            'javascript',
-            'javascriptreact',
-            'javascript.jsx',
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
         },
         opts = {},
     },
 
     -- vcl syntax highlighting support
     {
-        'fgsch/vim-varnish',
+        "fgsch/vim-varnish",
     },
 
 }

@@ -35,8 +35,9 @@ return {
         wk.add({
             { "<leader>a",  group = "AI" },
             { "<leader>aa", "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
-            { "<leader>ac", "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
             { "<leader>ae", "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
+            { "<leader>ac", "<CMD>CodeCompanion /chat<CR>",      desc = "Open Chat" },
+            { "<leader>ag", "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
             { "<leader>am", "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
             { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
             { "<leader>au", "<CMD>CodeCompanion /unittests<CR>", desc = "Generate Unit Tests", mode = { "n", "v" } },

@@ -16,6 +16,7 @@ require("mason-lspconfig").setup({
         "rust_analyzer",
         "tailwindcss",
         "terraformls",
+        "taplo",
         "ts_ls",
         "yamlls",
     },
@@ -30,6 +31,7 @@ vim.lsp.enable({
     "htmx",
     "lua_ls",
     "ruff",
+    "taplo",  -- toml
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -135,7 +137,6 @@ vim.lsp.config("basedpyright", {
     },
 })
 
-
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
     callback = function(args)
@@ -223,4 +224,11 @@ vim.lsp.config("yamlls", {
             schemas = require('schemastore').yaml.schemas(),
         },
     },
+})
+
+-- add http ft for kulala
+vim.filetype.add({
+  extension = {
+    ['http'] = 'http',
+  },
 })
