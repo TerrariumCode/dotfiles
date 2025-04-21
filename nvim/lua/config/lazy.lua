@@ -163,9 +163,6 @@ local keymap = vim.api.nvim_set_keymap
 -- Silent keymap option
 local opts = { silent = true }
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-
 keymap("v", "<leader>y", '"+y', { noremap = true })
 
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
