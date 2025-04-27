@@ -36,7 +36,7 @@ return {
             { "<leader>a",  group = "AI" },
             { "<leader>aa", "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
             { "<leader>ae", "<CMD>CodeCompanion /explain<CR>",   desc = "Explain Code",        mode = { "n", "v" } },
-            { "<leader>ac", "<CMD>CodeCompanion /chat<CR>",      desc = "Open Chat" },
+            { "<leader>ac", "<CMD>CodeCompanionChat<CR>",        desc = "Open Chat" },
             { "<leader>ag", "<CMD>CodeCompanion /commit<CR>",    desc = "Commit Message" },
             { "<leader>am", "<CMD>MCPHub<CR>",                   desc = "Open MCPHub",         mode = { "n" } },
             { "<leader>at", "<CMD>CodeCompanionChat Toggle<CR>", desc = "Toggle" },
