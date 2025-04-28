@@ -49,7 +49,7 @@ foreground = "0xc8d3f5"
 size = 14.0
 
 [font.normal]
-family = "BlexMono Nerd Font Mono"
+family = "Maple Mono NF"
 
 [[keyboard.bindings]]
 chars = "\u0015"
