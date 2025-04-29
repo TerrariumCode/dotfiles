@@ -15,8 +15,7 @@ hide_when_typing = true
 size = 14.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Bold"
+family = "Maple Mono NL NF"
 # family = "Monofur Nerd Font" # too fun
 
 [colors]
