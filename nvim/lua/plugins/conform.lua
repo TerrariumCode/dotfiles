@@ -52,11 +52,12 @@ return {
             json = { "jq" },
             lua = { "stylua" },
             markdown = { "markdownlint" },
-            python = { "black", "ruff" },
             postgresql = { "pg_format" },
+            python = { "black", "ruff" },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
             xml = { "xmlformatter" },
+            yaml = { "yq" },
             ["*"] = { "trim_whitespace", "trim_newlines" },
         },
         format_on_save = function(bufnr)
