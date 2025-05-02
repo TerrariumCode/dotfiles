@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
         -- "bacon",
         -- "bacon-ls",
         "basedpyright",
+        "cssls",
         "gopls",
         "html",
         -- "htmx",  -- borked right now on macos
@@ -26,6 +27,7 @@ require("mason-lspconfig").setup({
 vim.lsp.enable({
     "bacon_ls",
     "basedpyright",
+    "cssls",
     "dockerls",
     "gopls",
     "helm_ls",

@@ -75,10 +75,10 @@ return {
         opts = {},
     },
 
+    -- jinja2
+    { "HiPhish/jinja.vim", },
 
     -- vcl syntax highlighting support
-    {
-        "fgsch/vim-varnish",
-    },
+    { "fgsch/vim-varnish", },
 
 }

@@ -57,7 +57,7 @@ return {
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
             xml = { "xmlformatter" },
-            yaml = { "yq" },
+            yaml = { "yamlfix" },
             ["*"] = { "trim_whitespace", "trim_newlines" },
         },
         format_on_save = function(bufnr)

@@ -31,7 +31,6 @@ require("lazy").setup({
     checker = { enabled = true },
 })
 
-vim.g.mapleader = " "
 -- skip backwards compatibility routines and speed up loading
 vim.g.skip_ts_context_commentstring_module = true
 
@@ -164,6 +163,18 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { silent = true }
 
 keymap("v", "<leader>y", '"+y', { noremap = true })
+
+-- open oil keymap + autocmd to also open with preview
+keymap("n", "-", "<CMD>Oil --float<CR>", opts)
+vim.api.nvim_create_autocmd("User", {
+    pattern = "OilEnter",
+    callback = vim.schedule_wrap(function(args)
+        local oil = require("oil")
+        if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+            oil.open_preview()
+        end
+    end),
+})
 
 keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", { noremap = true, silent = true })
 keymap("n", "<C-S>s", ":vert sb", { noremap = true, silent = true })
