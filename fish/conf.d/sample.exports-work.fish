@@ -1,5 +1,7 @@
 set -Ux AWS_DEFAULT_REGION
 
+set -Ux CLAUDE_CODE_USE_BEDROCK 1
+
 set -Ux CLOUDHEALTH_TOKEN
 
 # fastly hdm
