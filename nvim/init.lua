@@ -3,7 +3,7 @@ require("config.lazy")
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
-        "ast_grep",
+        -- "ast_grep",
         -- "bacon",
         -- "bacon-ls",
         "basedpyright",
@@ -34,7 +34,7 @@ vim.lsp.enable({
     "htmx",
     "lua_ls",
     "ruff",
-    "taplo",  -- toml
+    "taplo", -- toml
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -183,26 +183,20 @@ vim.g.rustaceanvim = {
         default_settings = {
             -- rust-analyzer language server configuration
             ['rust-analyzer'] = {
-                server = {
-                    settings = {
-                        ["rust-analyzer"] = {
-                            cargo = {
-                                buildScripts = {
-                                    enable = true,
-                                },
-                                features = "all",
-                            },
-                            checkOnSave = {
-                                enable = false,
-                            },
-                            diagnostics = {
-                                enable = false,
-                            },
-                            procMacro = {
-                                enabled = true,
-                            },
-                        },
+                cargo = {
+                    buildScripts = {
+                        enable = true,
                     },
+                    features = "all",
+                },
+                checkOnSave = {
+                    enable = false,
+                },
+                diagnostics = {
+                    enable = false,
+                },
+                procMacro = {
+                    enabled = true,
                 },
             },
         },
@@ -226,11 +220,4 @@ vim.lsp.config("yamlls", {
             schemas = require('schemastore').yaml.schemas(),
         },
     },
-})
-
--- add http ft for kulala
-vim.filetype.add({
-  extension = {
-    ['http'] = 'http',
-  },
 })
