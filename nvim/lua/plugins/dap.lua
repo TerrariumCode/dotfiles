@@ -16,6 +16,22 @@ return {
                 name = 'lldb'
             }
 
+            dap.adapters.vcl = {
+                name = 'falco',
+                type = 'executable',
+                command = 'falco',
+                args = { 'dap' },
+            }
+            dap.configurations.vcl = {
+                {
+                    type = 'vcl',
+                    request = 'launch',
+                    name = "Debug VCL by falco",
+                    mainVCL = "${file}",
+                    includePaths = { "${workspaceFolder}" },
+                },
+            }
+
             dap.configurations.rust = {
                 {
                     name = 'Launch',
