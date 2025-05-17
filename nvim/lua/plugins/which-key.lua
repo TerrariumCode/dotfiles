@@ -44,11 +44,6 @@ return {
         })
 
         wk.add({
-            { "<leader>c",   group = "CSV" },
-            { "<leader>csv", "<CMD>CsvViewToggle<CR>", desc = "Toggle CSV View" },
-        })
-
-        wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>",    desc = "Git Blame Line" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
@@ -79,11 +74,6 @@ return {
         })
 
         wk.add({
-            { "<leader>s", "<CMD>ToggleTerm size=20 direction=horizontal name=horizontal<CR>", desc = "Toggle Right Vertical" },
-            { "<leader>S", "<CMD>ToggleTerm size=80 direction=vertical name=vertical<CR>",     desc = "Toggle Down Horizontal" },
-        })
-
-        wk.add({
             { "<leader>f",  group = "Telescope" },
             { "<leader>fb", ":Telescope buffers<CR>",                                     desc = "Find Buffers" },
             { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
@@ -102,8 +92,9 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>l", function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
-            { "<leader>z", "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
+            { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
+            { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
         })
     end
 }
