@@ -1,8 +1,9 @@
+command=/usr/local/bin/tmux-startup
 window-decoration = false
 mouse-hide-while-typing = true
 bold-is-bright = true
 link-url = true
-font-family = "FiraCode Nerd Font Mono"
+font-family = "JetBrains Mono NF"
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
