@@ -3,7 +3,6 @@ require("config.lazy")
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
-        -- "ast_grep",
         -- "bacon",
         -- "bacon-ls",
         "basedpyright",
@@ -34,6 +33,7 @@ vim.lsp.enable({
     "htmx",
     "lua_ls",
     "ruff",
+    "rust_analyzer",
     "taplo", -- toml
 })
 
@@ -174,37 +174,60 @@ vim.lsp.config("bacon_ls", {
     }
 })
 
-vim.g.rustaceanvim = {
-    -- Plugin configuration
-    tools = {
-    },
-    -- LSP configuration
-    server = {
-        default_settings = {
-            -- rust-analyzer language server configuration
-            ['rust-analyzer'] = {
-                cargo = {
-                    buildScripts = {
-                        enable = true,
-                    },
-                    features = "all",
+vim.lsp.config("rust_analyzer", {
+    settings = {
+        ['rust-analyzer'] = {
+            cargo = {
+                buildScripts = {
+                    enable = true,
                 },
-                checkOnSave = {
-                    enable = false,
-                },
-                diagnostics = {
-                    enable = false,
-                },
-                procMacro = {
-                    enabled = true,
-                },
+                features = "all",
+            },
+            checkOnSave = {
+                enable = false,
+            },
+            diagnostics = {
+                enable = false,
+            },
+            procMacro = {
+                enabled = true,
             },
         },
-    },
-    -- DAP configuration
-    dap = {
-    },
-}
+    }
+})
+
+-- TODO: REMOVED for now as it's borked, don't know why
+-- vim.g.rustaceanvim = {
+--     -- Plugin configuration
+--     tools = {
+--     },
+--     -- LSP configuration
+--     server = {
+--         default_settings = {
+--             -- rust-analyzer language server configuration
+--             ['rust-analyzer'] = {
+--                 cargo = {
+--                     buildScripts = {
+--                         enable = true,
+--                     },
+--                     features = "all",
+--                 },
+--                 checkOnSave = {
+--                     enable = true,
+--                 },
+--                 diagnostics = {
+--                     enable = true,
+--                 },
+--                 procMacro = {
+--                     enabled = true,
+--                 },
+--             },
+--         },
+--     },
+--     -- DAP configuration
+--     dap = {
+--     },
+-- }
 
 -- YAML
 vim.lsp.config("yamlls", {

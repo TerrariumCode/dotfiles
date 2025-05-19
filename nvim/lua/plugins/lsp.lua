@@ -43,10 +43,15 @@ return {
 
     -- Rust
     {
-        "mrcjkb/rustaceanvim",
-        version = "^6", -- Recommended
-        lazy = false,   -- This plugin is already lazy
+        'vxpm/ferris.nvim',
+        opts = {},
     },
+    -- TODO: REMOVED for now as it's borked, don't know why
+    -- {
+    --     "mrcjkb/rustaceanvim",
+    --     version = "^6", -- Recommended
+    --     lazy = false,   -- This plugin is already lazy
+    -- },
 
     {
         "saecki/crates.nvim",
