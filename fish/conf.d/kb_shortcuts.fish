@@ -43,6 +43,9 @@ abbr -a -- kc kubectl
 abbr -a -- kx kubectx
 abbr -a -- kn kubens
 
+# hypr things
+abbr -a -- mvm "hyprctl dispatch moveworkspacetomonitor"
+
 # random things
 abbr -a -- cb clipboard
 abbr -a -- clear-dns "sudo killall -HUP mDNSResponder"

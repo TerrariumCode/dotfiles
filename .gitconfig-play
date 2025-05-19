@@ -1,10 +1,9 @@
 [user]
 	name = cmac4603
 	email = cmac4603@users.noreply.github.com
-	signingkey = 426A472EEF048AB1
+	signingkey = 9DCEA3EB3F7EB517
 
 [commit]
-	template = /home/cmac4603/.gitcommitmsg.txt
 	gpgsign = true
 
 [push]

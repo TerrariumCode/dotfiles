@@ -2,11 +2,11 @@
   hosts: localhost
   tasks:
 
-    - ansible.builtin.include_role:
-        name: roles/apt-packages
-
-    - ansible.builtin.include_role:
-        name: roles/nerdfonts
+    # - ansible.builtin.include_role:
+    #     name: roles/apt-packages
+    #
+    # - ansible.builtin.include_role:
+    #     name: roles/nerdfonts
 
     - name: All the symlinks, get it done
       ansible.builtin.file:
@@ -17,14 +17,13 @@
         state: link
         force: true
       loop:
-        - ['~/repos/dotfiles/cargo/config.toml', '~/.cargo/config.toml']
-        - ['~/repos/dotfiles/alacritty-play.toml', '~/.config/alacritty/alacritty.toml']
-        - ['~/repos/dotfiles/tmux-cfg', '~/.config/tmux']
-        - ['~/repos/dotfiles/nvim', '~/.config/nvim']
-        - ['~/repos/dotfiles/.gitconfig-play', '~/.gitconfig']
-        - ['~/repos/dotfiles/fish/conf.d/exports.fish', '~/.config/fish/conf.d/exports.fish']
-        - ['~/repos/dotfiles/fish/conf.d/fnm.fish', '~/.config/fish/conf.d/fnm.fish']
-        - ['~/repos/dotfiles/fish/conf.d/kb_shortcuts.fish', '~/.config/fish/conf.d/kb_shortcuts.fish']
-        - ['~/repos/dotfiles/fish/conf.d/stern.fish', '~/.config/fish/conf.d/stern.fish']
-        - ['~/repos/dotfiles/fish/functions/fish_user_key_bindings.fish', '~/.config/fish/functions/fish_user_key_bindings.fish']
-        - ['~/repos/dotfiles/regolith/Xresources', '~/.config/regolith3/Xresources']
+        - ['~/dev/dotfiles.git/main/cargo/config.toml', '~/.cargo/config.toml']
+        - ['~/dev/dotfiles.git/main/alacritty-play.toml', '~/.config/alacritty/alacritty.toml']
+        - ['~/dev/dotfiles.git/main/tmux-cfg/.tmux.conf', '~/.tmux.conf']
+        - ['~/dev/dotfiles.git/main/nvim', '~/.config/nvim']
+        - ['~/dev/dotfiles.git/main/.gitconfig-play', '~/.gitconfig']
+        - ['~/dev/dotfiles.git/main/fish/conf.d/exports.fish', '~/.config/fish/conf.d/exports.fish']
+        - ['~/dev/dotfiles.git/main/fish/conf.d/fnm.fish', '~/.config/fish/conf.d/fnm.fish']
+        - ['~/dev/dotfiles.git/main/fish/conf.d/kb_shortcuts.fish', '~/.config/fish/conf.d/kb_shortcuts.fish']
+        - ['~/dev/dotfiles.git/main/fish/conf.d/stern.fish', '~/.config/fish/conf.d/stern.fish']
+        - ['~/dev/dotfiles.git/main/fish/functions/fish_user_key_bindings.fish', '~/.config/fish/functions/fish_user_key_bindings.fish']
