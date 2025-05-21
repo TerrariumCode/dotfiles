@@ -93,6 +93,7 @@ return {
         -- random assortment
         wk.add({
             { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
+            { "<leader>ht",  ":Hardtime toggle",                            desc = "Hardtime Toggle" },
             { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
             { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
         })
