@@ -1,0 +1,22 @@
+{
+  "lsp": {
+    "rust": {
+      "args": [
+        "parse",
+        "--no-dump"
+      ],
+      "command": "rust-analyzer",
+      "disabled": false
+    },
+    "typescript": {
+      "args": [
+        "--stdio"
+      ],
+      "command": "typescript-language-server",
+      "disabled": false
+    }
+  },
+  "tui": {
+    "theme": "opencode"
+  }
+}
