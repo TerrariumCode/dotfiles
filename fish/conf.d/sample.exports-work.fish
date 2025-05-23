@@ -27,6 +27,9 @@ set -Ux ANSIBLE_VAULT_PASSWORD
 set -Ux SEM3_ANSIBLE_VAULT_PASSWORD
 set -Ux VAULT_ADDR https://vault.hearstapps.com
 
+# this is being set wrong somewhere, thanks apple
+set -Ux SHELL /opt/homebrew/bin/fish
+
 set -Ux REGISTRY_HOST
 
 set -Ux WIZ_CLIENT_ID

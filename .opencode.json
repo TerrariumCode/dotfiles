@@ -1,5 +1,12 @@
 {
   "lsp": {
+    "python": {
+      "args": [
+        "-"
+      ],
+      "command": "basedpyright",
+      "disabled": false
+    },
     "rust": {
       "args": [
         "parse",
@@ -15,6 +22,9 @@
       "command": "typescript-language-server",
       "disabled": false
     }
+  },
+  "shell": {
+    "path": "/bin/zsh"
   },
   "tui": {
     "theme": "opencode"
