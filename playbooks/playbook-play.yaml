@@ -8,6 +8,11 @@
     # - ansible.builtin.include_role:
     #     name: roles/nerdfonts
 
+    - name: Git clone tpm (tmux plugin manager)
+      ansible.builtin.git:
+        repo: 'https://github.com/tmux-plugins/tpm'
+        dest: ~/.tmux/plugins/tpm
+
     - name: All the symlinks, get it done
       ansible.builtin.file:
         src: "{{ item[0] }}"
@@ -18,12 +23,18 @@
         force: true
       loop:
         - ['~/dev/dotfiles.git/main/cargo/config.toml', '~/.cargo/config.toml']
-        - ['~/dev/dotfiles.git/main/alacritty-play.toml', '~/.config/alacritty/alacritty.toml']
         - ['~/dev/dotfiles.git/main/tmux-cfg/tmux.conf', '~/.tmux.conf']
+        # - ['~/dev/dotfiles.git/main/tmux-cfg/tmux-startup.sh', '/usr/local/bin/tmux-startup']
         - ['~/dev/dotfiles.git/main/nvim', '~/.config/nvim']
-        - ['~/dev/dotfiles.git/main/tmux-cfg/tmux-startup.sh', '/usr/local/bin/tmux-startup']
         - ['~/dev/dotfiles.git/main/.gitconfig-play', '~/.gitconfig']
+        - ['~/dev/dotfiles.git/main/fish/completions/asdf.fish', '~/.config/fish/completions/asdf.fish']
+        - ['~/dev/dotfiles.git/main/fish/config-play.fish', '~/.config/fish/config.fish']
         - ['~/dev/dotfiles.git/main/fish/conf.d/exports.fish', '~/.config/fish/conf.d/exports.fish']
         - ['~/dev/dotfiles.git/main/fish/conf.d/kb_shortcuts.fish', '~/.config/fish/conf.d/kb_shortcuts.fish']
         - ['~/dev/dotfiles.git/main/fish/conf.d/stern.fish', '~/.config/fish/conf.d/stern.fish']
+        - ['~/dev/dotfiles.git/main/fish/conf.d/exports-play.fish', '~/.config/fish/conf.d/exports.fish']
         - ['~/dev/dotfiles.git/main/fish/functions/fish_user_key_bindings.fish', '~/.config/fish/functions/fish_user_key_bindings.fish']
+        - ['~/dev/dotfiles.git/main/hypr', '~/.config/hypr']
+        - ['~/dev/dotfiles.git/main/waybar', '~/.config/waybar']
+        - ['~/dev/dotfiles.git/main/rofi', '~/.config/rofi']
+        - ['~/dev/dotfiles.git/main/ghostty', '~/.config/ghostty/config']

@@ -6,7 +6,6 @@ set -U fish_greeting
 
 fish_add_path /opt/nvim-linux-x86_64/bin
 fish_add_path {$HOME}/.pyenv/bin
-fish_add_path $(pyenv root)/shims
 fish_add_path {$HOME}/.local/bin
 fish_add_path {$HOME}/.cargo/bin
 fish_add_path /usr/local/go/bin
@@ -14,14 +13,14 @@ fish_add_path {$HOME}/go/bin
 fish_add_path {$HOME}/gems/bin
 fish_add_path /opt/maven/bin
 fish_add_path /snap/bin
-fish_add_path {$HOME}/.dotnet/tools
+# fish_add_path {$HOME}/.dotnet/tools
 fish_add_path /usr/local/lib/apache-maven-3.9.6/bin
 fish_add_path -g -p /usr/bin/flutter/bin/
 
 set fish_color_autosuggestion red
 
 # allows dotnet tools to run
-export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
+# export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
 
 # some tmux thing
 export DISABLE_AUTO_TITLE='true'
@@ -37,7 +36,20 @@ export FZF_DEFAULT_OPTS='--color=bg+:#3c3836,bg:#32302f,spinner:#fb4934,hl:#9283
 alias pbcopy='xclip -selection clipboard'
 
 # asdf for elixir (can be used for others too)
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
+# ASDF configuration code
+if test -z $ASDF_DATA_DIR
+    set _asdf_shims "$HOME/.asdf/shims"
+else
+    set _asdf_shims "$ASDF_DATA_DIR/shims"
+end
+
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+if not contains $_asdf_shims $PATH
+    set -gx --prepend PATH $_asdf_shims
+end
+set --erase _asdf_shims
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"

@@ -7,18 +7,11 @@ cd playbooks/
 make run-play
 ```
 
-### Installing neovim
-```bash
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz                                                                                               ─╯
-    sudo rm -rf /opt/nvim
-    sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-```
-
 ## Work Machine
 ```bash
 # make sure to use the full path
-ln -s ~/repos/dotfiles/.zshrc-work ~/.zshrc
 ln -s ~/repos/dotfiles/tmux-cfg ~/.config/tmux
+ln -s ~/dev/dotfiles.git/main/hypr ~/.config/hypr
 ln -s ~/repos/dotfiles/nvim ~/.config/nvim
 ln -s ~/repos/dotfiles/custom_zsh/alias-work.zsh ~/.oh-my-zsh/custom/alias.zsh
 ln -s ~/repos/dotfiles/custom_zsh/themes/xxf.zsh-theme ~/.oh-my-zsh/custom/themes/xxf.zsh-theme

@@ -1,7 +1,7 @@
 [user]
-	name = cmac4603
-	email = cmac4603@users.noreply.github.com
-	signingkey = 9DCEA3EB3F7EB517
+	name = TerrariumCode
+	email = 12590206+TerrariumCode@users.noreply.github.com
+	signingkey = 483EBF3C43B95145
 
 [commit]
 	gpgsign = true

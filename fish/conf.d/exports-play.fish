@@ -1,0 +1,1 @@
+set -Ux GITHUB_TOKEN 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
