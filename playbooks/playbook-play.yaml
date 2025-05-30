@@ -37,4 +37,5 @@
         - ['~/dev/dotfiles.git/main/hypr', '~/.config/hypr']
         - ['~/dev/dotfiles.git/main/waybar', '~/.config/waybar']
         - ['~/dev/dotfiles.git/main/rofi', '~/.config/rofi']
+        - ['~/dev/dotfiles.git/main/dunst/', '~/.config/dunst']
         - ['~/dev/dotfiles.git/main/ghostty', '~/.config/ghostty/config']
