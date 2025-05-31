@@ -55,3 +55,6 @@ set --erase _asdf_shims
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# opencode
+fish_add_path /home/cmac/.opencode/bin
