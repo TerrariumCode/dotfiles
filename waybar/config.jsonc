@@ -10,7 +10,6 @@
     "custom/reboot",
     "custom/power"
   ],
-  "modules-center": ["hyprland/window"],
   "modules-right": [
     "network",
     "battery",
@@ -43,24 +42,6 @@
       "10": "",
       "default": ""
     }
-  },
-  "custom/lock": {
-  "format": "<span color='#00FFFF'>  </span>",
-  "on-click": "hyprlock",
-  "tooltip": true,
-  "tooltip-format": "Lock"
-  },
-  "custom/reboot": {
-    "format": "<span color='#FFD700'>  </span>",
-    "on-click": "systemctl reboot",
-    "tooltip": true,
-    "tooltip-format": "Reboot"
-  },
-  "custom/power": {
-    "format": "<span color='#FF4040'>  </span>",
-    "on-click": "systemctl poweroff",
-    "tooltip": true,
-    "tooltip-format": "Power Off"
   },
   "network": {
     "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
@@ -150,6 +131,6 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "bluetooth-manager"
+    "on-click": "blueman-manager"
   }
 }
