@@ -1,4 +1,19 @@
 {
+  "agents": {
+    "coder": {
+      "maxTokens": 5000,
+      "model": "claude-4-opus",
+      "reasoningEffort": "medium"
+    },
+    "task": {
+      "maxTokens": 5000,
+      "model": "claude-4-opus"
+    },
+    "title": {
+      "maxTokens": 80,
+      "model": "claude-4-opus"
+    }
+  },
   "lsp": {
     "python": {
       "args": [
