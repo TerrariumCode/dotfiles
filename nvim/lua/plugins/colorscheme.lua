@@ -1,11 +1,11 @@
 return {
-    "scottmckendry/cyberdream.nvim",
+    'ribru17/bamboo.nvim',
     lazy = false,
     priority = 1000,
-    opts = {
-        borderless_pickers = true,
-    },
     config = function()
-        vim.cmd("colorscheme cyberdream")
+        require('bamboo').setup {
+            style = "multiplex",
+        }
+        require('bamboo').load()
     end,
 }
