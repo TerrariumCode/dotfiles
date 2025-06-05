@@ -1,47 +1,36 @@
 {
-  "agents": {
-    "coder": {
-      "maxTokens": 5000,
-      "model": "claude-4-opus",
-      "reasoningEffort": "medium"
-    },
-    "task": {
-      "maxTokens": 5000,
-      "model": "claude-4-opus"
-    },
-    "title": {
-      "maxTokens": 80,
-      "model": "claude-4-opus"
-    }
-  },
+  "data": {},
   "lsp": {
     "python": {
+      "enabled": true,
+      "command": "basedpyright",
       "args": [
         "-"
       ],
-      "command": "basedpyright",
-      "disabled": false
+      "options": null
     },
     "rust": {
+      "enabled": true,
+      "command": "rust-analyzer",
       "args": [
         "parse",
         "--no-dump"
       ],
-      "command": "rust-analyzer",
-      "disabled": false
+      "options": null
     },
     "typescript": {
+      "enabled": true,
+      "command": "typescript-language-server",
       "args": [
         "--stdio"
       ],
-      "command": "typescript-language-server",
-      "disabled": false
+      "options": null
     }
+  },
+  "tui": {
+    "theme": "dracula"
   },
   "shell": {
     "path": "/bin/zsh"
-  },
-  "tui": {
-    "theme": "opencode"
   }
 }
