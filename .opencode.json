@@ -1,5 +1,18 @@
 {
   "data": {},
+  "mcpServers": {
+    "Sentry": {
+      "command": "npx",
+      "env": null,
+      "args": [
+        "mcp-remote@latest",
+        "https://mcp.sentry.dev/sse"
+      ],
+      "type": "",
+      "url": "",
+      "headers": null
+    }
+  },
   "lsp": {
     "python": {
       "enabled": true,

@@ -56,6 +56,7 @@ return {
             python = { "black", "ruff" },
             terraform = { "terraform_fmt" },
             toml = { "taplo" },
+            yaml = { "yamllint" },
             xml = { "xmlformatter" },
             ["*"] = { "trim_whitespace", "trim_newlines" },
         },
