@@ -1,4 +1,5 @@
-set -Ux AWS_DEFAULT_REGION
+set -Ux AWS_DEFAULT_REGION us-east-1
+set -gx AWS_PROFILE mediaos-dev-aidev
 
 set -Ux CLAUDE_CODE_USE_BEDROCK 1
 
