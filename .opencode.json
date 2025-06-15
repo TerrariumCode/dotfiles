@@ -1,5 +1,24 @@
 {
-  "data": {},
+  "data": {
+    "directory": ".opencode"
+  },
+  "agents": {
+    "primary": {
+      "model": "bedrock.claude-3.7-sonnet",
+      "maxTokens": 5000,
+      "reasoningEffort": ""
+    },
+    "task": {
+      "model": "bedrock.claude-3.7-sonnet",
+      "maxTokens": 5000,
+      "reasoningEffort": ""
+    },
+    "title": {
+      "model": "bedrock.claude-3.7-sonnet",
+      "maxTokens": 80,
+      "reasoningEffort": ""
+    }
+  },
   "mcpServers": {
     "Sentry": {
       "command": "npx",
@@ -39,9 +58,6 @@
       ],
       "options": null
     }
-  },
-  "tui": {
-    "theme": "dracula"
   },
   "shell": {
     "path": "/bin/zsh"
