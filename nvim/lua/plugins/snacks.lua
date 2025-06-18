@@ -3,7 +3,6 @@ return {
     ---@module 'snacks'
     priority = 1000,
     lazy = false,
-    version = "v2.20.0",
     opts = {
         bigfile = { enabled = true },
         dashboard = {

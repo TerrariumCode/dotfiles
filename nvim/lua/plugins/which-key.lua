@@ -14,24 +14,6 @@ return {
         local wk = require("which-key")
         local harpoon = require("harpoon")
 
-        -- telescope function for harpoon
-        local conf = require("telescope.config").values
-        local function toggle_telescope(harpoon_files)
-            local file_paths = {}
-            for _, item in ipairs(harpoon_files.items) do
-                table.insert(file_paths, item.value)
-            end
-
-            require("telescope.pickers").new({}, {
-                prompt_title = "Harpoon",
-                finder = require("telescope.finders").new_table({
-                    results = file_paths,
-                }),
-                previewer = conf.file_previewer({}),
-                sorter = conf.generic_sorter({}),
-            }):find()
-        end
-
         wk.add({
             { "<leader>a",  group = "AI" },
             { "<leader>aa", "<CMD>CodeCompanionActions<CR>",     desc = "Actions",             mode = { "n", "v" } },
@@ -74,15 +56,15 @@ return {
         })
 
         wk.add({
-            { "<leader>f",  group = "Telescope" },
-            { "<leader>fb", ":Telescope buffers<CR>",                                     desc = "Find Buffers" },
-            { "<leader>ff", ":Telescope find_files find_command=rg,--hidden,--files<CR>", desc = "Find Files" },
-            { "<leader>fg", ":Telescope advanced_git_search diff_commit_file<CR>",        desc = "Find Commits in File" },
-            { "<leader>fh", function() toggle_telescope(harpoon:list()) end,              desc = "Open Harpoon Window" },
-            { "<leader>fl", ":Telescope advanced_git_search diff_commit_line<CR>",        desc = "Find Commits on Line" },
-            { "<leader>fn", ":ScratchList<CR>",                                           desc = "Find Scratch" },
-            { "<leader>fs", ":Telescope toggleterm<CR>",                                  desc = "Find Terminals" },
-            { "<leader>ft", ":Telescope live_grep find_command=rg,--hidden,--files<CR>",  desc = "Find Text" },
+            { "<leader>f",  group = "Find..." },
+            { "<leader>fb", ":FzfLua buffers<CR>",                                    desc = "Find Buffers" },
+            { "<leader>ff", ":FzfLua files<CR>",                                      desc = "Find Files" },
+            { "<leader>fd", ":FzfLua dap_commands<CR>",                               desc = "Dap Commands" },
+            { "<leader>fg", ":FzfLua advanced_git_search diff_commit_file<CR>",       desc = "Find Commits in File" },
+            { "<leader>fl", ":FzfLua advanced_git_search diff_commit_line<CR>",       desc = "Find Commits on Line" },
+            { "<leader>fn", ":ScratchList<CR>",                                       desc = "Find Scratch" },
+            { "<leader>fs", ":FzfLua toggleterm<CR>",                                 desc = "Find Terminals" },
+            { "<leader>ft", ":FzfLua live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
         })
 
         wk.add({
