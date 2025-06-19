@@ -88,6 +88,7 @@ return {
         },
         { "<leader>fg", function() Snacks.picker.git_files() end,             desc = "Find Git Files" },
         { "<leader>fr", function() Snacks.picker.recent() end,                desc = "Recent" },
+        { "<leader>ft", function() Snacks.picker.grep() end,                  desc = "Grep" },
         -- git
         -- { "<leader>gb",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },
         -- { "<leader>gl",      function() Snacks.picker.git_log() end,                                 desc = "Git Log" },
