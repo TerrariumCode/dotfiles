@@ -56,18 +56,6 @@ return {
         })
 
         wk.add({
-            { "<leader>f",  group = "Find..." },
-            { "<leader>fb", ":FzfLua buffers<CR>",                                    desc = "Find Buffers" },
-            { "<leader>ff", ":FzfLua files<CR>",                                      desc = "Find Files" },
-            { "<leader>fd", ":FzfLua dap_commands<CR>",                               desc = "Dap Commands" },
-            { "<leader>fg", ":FzfLua advanced_git_search diff_commit_file<CR>",       desc = "Find Commits in File" },
-            { "<leader>fl", ":FzfLua advanced_git_search diff_commit_line<CR>",       desc = "Find Commits on Line" },
-            { "<leader>fn", ":ScratchList<CR>",                                       desc = "Find Scratch" },
-            { "<leader>fs", ":FzfLua toggleterm<CR>",                                 desc = "Find Terminals" },
-            { "<leader>ft", ":FzfLua live_grep find_command=rg,--hidden,--files<CR>", desc = "Find Text" },
-        })
-
-        wk.add({
             { "<leader>u",  group = "UndoTree" },
             { "<leader>ut", "<CMD>UndotreeToggle<CR>", desc = "Toggle" },
         })

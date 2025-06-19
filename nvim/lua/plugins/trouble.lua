@@ -1,3 +1,4 @@
+-- TODO: https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#trouble
 return {
     "folke/trouble.nvim",
     opts = {

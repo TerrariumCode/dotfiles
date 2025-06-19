@@ -120,7 +120,8 @@ vim.lsp.config("lua_ls", {
                 -- Get the language server to recognize the `vim` global
                 globals = {
                     'vim',
-                    'require'
+                    'require',
+                    'Snacks'
                 },
             },
             workspace = {
