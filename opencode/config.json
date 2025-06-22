@@ -1,0 +1,19 @@
+{
+  "$schema": "http://opencode.ai/config.json",
+  "theme": "tokyonight",
+  "autoshare": false,
+  "mcp": {
+    "sentry": {
+      "type": "local",
+      "command": [
+        "npx",
+        "mcp-remote@latest",
+        "https://mcp.sentry.dev/sse"
+      ]
+    },
+    "hdm": {
+      "type": "remote",
+      "url": "https://hdm-mcp.kubefeature.hearstapps.com"
+    }
+  }
+}
