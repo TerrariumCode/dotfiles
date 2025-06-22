@@ -1,5 +1,6 @@
 {
   "$schema": "http://opencode.ai/config.json",
   "theme": "tokyonight",
-  "autoshare": false
+  "autoshare": false,
+  "autoupdate": true
 }
