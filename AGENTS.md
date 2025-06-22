@@ -1,19 +1,28 @@
 ## Build, Lint, and Test
 
-- There are no dedicated build, lint, or test scripts.
-- Validate changes by running the relevant Ansible playbooks.
+- No dedicated build/lint/test scripts - this is a dotfiles repository
+- Run Ansible playbooks to validate changes: `cd playbooks && make run-play`
+- Use `uv run ansible-playbook -K playbook-play.yaml` for direct execution
+- Test individual roles by uncommenting them in playbook-play.yaml
 
 ## Code Style
 
 ### Ansible
+- Use full module names: `ansible.builtin.apt`, `ansible.builtin.file`
+- Use `become: true` for privilege escalation tasks
+- Use `loop: "{{ variable }}"` for iteration over lists/variables
+- Document tasks with descriptive `name:` fields
+- Use YAML format with proper indentation (2 spaces)
+- Variables in `vars/main.yml`, tasks in `tasks/main.yml`
 
-- Use full module names (e.g., `ansible.builtin.apt`).
-- Use `become: true` for tasks requiring privilege escalation.
-- Use `loop: "{{ ... }}"` for iterating over lists.
-- Keep plays and tasks well-documented with comments.
+### Fish Shell
+- Use `set -Ux` for universal exports, `set -gx` for global exports
+- Use `fish_add_path` for PATH modifications
+- Conditional blocks: `if status is-interactive` for interactive-only commands
+- Aliases use standard `alias name='command'` syntax
 
-### General
-
-- This is a dotfiles repository. Keep configuration files clean, organized, and well-commented.
-- When adding new roles or playbooks, follow the existing directory structure.
-- For any new packages or dependencies, ensure they are added to the appropriate package list.
+### Configuration Files
+- Keep dotfiles clean, organized, and well-commented
+- Follow existing directory structure when adding new configs
+- Use symlinks in Ansible playbooks for file management
+- Maintain separate configs for work/play environments (-work/-play suffixes)
