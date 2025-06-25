@@ -2,5 +2,22 @@
   "$schema": "http://opencode.ai/config.json",
   "theme": "tokyonight",
   "autoshare": false,
-  "autoupdate": true
+  "autoupdate": true,
+  "disabled_providers": [
+    "openai"
+  ],
+  "mcp": {
+    "hdm": {
+      "type": "remote",
+      "url": "http://localhost:8000/sse"
+    },
+    "sentry": {
+      "type": "local",
+      "command": [
+        "npx",
+        "mcp-remote@latest",
+        "https://mcp.sentry.dev/sse"
+      ]
+    }
+  }
 }
