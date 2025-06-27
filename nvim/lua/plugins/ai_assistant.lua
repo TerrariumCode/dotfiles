@@ -32,11 +32,21 @@ return {
                         },
                     })
                 end,
+                vertex = function()
+                    return require("codecompanion.adapters").extend("vertex", {
+                        env = {
+                            project_id = "hdm-ai-dev",
+                            api_key = "cmd: gcloud auth application-default print-access-token",
+                        },
+                        schema = {
+                            model = {
+                                default = "vertex_ai/gemini-2.5-pro"
+                            }
+                        }
+                    })
+                end,
             },
             strategies = {
-                -- stream = {
-                --     adapter = "ollama",
-                -- },
                 chat = {
                     adapter = "copilot",
                     tools = {

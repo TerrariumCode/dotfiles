@@ -26,6 +26,10 @@ return {
         })
 
         wk.add({
+            { "<leader>ca", function() require("tiny-code-action").code_action() end, desc = "Code Actions", mode = { "n" } },
+        })
+
+        wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>",    desc = "Git Blame Line" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
