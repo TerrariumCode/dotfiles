@@ -48,7 +48,7 @@ return {
             },
             strategies = {
                 chat = {
-                    adapter = "copilot",
+                    adapter = "vertex",
                     tools = {
                         ["mcp"] = {
                             -- Prevent mcphub from loading before needed
@@ -60,7 +60,7 @@ return {
                     }
                 },
                 inline = {
-                    adapter = "copilot",
+                    adapter = "vertex",
                 },
             },
         }
