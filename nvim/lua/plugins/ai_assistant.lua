@@ -40,7 +40,7 @@ return {
                         },
                         schema = {
                             model = {
-                                default = "vertex_ai/gemini-2.5-pro"
+                                default = "google/gemini-2.5-pro"
                             }
                         }
                     })
@@ -48,7 +48,7 @@ return {
             },
             strategies = {
                 chat = {
-                    adapter = "vertex",
+                    adapter = "copilot",
                     tools = {
                         ["mcp"] = {
                             -- Prevent mcphub from loading before needed
@@ -60,7 +60,7 @@ return {
                     }
                 },
                 inline = {
-                    adapter = "vertex",
+                    adapter = "copilot",
                 },
             },
         }
