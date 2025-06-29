@@ -26,10 +26,6 @@ return {
         })
 
         wk.add({
-            { "<leader>ca", function() require("tiny-code-action").code_action() end, desc = "Code Actions", mode = { "n" } },
-        })
-
-        wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>",    desc = "Git Blame Line" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
@@ -66,10 +62,12 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                      desc = "Toggle CSV View" },
-            { "<leader>ht",  ":Hardtime toggle<CR>",                        desc = "Hardtime Toggle" },
-            { "<leader>l",   function() Snacks.notifier.show_history() end, desc = "Show notification history (logs)" },
-            { "<leader>z",   "<CMD>ZenMode<CR>",                            desc = "Zen Toggle" },
+            { "<leader>o",   "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>",        desc = "Open Opencode In Vsplit" },
+            { "<leader>ca",  function() require("tiny-code-action").code_action() end, desc = "Code Actions",                    mode = { "n" } },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                                 desc = "Toggle CSV View" },
+            { "<leader>ht",  ":Hardtime toggle<CR>",                                   desc = "Hardtime Toggle" },
+            { "<leader>l",   function() Snacks.notifier.show_history() end,            desc = "Show notification history (logs)" },
+            { "<leader>z",   "<CMD>ZenMode<CR>",                                       desc = "Zen Toggle" },
         })
     end
 }
