@@ -8,8 +8,12 @@
   ],
   "mcp": {
     "hdm": {
-      "type": "remote",
-      "url": "http://localhost:8000/sse"
+      "type": "local",
+      "command": [
+        "npx",
+        "mcp-remote@latest",
+        "http://localhost:8000/mcp"
+      ]
     },
     "sentry": {
       "type": "local",
