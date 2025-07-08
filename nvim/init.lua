@@ -18,6 +18,7 @@ require("mason-lspconfig").setup({
         "terraformls",
         "taplo",
         "ts_ls",
+        "ty",
         "yamlls",
     },
 })
@@ -35,6 +36,7 @@ vim.lsp.enable({
     "ruff",
     "rust_analyzer",
     "taplo", -- toml
+    "ty",
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
