@@ -151,6 +151,11 @@ vim.lsp.config("basedpyright", {
             reportImportCycles = false,
             typeCheckingMode = "recommended",
         },
+        python = {
+            analysis = {
+                ignore = { "*" },
+            },
+        },
     },
 })
 
