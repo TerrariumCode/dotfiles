@@ -2,6 +2,9 @@
 
 SESSION_NAME="home"
 
+# hack for macos
+export PATH="/opt/homebrew/bin/:$PATH"
+
 # Check if the session already exists
 tmux has-session -t $SESSION_NAME 2>/dev/null
 
