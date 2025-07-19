@@ -17,6 +17,7 @@ fish_add_path /snap/bin
 fish_add_path /usr/local/lib/apache-maven-3.9.6/bin
 fish_add_path -g -p /usr/bin/flutter/bin/
 # fish_add_path $(dirname $(realpath $(which python)))
+fish_add_path {$HOME}/.istioctl/bin
 
 set fish_color_autosuggestion red
 
