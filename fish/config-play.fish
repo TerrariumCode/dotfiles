@@ -59,3 +59,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # opencode
 fish_add_path /home/cmac/.opencode/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/cmac/google-cloud-sdk/path.fish.inc' ]; . '/home/cmac/google-cloud-sdk/path.fish.inc'; end
