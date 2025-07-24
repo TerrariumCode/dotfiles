@@ -37,6 +37,22 @@ return {
                         },
                     })
                 end,
+                qwen3 = function()
+                    return require("codecompanion.adapters").extend("ollama", {
+                        name = "qwen3", -- Give this adapter a different name to differentiate it from the default ollama adapter
+                        schema = {
+                            model = {
+                                default = "qwen3:latest",
+                            },
+                            num_ctx = {
+                                default = 16384,
+                            },
+                            num_predict = {
+                                default = -1,
+                            },
+                        },
+                    })
+                end,
                 vertex = function()
                     return require("codecompanion.adapters").extend("vertex", {
                         env = {
@@ -53,7 +69,7 @@ return {
             },
             strategies = {
                 chat = {
-                    adapter = "copilot",
+                    adapter = "qwen3",
                     tools = {
                         ["mcp"] = {
                             -- Prevent mcphub from loading before needed
@@ -65,7 +81,7 @@ return {
                     }
                 },
                 inline = {
-                    adapter = "copilot",
+                    adapter = "qwen3",
                 },
             },
         }
