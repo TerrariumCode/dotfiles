@@ -69,7 +69,7 @@ return {
             },
             strategies = {
                 chat = {
-                    adapter = "qwen3",
+                    adapter = "copilot",
                     tools = {
                         ["mcp"] = {
                             -- Prevent mcphub from loading before needed
@@ -81,7 +81,7 @@ return {
                     }
                 },
                 inline = {
-                    adapter = "qwen3",
+                    adapter = "copilot",
                 },
             },
         }
