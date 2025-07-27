@@ -11,7 +11,11 @@
 	insteadOf = https://github.com/
 
 [core]
-	editor = nvim --clean
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RF
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
 
 [pull]
 	rebase = true
@@ -19,3 +23,4 @@
 [commit]
 	template = /Users/cmacrae/.gitcommitmsg.txt
 	gpgsign = true
+	verbose = true
