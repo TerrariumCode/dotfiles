@@ -1,5 +1,11 @@
 require("config.lazy")
 
+vim.g.trailing_whitespace_exclude_filetypes = {
+    "alpha",
+    "git",
+    "gitcommit",
+}
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
