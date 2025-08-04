@@ -26,6 +26,14 @@ return {
         })
 
         wk.add({
+            { "<leader>f",  group = "Fzflua" },
+            { "<leader>fb", "<CMD>FzfLua buffers<CR>",                       desc = "Find buffers" },
+            { "<leader>ff", "<CMD>FzfLua frecency files all_files=true<CR>", desc = "Find files" },
+            { "<leader>ft", "<CMD>FzfLua grep<CR>",                          desc = "Find text" },
+            { "<leader>fw", "<CMD>FzfLua grep_cword<CR>",                    desc = "Find word under cursor" },
+        })
+
+        wk.add({
             { "<leader>g",  group = "Git" },
             { "<leader>gb", "<CMD>Gitsigns blame_line<CR>",    desc = "Git Blame Line" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
@@ -62,7 +70,7 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>oo",   "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>",        desc = "Open Opencode In New Tmux Pane" },
+            { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>",        desc = "Open Opencode In New Tmux Pane" },
             { "<leader>ca",  function() require("tiny-code-action").code_action() end, desc = "Code Actions",                    mode = { "n" } },
             { "<leader>csv", "<CMD>CsvViewToggle<CR>",                                 desc = "Toggle CSV View" },
             { "<leader>ht",  ":Hardtime toggle<CR>",                                   desc = "Hardtime Toggle" },
