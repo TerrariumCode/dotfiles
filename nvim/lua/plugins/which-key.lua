@@ -27,10 +27,10 @@ return {
 
         wk.add({
             { "<leader>f",  group = "Fzflua" },
-            { "<leader>fb", "<CMD>FzfLua buffers<CR>",                       desc = "Find buffers" },
-            { "<leader>ff", "<CMD>FzfLua frecency files all_files=true<CR>", desc = "Find files" },
-            { "<leader>ft", "<CMD>FzfLua grep<CR>",                          desc = "Find text" },
-            { "<leader>fw", "<CMD>FzfLua grep_cword<CR>",                    desc = "Find word under cursor" },
+            { "<leader>fb", "<CMD>FzfLua buffers<CR>",                                     desc = "Find buffers" },
+            { "<leader>ff", "<CMD>FzfLua frecency files cwd_only=true all_files=true<CR>", desc = "Find files" },
+            { "<leader>ft", "<CMD>FzfLua grep<CR>",                                        desc = "Find text" },
+            { "<leader>fw", "<CMD>FzfLua grep_cword<CR>",                                  desc = "Find word under cursor" },
         })
 
         wk.add({
