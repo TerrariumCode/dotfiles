@@ -262,6 +262,8 @@ keymap("n", "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>", op
 keymap("n", "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", opts)
 keymap("v", "<leader>ds", "<esc><cmd>lua require('dap-python').debug_selection()<cr>", opts)
 
+vim.o.jumpoptions = "stack"
+
 -- OPTIONS
 vim.opt.title = false
 vim.opt.relativenumber = true
