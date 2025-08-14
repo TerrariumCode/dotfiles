@@ -33,6 +33,7 @@ vim.lsp.enable({
     "bacon_ls",
     "basedpyright",
     "cssls",
+    "djlint",
     "dockerls",
     "gopls",
     "helm_ls",
