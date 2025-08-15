@@ -30,13 +30,14 @@ return {
             { "<leader>fb", "<CMD>FzfLua buffers<CR>",                                     desc = "Find buffers" },
             { "<leader>ff", "<CMD>FzfLua frecency files cwd_only=true all_files=true<CR>", desc = "Find files" },
             { "<leader>fg", "<CMD>FzfLua globals<CR>",                                     desc = "Global Picker [$buffers|@lsp_symbols(currbuffer)|#lsp_symbols(cwd)]" },
+            -- { "<leader>fn", "<CMD>ObsidianDailies<CR>",                                    desc = "Find notes" },
             { "<leader>ft", "<CMD>FzfLua grep<CR>",                                        desc = "Find text" },
             { "<leader>fw", "<CMD>FzfLua grep_cword<CR>",                                  desc = "Find word under cursor" },
         })
 
         wk.add({
             { "<leader>g",  group = "Git" },
-            { "<leader>gb", "<CMD>BlameToggle window<CR>",    desc = "Git Blame Window" },
+            { "<leader>gb", "<CMD>BlameToggle window<CR>",     desc = "Git Blame Window" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
             { "<leader>go", function() Snacks.gitbrowse() end, desc = "Open Remote Git URL" },
         })
@@ -71,11 +72,11 @@ return {
 
         -- random assortment
         wk.add({
-            { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>",        desc = "Open Opencode In New Tmux Pane" },
-            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                                 desc = "Toggle CSV View" },
-            { "<leader>ht",  ":Hardtime toggle<CR>",                                   desc = "Hardtime Toggle" },
-            { "<leader>l",   function() Snacks.notifier.show_history() end,            desc = "Show notification history (logs)" },
-            { "<leader>z",   "<CMD>ZenMode<CR>",                                       desc = "Zen Toggle" },
+            { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode In New Tmux Pane" },
+            { "<leader>csv", "<CMD>CsvViewToggle<CR>",                          desc = "Toggle CSV View" },
+            { "<leader>ht",  ":Hardtime toggle<CR>",                            desc = "Hardtime Toggle" },
+            { "<leader>l",   function() Snacks.notifier.show_history() end,     desc = "Show notification history (logs)" },
+            { "<leader>z",   "<CMD>ZenMode<CR>",                                desc = "Zen Toggle" },
         })
     end
 }

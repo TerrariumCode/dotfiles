@@ -25,6 +25,7 @@ fish_add_path /Users/cmacrae/.kubescape/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /Library/PostgreSQL/16/bin
+fish_add_path /opt/podman/bin/
 
 set fish_color_autosuggestion red
 
