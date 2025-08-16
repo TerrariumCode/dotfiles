@@ -45,14 +45,10 @@ return {
                     local in_git = Snacks.git.get_root() ~= nil
                     local cmds = {
                         {
-                            title = "Open Issues",
-                            cmd = "gh issue list -L 3",
-                            key = "i",
-                            action = function()
-                                vim.fn.jobstart("gh issue list --web", { detach = true })
-                            end,
-                            icon = " ",
-                            height = 7,
+                            title = "Git Graph",
+                            cmd = "git log --oneline --decorate --graph --all",
+                            icon = " ",
+                            height = 21,
                         },
                         {
                             icon = " ",
