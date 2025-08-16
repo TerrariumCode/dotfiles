@@ -30,7 +30,8 @@ return {
             { "<leader>fb", "<CMD>FzfLua buffers<CR>",                                     desc = "Find buffers" },
             { "<leader>ff", "<CMD>FzfLua frecency files cwd_only=true all_files=true<CR>", desc = "Find files" },
             { "<leader>fg", "<CMD>FzfLua globals<CR>",                                     desc = "Global Picker [$buffers|@lsp_symbols(currbuffer)|#lsp_symbols(cwd)]" },
-            -- { "<leader>fn", "<CMD>ObsidianDailies<CR>",                                    desc = "Find notes" },
+            { "<leader>fn", "<CMD>ObsidianDailies<CR>",                                    desc = "Find obsidian dailies" },
+            { "<leader>fs", "<CMD>ScratchList<CR>",                                        desc = "Find scratch" },
             { "<leader>ft", "<CMD>FzfLua grep<CR>",                                        desc = "Find text" },
             { "<leader>fw", "<CMD>FzfLua grep_cword<CR>",                                  desc = "Find word under cursor" },
         })
