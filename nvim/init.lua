@@ -65,7 +65,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "gr", "<cmd>lua require('fzf-lua').lsp_references({ ignore_current_line = true })<cr>", opts)
         vim.keymap.set("n", "gF", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
         vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-
     end,
 })
 
@@ -258,7 +257,13 @@ vim.lsp.config("yamlls", {
                 -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
                 url = "",
             },
-            schemas = require('schemastore').yaml.schemas(),
+            schemas = require('schemastore').yaml.schemas {
+                extra = {
+                    url = 'http://127.0.0.1:8080/config.json',
+                    name = 'IgorIngress Configuration',
+                    fileMatch = { 'igor.yml', 'ingress.yml' },
+                }
+            },
         },
     },
 })

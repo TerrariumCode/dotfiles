@@ -1,20 +1,16 @@
 {
   "$schema": "http://opencode.ai/config.json",
   "theme": "tokyonight",
-  "autoshare": false,
+  "share": "manual",
   "autoupdate": true,
   "disabled_providers": [
     "openai"
   ],
+  "permission": {
+    "edit": "ask",
+    "bash": "ask"
+  },
   "mcp": {
-    "hdm": {
-      "type": "local",
-      "command": [
-        "npx",
-        "mcp-remote@latest",
-        "http://localhost:8000/sse"
-      ]
-    },
     "sentry": {
       "type": "local",
       "command": [
