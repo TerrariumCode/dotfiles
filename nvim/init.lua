@@ -257,13 +257,7 @@ vim.lsp.config("yamlls", {
                 -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
                 url = "",
             },
-            schemas = require('schemastore').yaml.schemas {
-                extra = {
-                    url = 'http://127.0.0.1:8080/config.json',
-                    name = 'IgorIngress Configuration',
-                    fileMatch = { 'igor.yml', 'ingress.yml' },
-                }
-            },
+            schemas = require('schemastore').yaml.schemas()
         },
     },
 })
