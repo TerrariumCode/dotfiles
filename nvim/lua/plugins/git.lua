@@ -15,4 +15,10 @@ return {
             vim.g.git_messenger_floating_win_opts = { border = 'single' }
         end,
     },
+    {
+        'topaxi/pipeline.nvim',
+        build = 'make',
+        ---@type pipeline.Config
+        opts = {},
+    },
 }

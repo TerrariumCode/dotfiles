@@ -38,7 +38,9 @@ return {
 
         wk.add({
             { "<leader>g",  group = "Git" },
+            { '<leader>ga', '<cmd>Pipeline<cr>',               desc = 'Open GitHub Actions Pipelines' },
             { "<leader>gb", "<CMD>BlameToggle window<CR>",     desc = "Git Blame Window" },
+            { "<leader>gf", "<CMD>AdvancedGitSearch<CR>",      desc = "Find git commits that changed the current file" },
             { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
             { "<leader>go", function() Snacks.gitbrowse() end, desc = "Open Remote Git URL" },
         })
