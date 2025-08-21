@@ -29,7 +29,7 @@ return {
             { "<leader>f",  group = "Fzflua" },
             { "<leader>fb", "<CMD>FzfLua buffers<CR>",                                     desc = "Find buffers" },
             { "<leader>ff", "<CMD>FzfLua frecency files cwd_only=true all_files=true<CR>", desc = "Find files" },
-            { "<leader>fg", "<CMD>FzfLua globals<CR>",                                     desc = "Global Picker [$buffers|@lsp_symbols(currbuffer)|#lsp_symbols(cwd)]" },
+            { "<leader>fg", "<CMD>FzfLua global<CR>",                                     desc = "Global Picker [$buffers|@lsp_symbols(currbuffer)|#lsp_symbols(cwd)]" },
             { "<leader>fn", "<CMD>ObsidianDailies<CR>",                                    desc = "Find obsidian dailies" },
             { "<leader>fs", "<CMD>ScratchList<CR>",                                        desc = "Find scratch" },
             { "<leader>ft", "<CMD>FzfLua grep<CR>",                                        desc = "Find text" },
@@ -38,11 +38,12 @@ return {
 
         wk.add({
             { "<leader>g",  group = "Git" },
-            { '<leader>ga', '<cmd>Pipeline<cr>',               desc = 'Open GitHub Actions Pipelines' },
-            { "<leader>gb", "<CMD>BlameToggle window<CR>",     desc = "Git Blame Window" },
-            { "<leader>gf", "<CMD>AdvancedGitSearch<CR>",      desc = "Find git commits that changed the current file" },
-            { "<leader>gg", function() Snacks.lazygit() end,   desc = "Lazygit" },
-            { "<leader>go", function() Snacks.gitbrowse() end, desc = "Open Remote Git URL" },
+            { '<leader>ga', '<cmd>Pipeline<cr>',                           desc = 'Open GitHub Actions Pipelines' },
+            { "<leader>gb", "<CMD>BlameToggle window<CR>",                 desc = "Git Blame Window" },
+            { "<leader>gd", "<CMD>AdvancedGitSearch diff_commit_file<CR>", desc = "Git Diff Commit File Search" },
+            { "<leader>gf", "<CMD>AdvancedGitSearch<CR>",                  desc = "Find Git Commits That Changed The Current File" },
+            { "<leader>gg", function() Snacks.lazygit() end,               desc = "Lazygit" },
+            { "<leader>go", function() Snacks.gitbrowse() end,             desc = "Open Remote Git URL" },
         })
 
         wk.add({
