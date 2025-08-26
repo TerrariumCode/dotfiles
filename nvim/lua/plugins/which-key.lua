@@ -60,12 +60,6 @@ return {
         })
 
         wk.add({
-            { "<leader>r",  group = "RustTools" },
-            { "<leader>rd", "<CMD>lua vim.cmd.RustLsp {'debuggables' }<CR>", desc = "RustDebuggables" },
-            { "<leader>rr", "<CMD>lua vim.cmd.RustLsp {'runnables' }<CR>",   desc = "RustRunnables" },
-        })
-
-        wk.add({
             { "<leader>.", "<CMD>Scratch<CR>", desc = "Open Daily Scratch" },
         })
 

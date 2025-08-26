@@ -43,7 +43,8 @@ vim.lsp.enable({
     "htmx",
     "lua_ls",
     "ruff",
-    "rust_analyzer",
+    -- NOTE: allow rustaceanvim to setup
+    -- "rust_analyzer",
     "taplo", -- toml
     -- TODO: reenable when ty gets better
     -- "ty",
@@ -205,60 +206,78 @@ vim.lsp.config("bacon_ls", {
     }
 })
 
-vim.lsp.config("rust_analyzer", {
-    settings = {
-        ['rust-analyzer'] = {
-            cargo = {
-                buildScripts = {
-                    enable = true,
-                },
-                features = "all",
-            },
-            checkOnSave = {
-                enable = false,
-            },
-            diagnostics = {
-                enable = false,
-            },
-            procMacro = {
-                enabled = true,
-            },
-        },
-    }
-})
-
--- TODO: REMOVED for now as it's borked, don't know why
--- vim.g.rustaceanvim = {
---     -- Plugin configuration
---     tools = {
---     },
---     -- LSP configuration
---     server = {
---         default_settings = {
---             -- rust-analyzer language server configuration
---             ['rust-analyzer'] = {
---                 cargo = {
---                     buildScripts = {
---                         enable = true,
---                     },
---                     features = "all",
---                 },
---                 checkOnSave = {
+-- NOTE: using rustaceanvim instead
+-- vim.lsp.config("rust_analyzer", {
+--     settings = {
+--         ['rust-analyzer'] = {
+--             cargo = {
+--                 buildScripts = {
 --                     enable = true,
 --                 },
---                 diagnostics = {
---                     enable = true,
---                 },
---                 procMacro = {
---                     enabled = true,
---                 },
+--                 features = "all",
+--             },
+--             checkOnSave = {
+--                 enable = false,
+--             },
+--             diagnostics = {
+--                 enable = false,
+--             },
+--             procMacro = {
+--                 enabled = true,
 --             },
 --         },
---     },
---     -- DAP configuration
---     dap = {
---     },
--- }
+--     }
+-- })
+
+vim.g.rustaceanvim = function()
+  -- Update this path
+  local extension_path = vim.env.HOME .. '/.local/share/nvim/mason/packages/codelldb/extension/'
+  local codelldb_path = extension_path .. 'adapter/codelldb'
+  local liblldb_path = extension_path .. 'lldb/lib/liblldb'
+  local this_os = vim.uv.os_uname().sysname;
+
+  -- The path is different on Windows
+  if this_os:find "Windows" then
+    codelldb_path = extension_path .. "adapter\\codelldb.exe"
+    liblldb_path = extension_path .. "lldb\\bin\\liblldb.dll"
+  else
+    -- The liblldb extension is .so for Linux and .dylib for MacOS
+    liblldb_path = liblldb_path .. (this_os == "Linux" and ".so" or ".dylib")
+  end
+
+  local cfg = require('rustaceanvim.config')
+  return {
+    dap = {
+      adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
+    },
+    -- Plugin configuration
+    tools = {
+    },
+    -- LSP configuration
+    server = {
+        default_settings = {
+            -- rust-analyzer language server configuration
+            ['rust-analyzer'] = {
+                cargo = {
+                    buildScripts = {
+                        enable = true,
+                    },
+                    features = "all",
+                },
+                checkOnSave = {
+                    enable = true,
+                },
+                diagnostics = {
+                    enable = true,
+                },
+                procMacro = {
+                    enabled = true,
+                },
+            },
+        },
+    },
+  }
+end
 
 -- YAML
 vim.lsp.config("yamlls", {
