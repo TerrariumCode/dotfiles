@@ -36,7 +36,7 @@ export DISABLE_AUTO_TITLE='true'
 
 export KUBE_EDITOR="nvim -u NORC"
 
-set -gx LLDB_EXEC_PATH "/Users/cmacrae/.local/share/nvim/mason/packages/codelldb/extension/lldb/bin/lldb"
+set -gx LLDB_EXEC_PATH "/opt/homebrew/opt/llvm/bin/lldb-dap"
 
 # buildkit now please, docker
 export DOCKER_BUILDKIT=1

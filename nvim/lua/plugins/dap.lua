@@ -13,7 +13,7 @@ return {
             local dap = require('dap')
             dap.adapters.lldb = {
                 type = 'executable',
-                command = "/opt/homebrew/opt/llvm/bin/lldb-server",
+                command = vim.env.LLDB_EXEC_PATH,
                 name = 'lldb'
             }
 

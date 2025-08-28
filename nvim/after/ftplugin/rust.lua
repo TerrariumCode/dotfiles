@@ -5,10 +5,9 @@ vim.keymap.set(
     "n",
     "<leader>a",
     function()
-        vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
-        -- or vim.lsp.buf.codeAction() if you don't want grouping.
+        vim.cmd.RustLsp('codeAction')
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Rust Code Actions" }
 )
 
 vim.keymap.set(
@@ -17,7 +16,7 @@ vim.keymap.set(
     function()
         vim.cmd.RustLsp('openCargo')
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Open Cargo.toml" }
 )
 
 vim.keymap.set(
@@ -26,7 +25,7 @@ vim.keymap.set(
     function()
         vim.cmd.RustLsp('debuggables')
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Rust Debuggables" }
 )
 
 vim.keymap.set(
@@ -35,7 +34,7 @@ vim.keymap.set(
     function()
         vim.cmd.RustLsp { 'crateGraph', '[backend]', '[output]' }
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Cargo Crate Graph" }
 )
 
 vim.keymap.set(
@@ -44,7 +43,7 @@ vim.keymap.set(
     function()
         vim.cmd.RustLsp('runnables')
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Rust Runnables" }
 )
 
 vim.keymap.set(
@@ -53,7 +52,7 @@ vim.keymap.set(
     function()
         vim.cmd.RustLsp('workspaceSymbol')
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Rust Runnables" }
 )
 
 vim.keymap.set(
@@ -62,5 +61,5 @@ vim.keymap.set(
     function()
         vim.cmd.RustLsp({ 'hover', 'actions' })
     end,
-    { silent = true, buffer = bufnr }
+    { silent = true, buffer = bufnr, desc = "Rust Hover" }
 )
