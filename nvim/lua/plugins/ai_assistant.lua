@@ -12,60 +12,62 @@ return {
         },
         opts = {
             adapters = {
-                copilot = function()
-                    return require("codecompanion.adapters").extend("copilot", {
-                        schema = {
-                            model = {
-                                default = "claude-3.7-sonnet",
+                http = {
+                    copilot = function()
+                        return require("codecompanion.adapters").extend("copilot", {
+                            schema = {
+                                model = {
+                                    default = "claude-3.7-sonnet",
+                                },
                             },
-                        },
-                    })
-                end,
-                llama3 = function()
-                    return require("codecompanion.adapters").extend("ollama", {
-                        name = "llama3", -- Give this adapter a different name to differentiate it from the default ollama adapter
-                        schema = {
-                            model = {
-                                default = "llama3:latest",
+                        })
+                    end,
+                    llama3 = function()
+                        return require("codecompanion.adapters").extend("ollama", {
+                            name = "llama3", -- Give this adapter a different name to differentiate it from the default ollama adapter
+                            schema = {
+                                model = {
+                                    default = "llama3:latest",
+                                },
+                                num_ctx = {
+                                    default = 16384,
+                                },
+                                num_predict = {
+                                    default = -1,
+                                },
                             },
-                            num_ctx = {
-                                default = 16384,
+                        })
+                    end,
+                    qwen3 = function()
+                        return require("codecompanion.adapters").extend("ollama", {
+                            name = "qwen3", -- Give this adapter a different name to differentiate it from the default ollama adapter
+                            schema = {
+                                model = {
+                                    default = "qwen3:latest",
+                                },
+                                num_ctx = {
+                                    default = 16384,
+                                },
+                                num_predict = {
+                                    default = -1,
+                                },
                             },
-                            num_predict = {
-                                default = -1,
+                        })
+                    end,
+                    vertex = function()
+                        return require("codecompanion.adapters").extend("vertex", {
+                            env = {
+                                project_id = "hdm-ai-dev",
+                                api_key = "cmd: gcloud auth application-default print-access-token",
                             },
-                        },
-                    })
-                end,
-                qwen3 = function()
-                    return require("codecompanion.adapters").extend("ollama", {
-                        name = "qwen3", -- Give this adapter a different name to differentiate it from the default ollama adapter
-                        schema = {
-                            model = {
-                                default = "qwen3:latest",
-                            },
-                            num_ctx = {
-                                default = 16384,
-                            },
-                            num_predict = {
-                                default = -1,
-                            },
-                        },
-                    })
-                end,
-                vertex = function()
-                    return require("codecompanion.adapters").extend("vertex", {
-                        env = {
-                            project_id = "hdm-ai-dev",
-                            api_key = "cmd: gcloud auth application-default print-access-token",
-                        },
-                        schema = {
-                            model = {
-                                default = "google/gemini-2.5-pro"
+                            schema = {
+                                model = {
+                                    default = "google/gemini-2.5-pro"
+                                }
                             }
-                        }
-                    })
-                end,
+                        })
+                    end,
+                }
             },
             strategies = {
                 chat = {
