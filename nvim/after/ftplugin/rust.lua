@@ -13,6 +13,15 @@ vim.keymap.set(
 
 vim.keymap.set(
     "n",
+    "<leader>rc",
+    function()
+        vim.cmd.RustLsp('openCargo')
+    end,
+    { silent = true, buffer = bufnr }
+)
+
+vim.keymap.set(
+    "n",
     "<leader>rd",
     function()
         vim.cmd.RustLsp('debuggables')
@@ -22,9 +31,27 @@ vim.keymap.set(
 
 vim.keymap.set(
     "n",
+    "<leader>rg",
+    function()
+        vim.cmd.RustLsp { 'crateGraph', '[backend]', '[output]' }
+    end,
+    { silent = true, buffer = bufnr }
+)
+
+vim.keymap.set(
+    "n",
     "<leader>rr",
     function()
         vim.cmd.RustLsp('runnables')
+    end,
+    { silent = true, buffer = bufnr }
+)
+
+vim.keymap.set(
+    "n",
+    "<leader>rs",
+    function()
+        vim.cmd.RustLsp('workspaceSymbol')
     end,
     { silent = true, buffer = bufnr }
 )

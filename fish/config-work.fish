@@ -36,8 +36,7 @@ export DISABLE_AUTO_TITLE='true'
 
 export KUBE_EDITOR="nvim -u NORC"
 
-export VSCODE_LLDB_DIR='~/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/'
-export LLDB_EXEC_PATH="/usr/local/opt/llvm/bin/lldb-vscode"
+set -gx LLDB_EXEC_PATH "/Users/cmacrae/.local/share/nvim/mason/packages/codelldb/extension/lldb/bin/lldb"
 
 # buildkit now please, docker
 export DOCKER_BUILDKIT=1

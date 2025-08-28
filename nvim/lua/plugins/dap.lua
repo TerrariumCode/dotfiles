@@ -3,6 +3,7 @@ return {
         "mfussenegger/nvim-dap",
         dependencies = {
             "mfussenegger/nvim-dap-python",
+            "ldelossa/nvim-dap-projects",
         },
         config = function()
             local dap_python = require('dap-python')
@@ -12,7 +13,7 @@ return {
             local dap = require('dap')
             dap.adapters.lldb = {
                 type = 'executable',
-                command = vim.env.LLDB_EXEC_PATH,
+                command = "/opt/homebrew/opt/llvm/bin/lldb-server",
                 name = 'lldb'
             }
 
@@ -22,6 +23,7 @@ return {
                 command = 'falco',
                 args = { 'dap' },
             }
+
             dap.configurations.vcl = {
                 {
                     type = 'vcl',
