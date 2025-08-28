@@ -68,6 +68,22 @@ return {
             { "<leader>ut", "<CMD>UndotreeToggle<CR>", desc = "Toggle" },
         })
 
+        wk.add({
+            { "<leader>d",  group = "Debugger" },
+            { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint" },
+            { "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", desc = "Continue" },
+            { "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", desc = "Step Into" },
+            { "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", desc = "Step Over" },
+            { "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", desc = "Step Out" },
+            { "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", desc = "Toggle REPL" },
+            { "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", desc = "Run Last" },
+            { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", desc = "Toggle UI" },
+            { "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", desc = "Terminate" },
+            { "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>", desc = "Python Test Method" },
+            { "<leader>df", "<cmd>lua require('dap-python').test_class()<cr>", desc = "Python Test Class" },
+            { "<leader>ds", "<cmd>lua require('dap-python').debug_selection()<cr>", desc = "Python Debug Selection", mode = "v" },
+        })
+
         -- random assortment
         wk.add({
             { "<leader>oo",  "<CMD>silent !tmux-sessionizer -s 0 --vsplit<CR>", desc = "Open Opencode In New Tmux Pane" },
