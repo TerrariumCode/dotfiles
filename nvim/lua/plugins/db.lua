@@ -13,5 +13,8 @@ return {
     init = function()
         -- Your DBUI configuration
         vim.g.db_ui_use_nerd_fonts = 1
+        vim.g.dbs = {
+            { name = 'rover-db-kubefeature-readonly', url = 'postgres://postgres@localhost:10185/mediaos' },
+        }
     end,
 }
