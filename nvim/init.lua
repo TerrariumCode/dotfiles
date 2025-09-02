@@ -2,6 +2,9 @@ require("config.lazy")
 
 require("nvim-dap-projects").search_project_config()
 
+-- NOTE: add when this is released in newer nvim
+-- vim.lsp.on_type_formatting.enable()
+
 vim.g.trailing_whitespace_exclude_filetypes = {
     "alpha",
     "git",
@@ -169,6 +172,14 @@ vim.lsp.config("lua_ls", {
 
 -- PYTHON
 vim.lsp.config("basedpyright", {
+    -- NOTE: may not be needed when this feature is released (up top)
+    -- capabilities = {
+    --     textDocument = {
+    --         onTypeFormatting = {
+    --             dynamicRegistration = true,
+    --         },
+    --     },
+    -- },
     settings = {
         basedpyright = {
             -- Using Ruff's import organizer
