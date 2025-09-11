@@ -198,14 +198,18 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-# to find app-id use `aerospace list-apps`
+# to find app-id use `osascript -e 'id of app "Microsoft Teams"'` on macos
 [[on-window-detected]]
-if.app-id = 'org.alacritty'
+if.app-id = 'com.mitchellh.ghostty'
 run = ['move-node-to-workspace T']
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = ['move-node-to-workspace B']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace M']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
