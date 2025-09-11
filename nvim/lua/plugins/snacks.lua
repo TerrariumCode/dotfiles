@@ -46,23 +46,33 @@ return {
                     local cmds = {
                         {
                             title = "Git Graph",
-                            cmd = "git log --oneline --decorate --graph --all",
                             icon = " ",
-                            height = 21,
+                            cmd = "git log --oneline --decorate --graph --all -n 10",
+                            height = 12,
                         },
                         {
-                            icon = " ",
-                            title = "Open PRs",
-                            cmd = "gh pr list -L 3",
-                            key = "P",
+                            title = "Current PR Status",
+                            icon = " ",
+                            cmd = "gh pr status",
+                            key = "p",
                             action = function()
-                                vim.fn.jobstart("gh pr list --web", { detach = true })
+                                vim.fn.jobstart("gh pr view --web", { detach = true })
                             end,
-                            height = 7,
+                            height = 10,
                         },
                         {
+                            title = "Current PR Checks",
                             icon = " ",
-                            title = "Git Status",
+                            cmd = "gh pr checks",
+                            key = "c",
+                            action = function()
+                                vim.fn.jobstart("gh pr checks --web", { detach = true })
+                            end,
+                            height = 10,
+                        },
+                        {
+                            title = "Git Diff Status",
+                            icon = " ",
                             cmd = "git --no-pager diff --stat -B -M -C",
                             height = 10,
                         },
@@ -73,7 +83,7 @@ return {
                             section = "terminal",
                             enabled = in_git,
                             padding = 1,
-                            ttl = 5 * 60,
+                            ttl = 2 * 60,
                             indent = 3,
                         }, cmd)
                     end, cmds)
