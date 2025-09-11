@@ -5,6 +5,7 @@ abbr -a -- ecr-login "aws ecr get-login-password --region us-east-1 | docker log
 abbr -a -- d docker
 abbr -a -- dc docker compose
 abbr -a -- dcx docker context
+abbr -a -- dps docker ps
 
 # fish things
 abbr -a -- hm history merge
