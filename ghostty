@@ -7,3 +7,4 @@ font-family = "JetBrainsMono NF"
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+confirm-close-surface = false
