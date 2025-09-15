@@ -289,3 +289,9 @@ vim.lsp.config("yamlls", {
         },
     },
 })
+
+vim.filetype.add({
+  extension = {
+    ['http'] = 'http',
+  },
+})
