@@ -13,6 +13,7 @@ return {
                     { icon = " ", key = "f", desc = "Find File", action = ":FzfLua files cwd_only=true all_files=true" },
                     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                     { icon = " ", key = "t", desc = "Find Text", action = ":FzfLua grep" },
+                    { icon = " ", key = "g", desc = "Search Git", action = ":AdvancedGitSearch" },
                     { icon = " ", key = "r", desc = "Recent Files", action = ":FzfLua frecency files cwd_only=true all_files=true" },
                     {
                         icon = " ",
