@@ -64,7 +64,7 @@ return {
                         {
                             title = "Current PR Checks",
                             icon = " ",
-                            cmd = "gh pr checks",
+                            cmd = "gh pr checks || echo \"\"",
                             key = "c",
                             action = function()
                                 vim.fn.jobstart("gh pr checks --web", { detach = true })
