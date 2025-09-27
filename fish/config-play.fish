@@ -4,8 +4,6 @@ end
 
 set -U fish_greeting
 
-set -g fish_key_bindings fish_vi_key_bindings
-
 fish_add_path /opt/nvim-linux-x86_64/bin
 fish_add_path {$HOME}/.pyenv/bin
 fish_add_path {$HOME}/.local/bin
