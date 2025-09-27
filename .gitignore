@@ -1,4 +1,9 @@
 .DS_Store
 atuin/.env
 fish/conf.d/exports.fish
+fish/functions/fisher.fish
+fish/functions/fish_prompt.fish
+fish/functions/tide.fish
+fish/functions/tide/
+fish/functions/_tide_*
 .opencode/

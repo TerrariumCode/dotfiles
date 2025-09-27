@@ -10,6 +10,8 @@ export DENO_INSTALL="/Users/cmacrae/.deno"
 
 set -U fish_greeting
 
+set -g fish_key_bindings fish_vi_key_bindings
+
 # fish_add_path {$(pyenv root)/shims}
 fish_add_path {$HOME}/bin
 fish_add_path /usr/local/bin
